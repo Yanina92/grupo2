@@ -1,4 +1,4 @@
-#Trabajo Integrador Grupo 2
+# Trabajo Integrador Grupo 2
 
 ## Proyecto: *Ferreteria* 
 
@@ -11,7 +11,7 @@
 * Jardinería
 
 
-###Integrantes:
+### Integrantes:
 
 * Soraire Sofia
 * Rivero Nicolas
