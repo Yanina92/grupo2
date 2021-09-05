@@ -26,3 +26,7 @@ Esta página web va a estar orientada a diversos usuarios como constructores, el
 * **Su Ferreteria Online:** Elegimos este sitio por la estética y el órden de los componentes que presentaba. (https://www.suferreteriaonline.com.ar/)
 * **El Ferretero:** Elegimos este sitio porque nos gusto la categoria de destacados (https://elferretero.com.ar/productos/)
 * **Do it Best:** Elegimos este sitio por la parte de detalle de productos (https://www.doitbest.com/)
+
+### Tablero de Trabajo:
+
+https://trello.com/b/2HwPf9MC/proyecto-ferreteria
