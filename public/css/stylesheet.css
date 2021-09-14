@@ -1,0 +1,68 @@
+.encabezado1 {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0E34A0;
+  color: white; 
+}
+
+.logoPerrito{
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.destornillador{
+  width: 250px;
+  height: 200px;
+}
+
+.encabezado2 {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F86624;
+}
+
+.linea {
+  border-top: 1px solid black;
+  height: 2px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+}
+
+main{
+  background-color: #EDF7F6;
+}
+
+.seccionDescuentos{
+  background-color: #F86624;
+}
+
+.masMenos{
+  display: flex;
+  justify-content: space-between;
+}
+
+.titulosLista {
+  display: flex;
+  justify-content: space-between;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  display: flex;
+  justify-content: space-around;
+}
+
+.descuento{
+  display: flex;
+  justify-content: center;  
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #0E34A0;  
+}
