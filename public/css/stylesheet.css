@@ -2,12 +2,56 @@
   display: flex;
   justify-content: space-between;
   background-color: #0E34A0;
-  color: white; 
+  color: white;
+  padding: 0.5rem;
+  padding-right: 1.5rem;  
+}
+
+.usuario{
+  font-size: 3rem;
+  flex-grow: 0.10;
+  text-align: center;
+}
+
+.tituloPrincipal{
+  font-size: 5rem;
+  flex-grow: 0.20;
+  text-align: center;
 }
 
 .logoPerrito{
-  border-radius: 5px;
+  border-radius: 5%;
   border: 2px solid black;
+  width: 10vw;
+  height: 20vh;
+}
+
+.navProducto{
+  font-size: 1.5rem;
+  flex-grow: 0.08;
+  text-align: center;
+}
+
+.busqueda{
+  flex-grow: 0.06;
+  text-align: left;
+}
+
+.input{
+  width: 15vw;
+  height: 3vh;
+}
+
+
+.lupa{
+  font-size: 1rem;
+  text-align: unset;
+}
+
+.carrito{
+  font-size: 2rem;
+  flex-grow: 0.04;
+  text-align: center;
 }
 
 .destornillador{
@@ -19,6 +63,8 @@
   display: flex;
   justify-content: space-between;
   background-color: #F86624;
+  padding: 0.5rem;
+  padding-top: 1.5rem;
 }
 
 .linea {
@@ -30,6 +76,7 @@
 
 main{
   background-color: #EDF7F6;
+  font-size: 1.3rem;
 }
 
 .seccionDescuentos{
@@ -43,7 +90,29 @@ main{
 
 .titulosLista {
   display: flex;
-  justify-content: space-between;
+  padding-top: 1.3rem;
+}
+
+.escritosLista1{
+  font-size: 1.5rem;
+  flex-grow: 0.50;
+  text-align: right;
+}
+
+.escritosLista2{
+  font-size: 1.5rem;
+  flex-grow: 0.40;
+  text-align: center;
+}
+.escritosLista3{
+  font-size: 1.5rem;
+  flex-grow: 0.20;
+  text-align: left;
+}
+.escritosLista4{
+  font-size: 1.5rem;
+  flex-grow: 0.22;
+  text-align: left;
 }
 
 article {
