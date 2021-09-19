@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
 }
+
 header {
   background-color: #647bf0;
   display: flex;
@@ -68,4 +70,63 @@ div.header-shop {
   text-align: center;
   min-width: 2rem;
   width: 2rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 80%;
+  height: 460px;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.footer-div-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  height: 120px;
+  background-color: red;
+}
+
+p.text-contact-us {
+  font-size: 18px;
+}
+
+span.footer-container-phone {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+span.footer-container-email {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+p.text-phone {
+  display: inline-block;
+}
+
+div.footer-div-follow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  height: 120px;
+  background-color: red;
+}
+
+div.google-location {
+  height: 120px;
 }
