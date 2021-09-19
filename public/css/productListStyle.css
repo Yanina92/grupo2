@@ -3,8 +3,21 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
+  font-family: "Jost", sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  min-width: 300px;
+}
+section {
+  background-color: red;
+  flex-basis: 50%;
+  min-width: 300px;
+}
 header {
   background-color: #647bf0;
   display: flex;
@@ -12,6 +25,7 @@ header {
   width: 100%;
   height: 75px;
   justify-content: space-around;
+  min-width: 300px;
 }
 
 div.header-logo {
@@ -78,13 +92,13 @@ footer {
 }
 
 .container {
+  min-width: 300px;
   width: 80%;
   height: 460px;
-  background-color: yellow;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 div.footer-div-contact {
@@ -92,11 +106,14 @@ div.footer-div-contact {
   flex-direction: column;
   align-items: flex-start;
   width: 60%;
-  height: 120px;
-  background-color: red;
+  flex-basis: 30%;
 }
 
 p.text-contact-us {
+  font-size: 18px;
+}
+
+p.text-follow-us {
   font-size: 18px;
 }
 
@@ -123,10 +140,28 @@ div.footer-div-follow {
   flex-direction: column;
   align-items: flex-start;
   width: 60%;
-  height: 120px;
-  background-color: red;
+  flex-basis: 30%;
+}
+
+span.footer-container-social-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+span.footer-container-social-icons i:nth-child(n) {
+  font-size: 40px;
+}
+
+div.footer-div-location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  flex-basis: 40%;
 }
 
 div.google-location {
-  height: 120px;
+  background-color: red;
+  flex-basis: 70%;
 }
