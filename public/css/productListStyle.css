@@ -15,7 +15,7 @@ body {
 }
 section {
   background-color: red;
-  flex-basis: 50%;
+  flex-basis: 60%;
   min-width: 300px;
 }
 header {
@@ -89,12 +89,13 @@ div.header-shop {
 footer {
   display: flex;
   justify-content: center;
+  flex-basis: 50%;
+  background-color: #dedede;
 }
 
 .container {
   min-width: 300px;
   width: 80%;
-  height: 460px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,5 +164,6 @@ div.footer-div-location {
 
 div.google-location {
   background-color: red;
+  width: 100%;
   flex-basis: 70%;
 }
