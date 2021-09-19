@@ -27,23 +27,29 @@ header {
   justify-content: space-around;
   min-width: 300px;
 }
+footer {
+  display: flex;
+  justify-content: center;
+  flex-basis: 50%;
+  background-color: #dedede;
+}
 
+/*--------- LOGO ---------*/
 div.header-logo {
   width: 4rem;
   height: 4rem;
   background-color: brown;
 }
 
+/*--------- SEARCH BAR ---------*/
 nav.header-search-bar {
   flex-basis: 50%;
 }
-
 form.form-search-bar {
   display: flex;
   position: relative;
   height: 2rem;
 }
-
 input.input-search {
   min-width: 2rem;
   width: 100%;
@@ -51,7 +57,6 @@ input.input-search {
   border: none;
   border-radius: 4px;
 }
-
 button.button-search {
   position: absolute;
   right: 0px;
@@ -62,6 +67,7 @@ button.button-search {
   background-color: rgba(0, 0, 0, 0);
 }
 
+/*------------ BURGER -----------*/
 div.header-burger {
   display: flex;
   flex-direction: column;
@@ -72,7 +78,6 @@ div.header-burger {
   height: 2rem;
   border-radius: 5px;
 }
-
 span[class*="burger-bread"] {
   display: block;
   width: 24px;
@@ -80,19 +85,14 @@ span[class*="burger-bread"] {
   background-color: white;
 }
 
+/*--------- CART ICON ---------*/
 div.header-shop {
   text-align: center;
   min-width: 2rem;
   width: 2rem;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  flex-basis: 50%;
-  background-color: #dedede;
-}
-
+/*--------- FOOTER CONTAINER ---------*/
 .container {
   min-width: 300px;
   width: 80%;
@@ -102,6 +102,7 @@ footer {
   justify-content: space-around;
 }
 
+/*--------- CONTACT DIV ---------*/
 div.footer-div-contact {
   display: flex;
   flex-direction: column;
@@ -109,23 +110,12 @@ div.footer-div-contact {
   width: 60%;
   flex-basis: 30%;
 }
-
 p.text-contact-us {
   font-size: 18px;
 }
 
-p.text-follow-us {
-  font-size: 18px;
-}
-
+/*--------- PHONE DETAIL ---------*/
 span.footer-container-phone {
-  width: 100%;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-span.footer-container-email {
   width: 100%;
   height: 2rem;
   display: flex;
@@ -136,6 +126,16 @@ p.text-phone {
   display: inline-block;
 }
 
+/*--------- EMAIL DETAIL ---------*/
+span.footer-container-email {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/*--------- FOLLOW DIV ---------*/
 div.footer-div-follow {
   display: flex;
   flex-direction: column;
@@ -143,7 +143,9 @@ div.footer-div-follow {
   width: 60%;
   flex-basis: 30%;
 }
-
+p.text-follow-us {
+  font-size: 18px;
+}
 span.footer-container-social-icons {
   display: flex;
   justify-content: space-between;
@@ -153,6 +155,7 @@ span.footer-container-social-icons i:nth-child(n) {
   font-size: 40px;
 }
 
+/*--------- LOCATION DIV ---------*/
 div.footer-div-location {
   display: flex;
   flex-direction: column;
@@ -161,7 +164,6 @@ div.footer-div-location {
   width: 60%;
   flex-basis: 40%;
 }
-
 div.google-location {
   background-color: red;
   width: 100%;
