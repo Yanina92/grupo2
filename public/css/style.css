@@ -1,0 +1,394 @@
+:root{
+  --amarillo: #EAC926;
+  --azul: #03264C;
+  --celeste: #1259c3;
+  --grisOscuro: #666;
+  --grisClaro: #ebebeb;
+  --verde: #39b54a;
+  --negro: #000;
+  --blanco: #fff;
+  --marronOscuro: #646464;
+  --azulClaro: #0022AA; 
+}
+.logoPerrito{
+  border-radius: 5%;
+  border: 2px solid black;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Jost", sans-serif;
+}
+
+/* body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  min-width: 300px;
+}
+section {
+  background-color: red;
+  flex-basis: 60%;
+  min-width: 300px;
+} */
+header {
+  background-color: #647bf0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  justify-content: space-around;
+  min-width: 300px;
+}
+footer {
+  display: inline-flex;
+  justify-content: center;
+  flex-basis: 50%;
+  background-color: #dedede;
+  width: 100vw;
+}
+
+/*--------- LOGO ---------*/
+div.header-logo {
+  width: 4rem;
+  height: 4rem;
+  /* background-color: brown; */
+}
+
+/*--------- SEARCH BAR ---------*/
+nav.header-search-bar {
+  flex-basis: 30%;
+}
+form.form-search-bar {
+  display: flex;
+  position: relative;
+  height: 2rem;
+}
+input.input-search {
+  min-width: 2rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}
+button.button-search {
+  position: absolute;
+  right: 0px;
+  width: 2rem;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/*------------ BURGER -----------*/
+div.header-burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+}
+span[class*="burger-bread"] {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+}
+
+/*--------- CART ICON ---------*/
+div.header-shop {
+  text-align: center;
+  min-width: 2rem;
+  width: 2rem;
+}
+
+/*--------- FOOTER CONTAINER ---------*/
+.container{
+  width: 80vw;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+/*--------- CONTACT DIV ---------*/
+div.footer-div-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  flex-basis: 30%;
+}
+p.text-contact-us {
+  font-size: 18px;
+}
+
+/*--------- PHONE DETAIL ---------*/
+span.footer-container-phone {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+p.text-phone {
+  display: inline-block;
+}
+
+/*--------- EMAIL DETAIL ---------*/
+span.footer-container-email {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/*--------- FOLLOW DIV ---------*/
+div.footer-div-follow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  flex-basis: 30%;
+}
+p.text-follow-us {
+  font-size: 18px;
+}
+span.footer-container-social-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+span.footer-container-social-icons i:nth-child(n) {
+  font-size: 30px;
+}
+
+/*--------- LOCATION DIV ---------*/
+div.footer-div-location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  flex-basis: 40%;
+}
+div.google-location {
+  background-color: red;
+  width: 50%;
+  flex-basis: 70%;
+}
+
+.cant{
+  margin-top: 8px;
+}
+
+.detalle{
+  margin-top: 12px;
+}
+
+.primer{
+    display: flex;
+    justify-content:space-between ;
+    margin-right: 5px;
+}
+.prod{
+    width:40%;
+    height:100px;
+    background-color: rgba(202, 200, 200, 0.938);
+    margin: 10px;
+}
+.log{
+padding: 20px;
+}
+.detProd{
+    text-align: center;
+    border-bottom: solid 2px grey;
+    font-weight: bold;
+    font-size: 17px;
+    padding-top: 5px;
+  }
+
+.inner-addonl{
+    padding: 10px;
+    width: 30px;
+    margin-left: 20px;
+}
+.cantidad{
+    width: 25%;
+}
+
+.titulo{
+  font-weight: bold;
+  font-size: 17px;
+}
+.desc{
+  margin: 10px; 
+}
+.especif{
+  margin: 10px;  
+}
+
+  body {
+
+  
+    font-family: 'Lato', sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+    scrollbar-color: transparent transparent; /* thumb and track color */
+    scrollbar-width: 0px;
+  }
+  
+  #carrusel {
+    float:left;
+    width:100vw;
+    overflow:hidden;
+    height:150px;
+    position:relative;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+ 
+#carrusel .fa-chevron-left {
+    position:absolute;
+    left:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+#carrusel .fa-chevron-right {
+    position:absolute;
+    right:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+.carrusel {
+    width:100vw;
+    left:0px;
+    position:absolute;
+    z-index:0;
+}
+ 
+.carrusel img {
+  width: 60%;
+}
+
+.product {
+  border:#CCCCCC 1px solid;
+  width: 30vw;
+  float: left;
+  margin-right: 5px;
+  text-align: center;
+  margin-left: 6px;
+  }
+
+
+  @media (min-width: 361px) { /* Tablet */
+
+.prod{
+      width:30%;
+      height:150px;
+  }
+.detalle{
+    margin-top: 15px; 
+  }
+.primer{
+    justify-content: left;
+    margin: 15px;  
+}
+.nombre{
+  font-size: 24px;
+  padding: 2px;
+}
+.precio{
+  font-size: 24px;
+  padding: 2px;
+}
+.cantidad{
+  width: 60%;
+}
+.caja{
+  margin-left: 50px;
+  left: 20px;
+}
+.carrusel img {
+  width: 45%;
+}
+.titulo{
+  font-weight: bold;
+  font-size: 24px;
+}
+.texto{
+  font-size: 20px;
+}
+.detProd{
+  font-weight: bold;
+  font-size: 24px;
+}
+footer{
+  display: flex;
+}
+  }
+  @media (min-width: 769px) { /* Tablet */
+  
+    .prod{
+      width:30%;
+      height:250px;
+  }
+  
+  .detalle{
+    margin-top: 15px; 
+  }
+.primer{
+    justify-content: left;
+    margin: 15px;
+    padding: 5px;  
+}
+.nombre{
+  font-size: 24px;
+  padding: 2px;
+}
+.precio{
+  font-size: 24px;
+  padding: 2px;
+}
+.cantidad{
+  width: 60%;
+}
+.caja{
+  margin-left: 50px;
+  left: 20px;
+}
+.carrusel img {
+  width: 25%;
+}
+.carrusel{
+  margin-left: 40px;
+}
+.titulo{
+  font-weight: bold;
+  font-size: 24px;
+}
+.texto{
+  font-size: 20px;
+}
+.detProd{
+  font-weight: bold;
+  font-size: 24px;
+}
+  
+  
+  }
