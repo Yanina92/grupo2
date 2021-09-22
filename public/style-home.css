@@ -1,0 +1,301 @@
+*{
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%vw;
+}
+
+body {
+    background-color:#001427;
+    color: #fff;
+}
+
+        /* HEADER */
+
+.header-top{
+    display: flex;
+    justify-content: space-between;
+    padding:3%;
+}
+        /* SEARCH-BAR */
+.search-bar{
+    display: flex;
+    position: relative;
+    align-items: center;    
+    
+}
+
+.fa-search{
+    position: relative;
+    right:10%;
+    color: black;
+    
+}
+        /* MENU-PRODUCTS */
+.header-top2{
+    width: 100%;
+    text-align: center;
+    margin-top:10px;
+}
+
+  /* ---------- SLIDER ---------- */
+
+
+
+.slider{
+    width: 100%;
+    margin: auto;
+    height:300px;
+    overflow: hidden;
+}
+
+.slider ul{
+    position:relative;
+    padding:0;
+    display:flex;
+    width: 300%;
+    animation: slider 10s infinite alternate;
+}
+.slider li{
+    list-style: none;
+    width: 100%;
+}
+
+.slider li img{
+    width:100%;
+    height:auto; 
+   }
+/* .arrows{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 130px;
+    font-size: 40px;
+} */
+     /* SLIDER */
+
+    /* ---------- MAIN-DESCUETAZOS ---------- */
+main{
+    text-align: center;
+    width: 100%;
+}
+.art-descuentos{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    text-align: center;
+    
+}
+
+.container-products{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    text-align: center;
+}
+
+
+.titulo{
+    display:inline-block;
+    text-align: center;
+    margin: 5% 10%;
+    width: 70%;
+}
+
+hr{
+    margin-left: 20%;
+    margin-right:20%;
+    border-color: red;
+    border: solid red 1px;     
+}
+
+        /* PRODUCTO */
+.producto{
+    position:absolute;
+    border-radius:5px ;
+    width: 40%;   
+    margin-top: 10px;
+    background-color:#671117;
+    z-index:-10;
+}
+
+.pre,.nxt{
+    width: 12%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    
+    cursor: pointer;
+    background: rgba(88,88,88,.4);
+}
+.pre{
+    left: 0;
+}
+.nxt{
+    right: 0;
+}
+#i1, #i2, #i3{
+    display:none;
+}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three{
+    z-index: 9 ;
+}
+
+
+.arrow-left,.arrow-right{
+    position: relative;
+    top: 100px;
+}
+
+.arrow-right{
+    order:1
+}
+
+.img-carrucel-2{
+    width:100%;
+    height:70%;
+    border-radius: 5px 5px 0 0;
+}
+
+.caja-off-precio{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 40px;
+    right:0px;
+}
+
+.oferta-texto{
+    display: flex;
+    background-color:red;
+    width: 90px;
+    border-radius: 0px 5px 5px 0px;
+ }
+
+ .oferta-precio{
+    display: flex;
+    color: black;
+    text-decoration:line-through;
+ }
+
+.precio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    position: relative;
+    top: 20px;
+}
+
+
+ /* ---------- ARTICLE-CATEGORIAS ---------- */
+
+.titulo-2{
+    margin-top: 300px;
+
+
+}
+.art-categorias{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    background-color: #6B0F1A;
+    height:20vh;
+    width:80vw;
+    padding: 3%;
+    
+}
+
+.cat-box{
+    margin: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#4C0208;
+    height:150px;
+    border-radius: 5px;
+}
+
+
+
+/* ---------- FOOTER ---------- */
+.banner-footer {
+    text-align: center;
+}
+
+.banner-footer nav ul{
+    display: flex;
+    justify-content:space-evenly;
+    margin: 25px;
+
+}
+
+.banner a{
+    margin-top:15px;
+}
+
+footer nav{
+    display: flex;
+    justify-content:space-around;
+}
+ footer nav ul{
+     display: flex;
+     flex-direction: column;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes slider {
+    0% { margin-left:0;}
+    50%{ margin-left:0;}
+
+
+    55% { margin-left:-100%;}
+    70%{ margin-left:-100%;}
+
+    75% { margin-left:-200%;}
+    100%{ margin-left:-200%;}
+}
+
+    @supports(object-fit: cover){
+        img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        }
+    }
