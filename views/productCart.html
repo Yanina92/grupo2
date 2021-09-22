@@ -4,27 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylesheet.css" />
+    <title>Product Cart</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <title>productCart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/stylesheetProductCart.css">
 </head>
 <body>
     <header>
-        <div class="encabezado1">
+        <div class="header-logo">
             <img class="logoPerrito" src="images/logoPerrito.png" alt="logoPerrito">
-            <h1 class="tituloPrincipal">Ferreteria</h1>
-            <div>
-                <div class="usuario"><i class="fas fa-user-circle"></i></div>
-                <p>Ingresar</p>
-            </div>
         </div>
-        <div class="encabezado2">
-             <strong class="navProducto">Productos</strong>
-             <div class="busqueda">
-             <input class="input" type="text" name="buscar">
-             <div class="lupa"><i class="fas fa-search"></i></div>
-             </div>
-             <div class="carrito"><i class="fas fa-shopping-cart"></i></div>
+        <div class="conjuntoSearchTitle">
+        <h1 class="tituloPrincipal">Ferreteria</h1>
+        <nav class="header-search-bar">
+            <form class="form-search-bar">
+                <input class="input-search" type="text" placeholder="Buscar...">
+                <button class="button-search" type="submit" value="">
+                    <i class="material-icons">
+                    search
+                    </i>
+                </button>
+            </form>
+        </nav>
+        </div>
+        <div class="header-burger">
+            <span class="burger-bread-top"></span>
+            <span class="burger-bread-paty"></span>
+            <span class="burger-bread-bottom"></span>
+        </div>
+        <div class="header-shop">
+            <i class="material-icons">shopping_cart</i>
+        </div>
+        <div class="login">
+            <div class="usuario"><i class="fas fa-user-circle"></i></div>
+            <p class="ingreso">Ingresar</p>
         </div>
     </header>
     <main>
@@ -34,111 +51,168 @@
             <strong class="escritosLista3">Cantidad</strong>
             <strong class="escritosLista4">Sub Total</strong>
         </div>
-        <div class="linea"></div>
-        <article>
+        <article class="producto">
             <img class="destornillador" src="images/destornillador.jpg" alt="destornillador">
-            <p>Destornillador</p>
-            <p>$400</p>
-            <div class="masMenos">
-                <i class="fas fa-plus-circle"></i>
-                <p>1</p>
-                <i class="fas fa-minus-circle"></i>
+            <div class="datosProd">
+                <p class="descripcion">Destornillador</p>
+                <div class="preciosCantidades">
+                    <p class="precioUnitario">$400</p>
+                    <div class="masMenos">
+                        <i class="fas fa-plus-circle"></i>
+                        <p>1</p>
+                        <i class="fas fa-minus-circle"></i>
+                    </div>
+                    <p>$400</p>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
             </div>
-            <p>$400</p>
-            <i class="fas fa-trash-alt"></i>
        </article>
        <br>
        <hr>
-       <article>
-           <img class="destornillador" src="images/destornillador.jpg" alt="destornillador">
-           <p>Destornillador</p>
-           <p>$400</p>
-           <div class="masMenos">
-            <i class="fas fa-plus-circle"></i>
-               <p>1</p>
-               <i class="fas fa-minus-circle"></i>
-           </div>
-           <p>$400</p>
-           <i class="fas fa-trash-alt"></i>
-        </article>
-        <br>
-        <hr>
-        <article>
+       <article class="producto">
             <img class="destornillador" src="images/destornillador.jpg" alt="destornillador">
-            <p>Destornillador</p>
-            <p>$400</p>
-            <div class="masMenos">
-                <i class="fas fa-plus-circle"></i>
-                <p>1</p>
-                <i class="fas fa-minus-circle"></i>
+            <div class="datosProd">
+                <p class="descripcion">Destornillador</p>
+                <div class="preciosCantidades">
+                    <p class="precioUnitario">$400</p>
+                    <div class="masMenos">
+                        <i class="fas fa-plus-circle"></i>
+                        <p>1</p>
+                        <i class="fas fa-minus-circle"></i>
+                    </div>
+                    <p>$400</p>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
             </div>
-            <p>$400</p>
-            <i class="fas fa-trash-alt"></i>
-         </article>
-         <br>
-         <hr>
-         <article>
+       </article>
+       <br>
+       <hr>
+       <article class="producto">
             <img class="destornillador" src="images/destornillador.jpg" alt="destornillador">
-            <p>Destornillador</p>
-            <p>$400</p>
-            <div class="masMenos">
-                <i class="fas fa-plus-circle"></i>
-                <p>1</p>
-                <i class="fas fa-minus-circle"></i>
+            <div class="datosProd">
+                <p class="descripcion">Destornillador</p>
+                <div class="preciosCantidades">
+                    <p class="precioUnitario">$400</p>
+                    <div class="masMenos">
+                        <i class="fas fa-plus-circle"></i>
+                        <p>1</p>
+                        <i class="fas fa-minus-circle"></i>
+                    </div>
+                    <p>$400</p>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
             </div>
-            <p>$400</p>
-            <i class="fas fa-trash-alt"></i>
-         </article>
-         <br>
-         <hr>
-         <article>
+       </article>
+       <br>
+       <hr>
+       <article class="producto">
             <img class="destornillador" src="images/destornillador.jpg" alt="destornillador">
-            <p>Destornillador</p>
-            <p>$400</p>
-            <div class="masMenos">
-                <i class="fas fa-plus-circle"></i>
-                <p>1</p>
-                <i class="fas fa-minus-circle"></i>
+            <div class="datosProd">
+                <p class="descripcion">Destornillador</p>
+                <div class="preciosCantidades">
+                    <p class="precioUnitario">$400</p>
+                    <div class="masMenos">
+                        <i class="fas fa-plus-circle"></i>
+                        <p>1</p>
+                        <i class="fas fa-minus-circle"></i>
+                    </div>
+                    <p>$400</p>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
             </div>
-            <p>$400</p>
-            <i class="fas fa-trash-alt"></i>
-         </article>
-         <br>
-         <hr>
-         <article>
+       </article>
+       <br>
+       <hr>
+       <article class="producto">
             <img class="destornillador" src="images/destornillador.jpg" alt="destornillador">
-            <p>Destornillador</p>
-            <p>$400</p>
-            <div class="masMenos">
-                <i class="fas fa-plus-circle"></i>
-                <p>1</p>
-                <i class="fas fa-minus-circle"></i>
+            <div class="datosProd">
+                <p class="descripcion">Destornillador</p>
+                <div class="preciosCantidades">
+                    <p class="precioUnitario">$400</p>
+                    <div class="masMenos">
+                        <i class="fas fa-plus-circle"></i>
+                        <p>1</p>
+                        <i class="fas fa-minus-circle"></i>
+                    </div>
+                    <p>$400</p>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
             </div>
-            <p>$400</p>
-            <i class="fas fa-trash-alt"></i>
-         </article>
-         <br>
-         <div class="linea"></div>
-         <article class="total">
-            <p> </p>
-            <p> </p>
-            <p>Total</p>
-            <p>$2400</p>
-         </article>
-         <br>
-         <section class="seccionDescuentos">
-         <p class="descuento">Descuentos y cupones</p>
-         <div class="descuento">
-            <input type="text" name="cupon" placeholder="Ingresa el codigo de tu cupon">
-         </div>
-         <br>
-         </section>
+       </article>
+       <br>
+       <hr>
+       <article class="producto">
+            <img class="destornillador" src="images/destornillador.jpg" alt="destornillador">
+            <div class="datosProd">
+                <p class="descripcion">Destornillador</p>
+                <div class="preciosCantidades">
+                    <p class="precioUnitario">$400</p>
+                    <div class="masMenos">
+                        <i class="fas fa-plus-circle"></i>
+                        <p>1</p>
+                        <i class="fas fa-minus-circle"></i>
+                    </div>
+                    <p>$400</p>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+            </div>
+       </article>
+       <div class="linea"></div>
+       <br>
+       <article class="total">
+          <p>Total</p>
+          <p>$2400</p>
+       </article>
+       <div class="linea"></div>
+       <br>
+       <br>
+       <section class="seccionDescuentos">
+       <p class="descuento">Descuentos y cupones</p>
+       <div class="descuento">
+          <input type="text" name="cupon" placeholder="Ingresa el codigo de tu cupon" class="entrada">
+       </div>
+       <br>
+       </section>
+       <br>
+       <article class="botones">
+            <button class="boton">Finalizar la compra</button>
+            <br>
+            <br>
+            <button class="boton">Continuar comprando</button>
+       </article>
+       <br>
+       <br>
     </main>
     <footer>
-        <br>
-        <button>Continuar comprando</button>
-        <button>Finalizar la compra</button>
-        <br>
-    </footer>   
+        <div class="container">
+            <div class="footer-div-contact">
+                <p class="text-contact-us">CONTACTANOS</p>
+                <br class="mini-espacio">
+                <span class="footer-container-phone">
+                    <i class="material-icons">whatsapp</i>
+                    <p class="text-phone">+5491158763838</p>
+                </span>
+                <span class="footer-container-email">
+                    <i class="material-icons">alternate_email</i>
+                    <p class="text-email">ferreteria@gmail.com</p>
+                </span>
+            </div>
+            <br>
+            <div class="footer-div-follow">
+                <p class="text-follow-us">SEGUINOS</p>
+                <span class="footer-container-social-icons">
+                    <i class="material-icons">facebook</i>
+                    <i class="material-icons">flutter_dash</i>
+                    <i class="material-icons">camera_alt</i>
+                </span>
+            </div>
+
+            <div class="footer-div-location">
+                <p class="text-location"> 123 Calle falsa </p>
+                <div class="google-location"></div>
+            </div>
+
+        </div>
+    </footer>
 </body>
 </html>
