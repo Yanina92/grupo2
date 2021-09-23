@@ -5,41 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c91d94187c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style-home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style-home.css">
     <title>Home</title>
 </head>
 <body>
-   <header class="top" >
-      <div class="header-top"id="head">
-         <div class="logo">
-            Ferreteria
-         </div>
-         <div class="search-bar">
-            <form action="/" method="GET"></form>
-            <input type="search"></input>
-            <i class="fas fa-search"></i>
-            
-         </div>
-         <div class="nav-icons">
-            <i class="fas fa-shopping-cart"></i>
-            <!-- <div class="menu-burger">
-               <div class="menu-btn"></div> -->
-            </div>
-       </div>
-
-       <div class="header-top2">
-          <div class="menu-products">
-          <h3>Productos</h3><i class="fas fa-chevron-down"></i>
-       </div>
+   <header>
+      <div class="header-logo">
+          <!-- <img src="someimage.com" alt="logo de ferreteria"> -->
       </div>
+      <nav class="header-search-bar">
+          <form class="form-search-bar">
+              <input class="input-search" type="text" placeholder="Buscar...">
+              <button class="button-search" type="submit" value="">
+                  <i class="material-icons">
+                  search
+                  </i>
+              </button>
+          </form>
+      </nav>
+      <div class="header-burger">
+          <span class="burger-bread-top"></span>
+          <span class="burger-bread-paty"></span>
+          <span class="burger-bread-bottom"></span>
+      </div>
+      <div class="header-shop">
+          <i class="material-icons">
+              shopping_cart
+          </i>
+      </div>
+
+      
+  </header>
+  <div class="header-top2">
+   <div class="menu-products">
+   <h3>Productos</h3><i class="fas fa-chevron-down"></i>
+</div>
+</div>
 
       <section class="carrucel">
          <div class="slider">
             <div class="slider">
             <ul>
-             <li><img src="/images/img-slider-1.png"></li>
-             <li><img src="/images/img-slider-2.png"></li>
-             <li><img src="/images/img-slider-3.png"></li>
+             <li><img src="/images-home/img-slider-1.png"></li>
+             <li><img src="/images-home/img-slider-2.png"></li>
+             <li><img src="/images-home/img-slider-3.png"></li>
              </ul>
             </div>
             <!-- <div class="arrows"><i class="fas fa-angle-left"></i><i class="fas fa-angle-right"></i></div> -->
@@ -107,7 +122,7 @@
 
    <article>
       <div class="titulo-2">
-         <p>Categorias Destacadas</p>
+         <p>CATEGORIAS DESTACADAS</p>
          <hr>
       </div>
       <div class="art-categorias">
@@ -142,14 +157,19 @@
          <div>
             <p>Contactanos</p>
             <ul>
-               <li>+5491123546767</li>
-               <li>ferreteria@gmail.com</li>
+               <li> <i class="fas fa-phone-alt"></i> +5491123546767</li>
+               <li> <i class="fas fa-at"></i> ferreteria@gmail.com</li>
             </ul>
          </div>
          <div>
             <p>Seguinos</p>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-twitter"></i>
          </div>
-         <div>Encontranos En</div>
+         <div>Encontranos En
+         <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3287.6112288976524!2d-58.57412282439696!3d-34.51273910934077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1632368863175!5m2!1ses-419!2sar" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>  </div>
+         <p><i class="fas fa-map-marker-alt"></i>Calle Falsa 123</p>
+      </div>
       </nav>
    </footer>
  
