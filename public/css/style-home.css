@@ -6,14 +6,14 @@
 }
 
  /* VAR COLORS  */
- :root{
+:root{
      --main-bg-color:#f2f2f2;
      --main-text-color:black;
      --main-hr-color:#212121;
-     --main-bg-products-color:  #3F51B5;
-     --main-linea-color:#BDBDBD;
+     --main-products-color: #fab73d;
      --main-btn-color: #fab73d;
-     --main-header-color: #73c39e;;
+     --main-header-color: #73c39e;
+     --main-footer-color: #73c39e;
  }
  /* VAR COLORS  */
 header{
@@ -48,34 +48,37 @@ div.header-logo {
     width: 4rem;
     height: 4rem;
     background-color: brown;
-  }
-  header {
-    
+}
+
+header{
     display: flex;
     align-items: center;
     width: 100%;
     height: 75px;
     justify-content: space-around;
     min-width: 300px;
-  }
+}
 
   /*--------- SEARCH BAR ---------*/
-  nav.header-search-bar {
+nav.header-search-bar {
     flex-basis: 50%;
-  }
-  form.form-search-bar {
+}
+
+form.form-search-bar {
     display: flex;
     position: relative;
     height: 2rem;
-  }
-  input.input-search {
+}
+
+input.input-search {
     min-width: 2rem;
     width: 100%;
     outline: none;
     border: none;
     border-radius: 4px;
-  }
-  button.button-search {
+}
+
+button.button-search {
     position: absolute;
     right: 0px;
     width: 2rem;
@@ -83,10 +86,10 @@ div.header-logo {
     outline: none;
     border: none;
     background-color: rgba(0, 0, 0, 0);
-  }
+}
   
   /*------------ BURGER -----------*/
-  div.header-burger {
+div.header-burger {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -95,21 +98,21 @@ div.header-logo {
     width: 2rem;
     height: 2rem;
     border-radius: 5px;
-  }
-  span[class*="burger-bread"] {
+}
+
+span[class*="burger-bread"] {
     display: block;
     width: 24px;
     height: 3px;
     background-color: white;
-  }
+}
   
   /*--------- CART ICON ---------*/
-  div.header-shop {
+div.header-shop {
     text-align: center;
     min-width: 2rem;
     width: 2rem;
-  }
-
+}
 
 .header-top2{
     width: 100%;
@@ -118,8 +121,6 @@ div.header-logo {
 }
 
   /* ---------- SLIDER ---------- */
-
-
 
 .slider{
     width: 100%;
@@ -135,6 +136,7 @@ div.header-logo {
     width: 300%;
     animation: slider 10s infinite alternate;
 }
+
 .slider li{
     list-style: none;
     width: 100%;
@@ -143,21 +145,15 @@ div.header-logo {
 .slider li img{
     width:100%;
     height:auto; 
-   }
-/* .arrows{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    bottom: 130px;
-    font-size: 40px;
-} */
-     /* SLIDER */
-
+}
     /* ---------- MAIN-DESCUENTAZOS ---------- */
+
+
 main{
     text-align: center;
     width: 100%;
 }
+
 .art-descuentos{
     display: flex;
     justify-content: center;
@@ -177,8 +173,6 @@ main{
 .container-products-2,.container-products-3,.container-products-4{
     display: none;
 }
-
-
 
 .titulo{
     font-size: 1.5em;
@@ -204,6 +198,7 @@ hr{
     background-color:var(--main-btn-color);
     box-shadow: 0px 0px 5px 1px black;
 }
+
 .descripcion{
     display: none;
     margin-top: 10px;
@@ -220,9 +215,11 @@ hr{
 .container-products-2:hover{
     transform: scale(1.1);
 }
+
 .container-products-3:hover{
     transform: scale(1.1);
 }
+
 .container-products-4:hover{
     transform: scale(1.1);
 }
@@ -256,28 +253,27 @@ hr{
     background-color:red;
     width: 90px;
     border-radius: 0px 5px 5px 0px;
- }
+}
 
- .precio-tachado{
+.precio-tachado{
     display: flex;
     color: black;
     text-decoration:line-through;
     font-family: Jostfamily;
- }
+}
 
 .precio-oferta{
     display: flex;
     font-family: Jostfamily;
     font-size:18px;
 }
+
 .precio{
     display: flex;
     position: relative;
     margin-right: 10px;
     font-family: Jostfamily;
 }
-
-
 
  /* ---------- ARTICLE-CATEGORIAS ---------- */
 
@@ -287,8 +283,8 @@ hr{
     margin-top: 80px;
     margin-bottom: 50px;
     color: var(--main-title-text-color);
-
 }
+
 .art-categorias{
     margin: auto;
     text-align: center;
@@ -300,8 +296,7 @@ hr{
     color: var(--main-title-text-color);
     height:20vh;
     width:80vw;
-    padding: 3%;
-    
+    padding: 3%;    
 }
 
 .cat-box{
@@ -319,9 +314,12 @@ hr{
     font-weight: bold;
 }
 
-
-
 /* ---------- FOOTER ---------- */
+
+footer{
+    background-color:var(--main-header-color)
+}
+
 .banner-footer {
     text-align: center;
 }
@@ -330,7 +328,6 @@ hr{
     display: flex;
     justify-content:space-evenly;
     margin: 25px;
-
 }
 
 .banner a{
@@ -338,26 +335,28 @@ hr{
 }
 
 footer div:first-child{
-        text-align: center;
+    text-align: center;
 }
 
 footer nav{
     display: flex;
     justify-content:space-between;
 }
- footer nav ul{
+
+footer nav ul{
      display: flex;
      flex-direction: column;
      align-items: flex-start;
- }
+}
+
 .contacto p{
     display: flex;
 }
 
- iframe{
+iframe{
      width:100px;
      height: 100px;
- }
+}
 
 
 @media (min-width:768px){
@@ -384,10 +383,6 @@ footer nav{
 .container-products,.container-products-2,.container-products-3,.container-products-4{
  display:flex;
  width: 20%;
- }
-
-.descripcion{
-    
 }
 
 } 
