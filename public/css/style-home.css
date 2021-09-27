@@ -10,7 +10,8 @@
      --main-bg-color:#f2f2f2;
      --main-text-color:black;
      --main-hr-color:#212121;
-     --main-products-color: #fab73d;
+     --main-products-color: #fab73d;;
+     --main-linea-color:#BDBDBD;
      --main-btn-color: #fab73d;
      --main-header-color: #73c39e;
      --main-footer-color: #73c39e;
@@ -51,6 +52,7 @@ div.header-logo {
 }
 
 header{
+
     display: flex;
     align-items: center;
     width: 100%;
