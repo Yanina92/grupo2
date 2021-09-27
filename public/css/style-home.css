@@ -6,7 +6,7 @@
 }
 
  /* VAR COLORS  */
-:root{
+ :root{
      --main-bg-color:#f2f2f2;
      --main-text-color:black;
      --main-hr-color:#212121;
@@ -52,7 +52,7 @@ div.header-logo {
 }
 
 header{
-
+    
     display: flex;
     align-items: center;
     width: 100%;
@@ -337,7 +337,7 @@ footer{
 }
 
 footer div:first-child{
-    text-align: center;
+        text-align: center;
 }
 
 footer nav{
@@ -345,7 +345,7 @@ footer nav{
     justify-content:space-between;
 }
 
-footer nav ul{
+ footer nav ul{
      display: flex;
      flex-direction: column;
      align-items: flex-start;
@@ -385,7 +385,7 @@ iframe{
 .container-products,.container-products-2,.container-products-3,.container-products-4{
  display:flex;
  width: 20%;
-}
+ }
 
 } 
 
