@@ -9,6 +9,19 @@
   --blanco: #fff;
   --marronOscuro: #646464;
   --azulClaro: #0022AA; 
+  --dark_primary_color: #512da8;
+  --light_primary_color: #d1c4e9;
+  --primary_color: #673ab7;
+  --acent_color: #cddc39;
+  --text_icons_color: #ffffff;
+  --text_primary_color: #212121;
+  --text_secondary_color: #757575;
+  --divider_color: #bdbdbd;
+  --header: #73c39e;
+  --boton: #fab73d;
+  --bordeBoton: #b9aa1c;
+  --sobreBoton: #b83e06;
+  --footer: #dedede;
 }
 .logoPerrito{
   border-radius: 5%;
@@ -38,7 +51,7 @@ section {
   min-width: 300px;
 } */
 header {
-  background-color: #647bf0;
+  background-color: var(--header);
   display: flex;
   align-items: center;
   width: 100%;
@@ -50,8 +63,17 @@ footer {
   display: inline-flex;
   justify-content: center;
   flex-basis: 50%;
-  background-color: #dedede;
+  background-color: var(--footer);
   width: 100vw;
+}
+main{
+  background: repeating-linear-gradient(
+    45deg,
+    #eee,
+    #eee 6px,
+    #f2f2f2 6px,
+    #f2f2f2 20px
+  );
 }
 
 /*--------- LOGO ---------*/
@@ -239,7 +261,6 @@ padding: 20px;
 
   body {
 
-  
     font-family: 'Lato', sans-serif;
   }
   
@@ -342,7 +363,7 @@ footer{
   display: flex;
 }
   }
-  @media (min-width: 769px) { /* Tablet */
+  @media (min-width: 768px) { /* Tablet */
   
     .prod{
       width:30%;
