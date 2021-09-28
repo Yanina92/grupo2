@@ -7,3 +7,11 @@
 * *Continuar haciendo:* Continuar con las reuniones periódicas.
 * *Hacer menos:* No tenemos comentarios por el momento.
 * *Dejar de hacer:* No tenemos comentarios por el momento.
+
+**Sprint 2:**
+
+* *Comenzar a hacer:* Ponernos más de acuerdo con la fuente y colores a usar en la página.
+* *Hacer más:* Dedicarle más tiempo y organizar mejor las tareas a realizar.
+* *Continuar haciendo:* Continuar con las reuniones una vez por semana o más de ser necesario.
+* *Hacer menos:* No tenemos comentarios por el momento.
+* *Dejar de hacer:* No tenemos comentarios por el momento.
