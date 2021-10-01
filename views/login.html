@@ -4,14 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/loginStyle.css">
+    <title>Product list</title>
 </head>
-<body>
-    <h1>Login</h1>
-    <a href='login.html'>Login</a>
-    <a href='productDetail.html'>productDetail</a>
-    <a href='productCart.html'>productCart</a>
-    <a href='register.html'>register</a>
-    
+<body class="grid-container">
+    <header class="nav-header">
+
+        <div class="nav-logo">
+            <img src="img/LogoFerreteria80x54.png" alt="logo de ferreteria">
+        </div>
+
+        <nav class="nav-search-bar">
+            <form class="form-search-bar">
+                <input class="input-search" type="text" placeholder="Buscar...">
+                <button class="button-search" type="submit" value="">
+                <i class="material-icons">search</i>
+                </button>
+            </form>
+        </nav>
+
+        <div class="nav-burger">
+            <i class="material-icons">reorder</i>
+            <i class="material-icons">shopping_cart</i>
+        </div>
+
+    </header>
+
+    <nav class="support-bar">
+
+        <span class="products-bar">Productos</span>
+        <span></span>
+        <span class="user-bar">
+            <i class="material-icons">account_circle</i>Register
+        </span>
+        <span class="login-bar">Login</span>
+
+    </nav>
+
+    <main class="main-content">
+        <section class="section-login-container">
+            <div class="div-box-login">
+                <form class="form-login">
+                    <div class='div-formbox-user'>
+                        <input class='input-user-name' placeholder="Name" type='text'>
+                        <i class="material-icons icon-login">perm_identity</i>
+                    </div>
+                    <div class ='div-formbox-password'>
+                        <input class='input-user-pass' placeholder="Password" type='text'>
+                        <i class="material-icons-outlined icon-login">lock</i>
+                    </div>
+                    <br>
+                    <button class="button-login" type="submit" value="">Login</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="nav-footer">
+        <div class="contact">
+            <p>Contactanos</p>
+            <div class="whatsapp"><i class="material-icons">whatsapp</i> +5491145638282</div>
+            <div class="email"><i class="material-icons">alternate_email</i> ferreteria@gmail.com</div>
+        </div>
+        <div class="follow">
+            <p>Seguinos</p>
+            <i class="material-icons">flutter_dash</i>
+            <i class="material-icons">camera_alt</i>
+            <i class="material-icons">facebook</i>
+        </div>
+        <div class="location">
+            <p>Calle falsa 123</p>
+            <img class="img-location" src="img/googleMaps.png" alt="logo de ferreteria">
+        </div>
+    </footer>
 </body>
 </html>
