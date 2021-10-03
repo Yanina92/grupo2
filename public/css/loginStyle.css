@@ -105,8 +105,8 @@ body {
 
 /****************        *******************/
 
-.main-content {
-  grid-area: "header";
+.main-content-login {
+  grid-area: "main";
   background: repeating-linear-gradient(
     45deg,
     #f0f0f0,
@@ -114,6 +114,66 @@ body {
     #f2f2f2 10px,
     #f2f2f2 20px
   );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-login-container {
+  max-width: 600px;
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 15%);
+}
+.div-box-login {
+  width: 100%;
+}
+.form-login {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.div-formbox-user,
+.div-formbox-password,
+.div-formbox-email,
+.div-formbox-phone {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.input-user-name,
+.input-user-pass,
+.input-user-email,
+.input-user-phone {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(0 0 0 / 15%);
+  width: 80%;
+  font-size: 1.5rem;
+}
+
+.icon-login {
+  position: relative;
+  top: 3px;
+  font-size: 2rem;
+  color: var(--contrastColor);
+}
+
+.button-login {
+  width: 20%;
+  height: 15%;
+  border: none;
+  background-color: var(--contrastColor);
 }
 
 .nav-footer {

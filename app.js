@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
-const port= 3043
-const path = require('path')
+const port = process.env.PORT || 3030;
 
-app.use(express.static('public'))
+const routerHome = require('./routes/routeHome');
+const routerUser = require('./routes/routeUser');
 
+<<<<<<< HEAD
 app.listen(port,()=>{
     console.log("localhost:" + port + " " + "Activo")});
 
@@ -25,3 +26,14 @@ app.get('/register', function (req,res){
 
 app.get('/login', function (req,res){
     res.sendFile(path.join(__dirname,'/views/login.html'))});
+=======
+app.use(express.static('public'));
+
+app.listen(port,()=>{
+    console.log("localhost:" + port + " " + "Activo")
+    }
+);
+
+app.use('/', routerHome);
+app.use('/user', routerUser);
+>>>>>>> f21d7322dd1bbd48bb8caafadeffa8713a2c7514
