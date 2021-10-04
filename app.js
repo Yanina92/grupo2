@@ -1,27 +1,18 @@
 const express = require('express');
 const app = express();
-const port= 3043
-const path = require('path')
+const port = process.env.PORT || 3030;
 
-app.use(express.static('public'))
+const routerHome = require('./routes/routeHome');
+const routerUser = require('./routes/routeUser');
+
+app.use(express.static('public'));
+
+app.set('view engine', 'ejs');
 
 app.listen(port,()=>{
-    console.log("localhost:" + port + " " + "Activo")});
+    console.log("localhost:" + port + " " + "Activo")
+    }
+);
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname,'/views/login.html'))})
-
-app.get('/productDetail',function (req, res){
-    res.sendFile(path.join(__dirname,'/views/productDetail.html'))});
-
-app.get('/productList',function (req, res){
-    res.sendFile(path.join(__dirname,'/views/productList.html'))})
-
-app.get('/productCart',function (req, res){
-    res.sendFile(path.join(__dirname,'/views/productCart.html'))});
-
-app.get('/register', function (req,res){
-    res.sendFile(path.join(__dirname,'/views/register.html'))});
-
-app.get('/login', function (req,res){
-    res.sendFile(path.join(__dirname,'/views/login.html'))});
+app.use('/', routerHome);
+app.use('/user', routerUser);

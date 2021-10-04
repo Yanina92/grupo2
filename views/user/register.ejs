@@ -16,25 +16,7 @@
 </head>
 <body class="grid-container">
     <header class="nav-header">
-
-        <div class="nav-logo">
-            <img src="img/LogoFerreteria80x54.png" alt="logo de ferreteria">
-        </div>
-
-        <nav class="nav-search-bar">
-            <form class="form-search-bar">
-                <input class="input-search" type="text" placeholder="Buscar...">
-                <button class="button-search" type="submit" value="">
-                <i class="material-icons">search</i>
-                </button>
-            </form>
-        </nav>
-
-        <div class="nav-burger">
-            <i class="material-icons">reorder</i>
-            <i class="material-icons">shopping_cart</i>
-        </div>
-
+        <%- include('../partials/header'); %>
     </header>
 
     <nav class="support-bar">
@@ -48,41 +30,33 @@
 
     </nav>
 
-    <main class="main-content">
+    <main class="main-content-login">
         <section class="section-login-container">
-            <div class="div-box-login">
                 <form class="form-login">
                     <div class='div-formbox-user'>
                         <input class='input-user-name' placeholder="Name" type='text'>
                         <i class="material-icons icon-login">perm_identity</i>
+                    </div>
+                    <div class ='div-formbox-email'>
+                        <input class='input-user-email' placeholder="Email" type='text'>
+                        <i class="material-icons-outlined icon-login">email</i>
+                    </div>
+                    <div class ='div-formbox-phone'>
+                        <input class='input-user-phone' placeholder="Phone" type='text'>
+                        <i class="material-icons-outlined icon-login">phone</i>
                     </div>
                     <div class ='div-formbox-password'>
                         <input class='input-user-pass' placeholder="Password" type='text'>
                         <i class="material-icons-outlined icon-login">lock</i>
                     </div>
                     <br>
-                    <button class="button-login" type="submit" value="">Login</button>
+                    <button class="button-login" type="submit" value="">Register</button>
                 </form>
-            </div>
         </section>
     </main>
 
     <footer class="nav-footer">
-        <div class="contact">
-            <p>Contactanos</p>
-            <div class="whatsapp"><i class="material-icons">whatsapp</i> +5491145638282</div>
-            <div class="email"><i class="material-icons">alternate_email</i> ferreteria@gmail.com</div>
-        </div>
-        <div class="follow">
-            <p>Seguinos</p>
-            <i class="material-icons">flutter_dash</i>
-            <i class="material-icons">camera_alt</i>
-            <i class="material-icons">facebook</i>
-        </div>
-        <div class="location">
-            <p>Calle falsa 123</p>
-            <img class="img-location" src="img/googleMaps.png" alt="logo de ferreteria">
-        </div>
+        <%- include('../partials/footer'); %>
     </footer>
 </body>
 </html>
