@@ -20,31 +20,7 @@
 </head>
 <body>
    <header>
-      <div class="header-logo">
-          <!-- <img src="someimage.com" alt="logo de ferreteria"> -->
-      </div>
-      <nav class="header-search-bar">
-          <form class="form-search-bar">
-              <input class="input-search" type="text" placeholder="Buscar...">
-              <button class="button-search" type="submit" value="">
-                  <i class="material-icons">
-                  search
-                  </i>
-              </button>
-          </form>
-      </nav>
-      <div class="header-burger">
-          <span class="burger-bread-top"></span>
-          <span class="burger-bread-paty"></span>
-          <span class="burger-bread-bottom"></span>
-      </div>
-      <div class="header-shop">
-          <i class="material-icons">
-              shopping_cart
-          </i>
-      </div>
-
-      
+      <%- include('./partials/header') %>
   </header>
   <div class="header-top2">
    <div class="menu-products">
@@ -61,7 +37,7 @@
              <li><img src="/images-home/img-walt-large.jpg"></li>
              </ul>
             </div>
-            <!-- <div class="arrows"><i class="fas fa-angle-left"></i><i class="fas fa-angle-right"></i></div> -->
+          <div class="arrows"><i class="fas fa-angle-left"></i><i class="fas fa-angle-right"></i></div> 
          </div>
       </section>
    </header>
@@ -199,24 +175,9 @@
    </section>
 
    <footer>
-      <div>Encontranos En
-         <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3287.6112288976524!2d-58.57412282439696!3d-34.51273910934077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1632368863175!5m2!1ses-419!2sar" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>  </div>
-         <p><i class="fas fa-map-marker-alt"></i>Calle Falsa 123</p>
-      </div>
-      <nav>
-         <div class="contacto">
-            <p>Contactanos</p>
-            <ul>
-               <li> <i class="fas fa-phone-alt"></i> +5491123546767</li>
-               <li> <i class="fas fa-at"></i> ferreteria@gmail.com</li>
-            </ul>
-         </div>
-         <div class="social-contact">
-            <p>Seguinos</p>
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter"></i>
-         </div>
-      </nav>
+      
+         <%- include('./partials/footer'); %>
+     
    </footer>
  
 </body>
