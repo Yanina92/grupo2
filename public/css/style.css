@@ -36,21 +36,17 @@
   box-sizing: border-box;
   font-size: 16px;
   font-family: "Jost", sans-serif;
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-width: 0px;
 }
 
-/* body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100vh;
-  min-width: 300px;
+.body-productDetail {
+
+  font-family: 'Lato', sans-serif;
 }
-section {
-  background-color: red;
-  flex-basis: 60%;
-  min-width: 300px;
-} */
-header {
+
+.head {
   background-color: var(--header);
   display: flex;
   align-items: center;
@@ -59,14 +55,14 @@ header {
   justify-content: space-around;
   min-width: 300px;
 }
-footer {
+.foot{
   display: inline-flex;
   justify-content: center;
   flex-basis: 50%;
   background-color: var(--footer);
   width: 100vw;
 }
-main{
+.pricipal{
   background: repeating-linear-gradient(
     45deg,
     #eee,
@@ -259,16 +255,7 @@ padding: 20px;
   margin: 10px;  
 }
 
-  body {
 
-    font-family: 'Lato', sans-serif;
-  }
-  
-  * {
-    box-sizing: border-box;
-    scrollbar-color: transparent transparent; /* thumb and track color */
-    scrollbar-width: 0px;
-  }
   
   #carrusel {
     float:left;
@@ -359,7 +346,7 @@ padding: 20px;
   font-weight: bold;
   font-size: 24px;
 }
-footer{
+.foot{
   display: flex;
 }
   }
@@ -410,6 +397,4 @@ footer{
   font-weight: bold;
   font-size: 24px;
 }
-  
-  
   }
