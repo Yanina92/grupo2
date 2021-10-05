@@ -1,0 +1,49 @@
+<%- include('../partials/head'); %>
+
+<body class="grid-container">
+    <header class="nav-header">
+        <%- include('../partials/header'); %>
+    </header>
+
+    <nav class="support-bar">
+
+        <span class="products-bar">Productos</span>
+        <span></span>
+        <span class="user-bar">
+            <i class="material-icons">account_circle</i>Register
+        </span>
+        <span class="login-bar">Login</span>
+
+    </nav>
+
+    <main class="main-content-login">
+        <section class="section-login-container">
+                <form class="form-login">
+                    <div class='div-formbox-user'>
+                        <input class='input-user-name' placeholder="ID" type='text'>
+                        <i class="material-icons icon-login">perm_identity</i>
+                    </div>
+                    <div class ='div-formbox-email'>
+                        <input class='input-user-email' placeholder="Nombre" type='text'>
+                        <i class="material-icons-outlined icon-login">email</i>
+                    </div>
+                    <div class ='div-formbox-phone'>
+                        <input class='input-user-phone' placeholder="Categoria" type='text'>
+                        <i class="material-icons-outlined icon-login">phone</i>
+                    </div>
+                    <div class ='div-formbox-password'>
+                        <input class='input-user-pass' placeholder="Precio" type='text'>
+                        <i class="material-icons-outlined icon-login">lock</i>
+                    </div>
+                    <br>
+                    <button class="button-login" type="submit" value="">Buscar</button>
+                </form>
+        </section>
+    </main>
+
+    <footer class="nav-footer">
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

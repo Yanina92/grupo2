@@ -19,14 +19,23 @@
     <title>Home</title>
 </head>
 <body>
-   <header>
+  <div class="grid-container-home">
+    <header class="nav-header">
       <%- include('./partials/header') %>
   </header>
-  <div class="header-top2">
-   <div class="menu-products">
-   <h3>Productos</h3><i class="fas fa-chevron-down"></i>
-</div>
-</div>
+
+  <nav class="support-bar">
+
+   <span class="products-bar">Productos</span>
+   <span></span>
+   <span class="user-bar">
+       <i class="material-icons">account_circle</i>Register
+   </span>
+   <span class="login-bar">Login</span>
+
+</nav>
+</div>   
+
 
       <section class="carrucel">
          <div class="slider">
@@ -40,11 +49,10 @@
           <div class="arrows"><i class="fas fa-angle-left"></i><i class="fas fa-angle-right"></i></div> 
          </div>
       </section>
-   </header>
-   <main>
+   <main class="main-home">
       <div class="title">
       <p>APROVECHA ESTOS DESCUENTAZOS</p>
-      <hr>
+      <hr class="home-hr">
       </div>
       <article class="products-off">
          <div class="arrow-left"><i class="fas fa-angle-left"></i></div>
@@ -113,11 +121,11 @@
       </div>
    </main>
 
-<main>
+<main class="main-home">
    <article>
       <div class="title">
          <p>CATEGORIAS DESTACADAS</p>
-         <hr>
+         <hr class="home-hr">
       </div>
       <div class="art-categorias">
          <div class="cat-box">
@@ -174,11 +182,10 @@
       <hr>
    </section>
 
-   <footer>
+   <footer class="nav-footer">
       
          <%- include('./partials/footer'); %>
      
    </footer>
- 
 </body>
 </html>
