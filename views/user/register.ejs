@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/loginStyle.css">
+    <title>Product list</title>
+</head>
+<body class="grid-container">
+    <header class="nav-header">
+        <%- include('../partials/header'); %>
+    </header>
+
+    <nav class="support-bar">
+
+        <span class="products-bar">Productos</span>
+        <span></span>
+        <span class="user-bar">
+            <i class="material-icons">account_circle</i>Register
+        </span>
+        <span class="login-bar">Login</span>
+
+    </nav>
+
+    <main class="main-content-login">
+        <section class="section-login-container">
+                <form class="form-login">
+                    <div class='div-formbox-user'>
+                        <input class='input-user-name' placeholder="Name" type='text'>
+                        <i class="material-icons icon-login">perm_identity</i>
+                    </div>
+                    <div class ='div-formbox-email'>
+                        <input class='input-user-email' placeholder="Email" type='text'>
+                        <i class="material-icons-outlined icon-login">email</i>
+                    </div>
+                    <div class ='div-formbox-phone'>
+                        <input class='input-user-phone' placeholder="Phone" type='text'>
+                        <i class="material-icons-outlined icon-login">phone</i>
+                    </div>
+                    <div class ='div-formbox-password'>
+                        <input class='input-user-pass' placeholder="Password" type='text'>
+                        <i class="material-icons-outlined icon-login">lock</i>
+                    </div>
+                    <br>
+                    <button class="button-login" type="submit" value="">Register</button>
+                </form>
+        </section>
+    </main>
+
+    <footer class="nav-footer">
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>
