@@ -8,7 +8,7 @@ const routerUser = require('./routes/routeUser');
 
 app.set('view engine', 'ejs');
 
-app.use('/',routerProductDetail)
+app.use('/productDetail',routerProductDetail)
 app.use('/productCart',routerProductCart)
 app.use(express.static('public'))
 app.use('/', routerHome);
