@@ -510,26 +510,26 @@ padding: 20px;
 
 .escritosLista1ProductCart{
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   flex-grow: 0.50;
   text-align: right;
 }
 
 .escritosLista2ProductCart{
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   flex-grow: 0.40;
   text-align: center;
 }
 .escritosLista3ProductCart{
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   flex-grow: 0.20;
   text-align: left;
 }
 .escritosLista4ProductCart{
   display: none; 
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   flex-grow: 0.22;
   text-align: left;
 }
@@ -559,7 +559,7 @@ i.fas.fa-trash-alt:hover{
   .escritosLista4ProductCart{
     display: flex;
     position: relative;
-    left: 5rem;
+    left: 6rem;
   }
 
   .descripcionProductCart{
@@ -618,23 +618,23 @@ i.fas.fa-trash-alt:hover{
   .escritosLista1ProductCart{
     display: flex;
     position: relative;
-    left: 26rem;
+    left: 22rem;
   }
   
   .escritosLista2ProductCart{
     display: flex;
     position: relative;
-    left: 5rem;
+    left: 11rem;
+    color: var(--grisOscuro);
   }
   .escritosLista3ProductCart{
-    font-size: 1.5rem;
     position: relative;
-    right: 13rem;
+    left: 1.8rem;
   }
   .escritosLista4ProductCart{
-    font-size: 1.5rem;
     position: relative;
-    right: 15rem;
+    left: -38px;
+    color: var(--grisOscuro);
   }
 
   .precioUnitarioProductCart{
