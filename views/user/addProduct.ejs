@@ -19,27 +19,37 @@
     <main class="main-content-login">
         <section class="section-login-container">
             
-                <form class="form-login">
+                <form class="form-login" action="/" method="post">
+                    <p>Agregar producto</p>
+                    <br>
                     <div class='div-formbox-user'>
-                        <input class='input-user-name' placeholder="Nombre del producto" type='text'>
-                        <i class="material-icons icon-login">perm_identity</i>
+                        <input class='input-user-name' placeholder="Nombre del producto" type='text' name="name" >
                     </div>
                     <div class ='div-formbox-email'>
-                        <input class='input-user-email' placeholder="Descripcion" type='text'>
-                        <i class="material-icons-outlined icon-login">email</i>
+                        <input class='input-user-email' placeholder="Descripcion" type='text' name="description">
+                    
                     </div>
                     <div class ='div-formbox-phone'>
-                        <input class='input-user-phone' placeholder="Categoria" type='text'>
-                        <i class="material-icons-outlined icon-login">phone</i>
+                        <input class='input-user-phone' placeholder="Categoria" type='text' name="category">
+                    
                     </div>
                     <div class ='div-formbox-password'>
-                        <input class='input-user-pass' placeholder="Precio" type='text'>
-                        <i class="material-icons-outlined icon-login">lock</i>
+                        <input class='input-user-pass' placeholder="Marca" type='text'name="brand">
+                    
                     </div>
                     <div class ='div-formbox-password'>
-                        <input class='input-user-pass' placeholder="Agregar imagen" type='text'>
-                        <i class="material-icons-outlined icon-login">lock</i>
+                        <input class='input-user-pass' placeholder="Precio" type='text' name="price">
+                
                     </div>
+                    <div class ='div-formbox-password'>
+                        <input class='input-user-pass' placeholder="Agregar imagen" type="file" name="image">
+                
+                    </div>
+                    <div class ='div-formbox-password'>
+                        <input class='input-user-pass' placeholder="Esta en oferta ? " type="checkbox" name="offer">
+                
+                    </div>
+                    
                     <br>
                     <button class="button-login" type="submit" value="">Ingresar</button>
                 </form>
