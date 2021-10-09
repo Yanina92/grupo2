@@ -37,9 +37,13 @@
                                 </span>
                             </button>
                         </form>
-                        <span class="material-icons-outlined">
-                            edit
-                        </span>
+                        <form action='/users/edit/<%= user.id %>' method='GET'>
+                            <button type="submit" class="action-button delete">
+                                <span class="material-icons-outlined">
+                                    edit
+                                </span>
+                            </button>
+                        </form>
                     </div>
                 </div>
             <%})%>

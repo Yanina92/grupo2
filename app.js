@@ -7,9 +7,14 @@ const routerHome = require('./routes/routeHome');
 const routeLogin = require('./routes/routeLogin');
 const routeRegister = require('./routes/routeRegister');
 const routerUsers = require('./routes/routeUsers');
+const methodOverride = require('method-override');
 
 app.set('view engine', 'ejs');
+
 app.use(express.static('public'))
+app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
+app.use(express.urlencoded({ extended: false })); // Para que se usa??
+app.use(express.json()); // Para que se usa??
 
 app.use('/', routerHome);
 app.use('/productDetail',routerProductDetail)

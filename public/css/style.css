@@ -656,6 +656,7 @@ i.fas.fa-trash-alt:hover {
 /* mauro */
 
 html {
+  font-size: 16px;
   height: 100%;
 }
 
@@ -745,7 +746,7 @@ body {
 
 /****************        *******************/
 
-.main-content-login {
+.main-content {
   grid-area: "main";
   background: repeating-linear-gradient(
     45deg,
@@ -1428,21 +1429,103 @@ footer {
       }
   } */
 
+.cards-list {
+  display: block;
+  height: 90px;
+}
+
+.section-container {
+  max-width: 600px;
+  max-height: 600px;
+  width: 98%;
+  height: 90%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 15%);
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  align-content: space-between;
+  overflow: scroll;
+}
+
 .user-card {
   min-width: 340px;
-  max-width: 460px;
+  max-width: 560px;
   width: 100%;
   background-color: var(--textSecondaryColor);
   height: 90px;
   border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 .user-data {
-  display: inline-block;
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
 }
 .user-profile-card {
   width: 60px;
   height: 60px;
+  border-radius: 28px;
 }
+
+/** FORM STANDAR ******************************/
+.form-show-data-rows {
+  max-width: 600px;
+  max-height: 600px;
+  width: 98%;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 0.8fr;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+}
+
+.input-type-text {
+  width: 100%;
+  height: 2rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(0 0 0 / 15%);
+  font-size: 1.2rem;
+}
+
+.form-select-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.label-text {
+  height: 2rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(0 0 0 / 15%);
+  font-size: 1.2rem;
+  padding-top: 0.1rem;
+}
+
+.form-button-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.5rem 0.2rem;
+}
+
+.button-standar {
+  height: 2rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: var(--contrastColor);
+}
+/**********************************************/
