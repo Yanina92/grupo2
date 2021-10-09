@@ -20,21 +20,25 @@
     </header>
 
     <main class="main-content-login">
-        <section class="section-login-container">
-            <div class="user-card">
-                <img class="user-profile-card"src="https://img.favpng.com/17/3/18/computer-icons-user-profile-male-png-favpng-ZmC9dDrp9x27KFnnge0jKWKBs.jpg"></img>
-                <div class="user-data">
-                    <p>Mauro Adrian Rivero</p>
-                    <p>Administrador</p>
-                    <p>mauro.rivero@gmail.com</p>
-                </div>
-                <span class="material-icons-outlined">
-                    delete_forever
-                    </span>
-                    <span class="material-icons-outlined">
-                        edit
+        <section class="section-container">
+            <% users.forEach(function(user) {%>
+                <div class="cards-list">
+                    <div class="user-card">
+                        <img class="user-profile-card"src="https://img.favpng.com/17/3/18/computer-icons-user-profile-male-png-favpng-ZmC9dDrp9x27KFnnge0jKWKBs.jpg"></img>
+                        <div class="user-data">
+                            <p><%=user.firstName%></p>
+                            <p><%=user.profile%></p>
+                            <p><%=user.email%></p>
+                        </div>
+                        <span class="material-icons-outlined">
+                            delete_forever
                         </span>
-            </div>
+                        <span class="material-icons-outlined">
+                            edit
+                        </span>
+                    </div>
+                </div>
+            <%})%>
         </section>
     </main>
 
