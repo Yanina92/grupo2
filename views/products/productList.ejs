@@ -1,0 +1,33 @@
+<html>
+    <%- include('../partials/head'); %>
+<body class="grid-container">
+    <header class="nav-header">
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main class="nav-main">
+        <div class="cotenedor">
+            <% products.forEach(function(product){ %>
+                <div class="box-products">
+                    <div class="product">
+                       <img class="product-img" src=<%=product.image %> alt="<%=product.image %>">
+                       <div class="box-text-off">
+                       <p><%=product.offer %></p>
+                       </div>
+                       <p class="prize-through"><%=product.price %></p>
+                       <div class="box-prize-off">
+                       <p><%=product.price %></p>
+                       <p><%=product.discount %></p>
+                       </div>
+                       <p class="product-footer"><%=product.description %></p>
+                    </div>
+                 </div>
+                 <% }) %>
+        </div>
+    </main>
+
+    <footer class="nav-footer">
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>

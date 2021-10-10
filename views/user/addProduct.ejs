@@ -19,39 +19,45 @@
     <main class="main-content-login">
         <section class="section-login-container">
             
-                <form class="form-login" action="/" method="post">
+                <form class="form-login" action="/products" method="POST" enctype="multipart/form-data">
                     <p>Agregar producto</p>
                     <br>
                     <div class='div-formbox-user'>
-                        <input class='input-user-name' placeholder="Nombre del producto" type='text' name="name" >
+                        <input class='input-user-name' placeholder="Nombre del producto" type='text' name="name" id="name" >
                     </div>
                     <div class ='div-formbox-email'>
-                        <input class='input-user-email' placeholder="Descripcion" type='text' name="description">
+                        <input class='input-user-email' placeholder="Descripcion" type='text' name="description" id="description">
                     
                     </div>
                     <div class ='div-formbox-phone'>
-                        <input class='input-user-phone' placeholder="Categoria" type='text' name="category">
+                        <input class='input-user-phone' placeholder="Categoria" type='text' name="category" id="category">
+                    
+                    </div>
+                    
+                    <div class ='div-formbox-password'>
+                        <input class='input-user-pass' placeholder="Marca" type='text' name="brand" id="brand">
                     
                     </div>
                     <div class ='div-formbox-password'>
-                        <input class='input-user-pass' placeholder="Marca" type='text'name="brand">
-                    
-                    </div>
-                    <div class ='div-formbox-password'>
-                        <input class='input-user-pass' placeholder="Precio" type='text' name="price">
+                        <input class='input-user-pass' placeholder="Precio" type='number' name="price" id="price">
                 
                     </div>
-                    <div class ='div-formbox-password'>
-                        <input class='input-user-pass' placeholder="Agregar imagen" type="file" name="image">
-                
-                    </div>
+
                     <div class ='div-formbox-password'>
                         <input class='input-user-pass' placeholder="Esta en oferta ? " type="checkbox" name="offer">
                 
                     </div>
-                    
+
+                    <div class ='div-formbox-password'>
+                        <input class='input-user-pass' placeholder="De cuanto es su descuento? " type="number" name="discount">
+                
+                    </div>
+                    <!-- <div class ='div-formbox-password'>
+                        <input class='input-user-pass' placeholder="Agregar imagen" type="file" name="image">
+                
+                    </div> -->
                     <br>
-                    <button class="button-login" type="submit" value="">Ingresar</button>
+                    <button class="button-login" type="submit">Ingresar</button>
                 </form>
         </section>
     </main>
