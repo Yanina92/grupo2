@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const usersFile = path.join(__dirname, '../data/users.json');
-// const userFileConsoleTest = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
-// console.log('Lee en el inicio: ', userFileConsoleTest);
 
 const controller = {
     index:function(req, res) {
@@ -34,7 +32,6 @@ const controller = {
 		userToEdit = {
 			id: userToEdit.id,
 			...req.body,
-			//image: userToEdit.image,
 		};
         console.log(req.body);
 		console.log(userToEdit);

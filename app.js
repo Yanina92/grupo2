@@ -12,9 +12,9 @@ const methodOverride = require('method-override');
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'))
-app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
-app.use(express.urlencoded({ extended: false })); // Para que se usa??
-app.use(express.json()); // Para que se usa??
+app.use(methodOverride('_method'));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.use('/', routerHome);
 app.use('/productDetail',routerProductDetail)
