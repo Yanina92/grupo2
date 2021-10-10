@@ -1430,8 +1430,11 @@ footer {
   } */
 
 .cards-list {
-  display: block;
-  height: 90px;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: space-between;
 }
 
 .section-container {
@@ -1456,14 +1459,15 @@ footer {
   min-width: 340px;
   max-width: 560px;
   width: 100%;
-  background-color: var(--textSecondaryColor);
+  background-color: #ffffff;
   height: 90px;
-  border-radius: 10px;
+  border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
   margin-top: 5px;
   margin-bottom: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: 1px solid rgb(0 0 0 / 15%);
 }
 .user-data {
   width: 210px;
@@ -1531,5 +1535,33 @@ footer {
 /**********************************************/
 
 .action-button {
-  color: white;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.icon-button-delete {
+  font-size: 2rem;
+  color: var(--textPrimaryColor);
+}
+
+.icon-button-edit {
+  font-size: 2rem;
+  color: var(--textPrimaryColor);
+}
+
+a.link-form-button,
+a.link-form-button:visited {
+  text-align: center;
+  padding-top: 0.22rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: var(--contrastColor);
+  color: var(--textPrimaryColor);
+  text-decoration: none;
 }

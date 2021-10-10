@@ -19,34 +19,36 @@
         <%- include('../partials/header'); %>
     </header>
 
-    <main class="main-content-login">
+    <main class="main-content">
         <section class="section-container">
-            <% users.forEach(function(user) {%>
-                <div class="cards-list">
-                    <div class="user-card">
-                        <img class="user-profile-card"src="https://img.favpng.com/17/3/18/computer-icons-user-profile-male-png-favpng-ZmC9dDrp9x27KFnnge0jKWKBs.jpg"></img>
-                        <div class="user-data">
-                            <p><%=user.firstName%></p>
-                            <p><%=user.profile%></p>
-                            <p><%=user.email%></p>
+            <div class="section-container-inner">
+                <% users.forEach(function(user) {%>
+                    <div class="cards-list">
+                        <div class="user-card">
+                            <img class="user-profile-card"src="https://img.favpng.com/17/3/18/computer-icons-user-profile-male-png-favpng-ZmC9dDrp9x27KFnnge0jKWKBs.jpg"></img>
+                            <div class="user-data">
+                                <p><%=user.firstName%></p>
+                                <p><%=user.profile%></p>
+                                <p><%=user.email%></p>
+                            </div>
+                            <form action='/users/delete/<%= user.id %>?_method=DELETE' method='post'>
+                                <button type="submit" class="action-button">
+                                    <span class="material-icons-outlined icon-button-delete">
+                                        delete_forever
+                                    </span>
+                                </button>
+                            </form>
+                            <form action='/users/edit/<%= user.id %>' method='GET'>
+                                <button type="submit" class="action-button">
+                                    <span class="material-icons-outlined icon-button-edit">
+                                        edit
+                                    </span>
+                                </button>
+                            </form>
                         </div>
-                        <form action='/users/delete/<%= user.id %>?_method=DELETE' method='post'>
-                            <button type="submit" class="action-button delete">
-                                <span class="material-icons-outlined">
-                                    delete_forever
-                                </span>
-                            </button>
-                        </form>
-                        <form action='/users/edit/<%= user.id %>' method='GET'>
-                            <button type="submit" class="action-button delete">
-                                <span class="material-icons-outlined">
-                                    edit
-                                </span>
-                            </button>
-                        </form>
                     </div>
-                </div>
-            <%})%>
+                <%})%>
+            </div>
         </section>
     </main>
 

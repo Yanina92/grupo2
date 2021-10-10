@@ -50,6 +50,18 @@ const controller = {
 		fs.writeFileSync(usersFile, JSON.stringify(newUsers, null, ' '));
 
         res.redirect('/users');
+    },
+
+    create:function(req, res) {
+        console.log("ENTRE")
+        let users = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
+        let newUser = {
+			id: users[users.length - 1].id + 1,
+			...req.body,
+		};
+		users.push(newUser)
+		fs.writeFileSync(usersFile, JSON.stringify(users, null, ' '));
+		res.redirect('/');
     }
 }
 
