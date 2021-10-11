@@ -1,0 +1,39 @@
+<%-include('../partials/head') %>
+<body>
+    <header class="nav-header">
+        <%-include('../partials/header') %>
+    </header>
+    
+    <main class="main-content">
+        <section class="section-container">
+                <div class="section-container-inner">
+                    <form class="form-show-data-rows"  action="/products/edit/<%= productToEdit.id %>?_method=PATCH" method="POST">
+                        <input class='input-type-text' type='text' name="name" value="Nombre: <%= productToEdit.name %>">
+                        <input class='input-type-text' type='text' name="category" value="Categoria: <%= productToEdit.category %>">
+                        <input class='input-type-text' type='text' name="description" value="Descripcion: <%= productToEdit.description %>">
+
+                        <input class='input-type-text' type='text' name="brand" value="Marca: <%= productToEdit.brand %>">
+                        <input class='input-type-text' type='text' name="offer" value="Oferta: <%= productToEdit.offer %>">
+                        <input class='input-type-text' type='text' name="discount" value="Descuento: %<%= productToEdit.discount %>">
+
+                        <input class='input-type-text' type='text' name="price" value="Precio $<%= productToEdit.price %>">
+                        <input class='input-type-text' type='text' name="image" value="Imagen: <%= productToEdit.image %>">
+                        <img src="<%= productToEdit.image %>" alt="">
+                        <div class="form-button-container">
+                            <a href="/products" class="link-form-button">Cancelar</a>
+                            <button class="button-standar" type="submit" value="">Guardar cambios</button>
+                        </div>
+                        <div class="form-button-container">
+                            <form action='/products/delete/<%= productToEdit.id %>?_method=DELETE' method='post'>
+                            <button class="button-standar" type="submit" value="">Borrar producto</button>
+                        </div>
+                    </form>
+                </div>
+        </section>
+    </main>
+    
+
+</body>
+    <footer>
+        <%-include('../partials/footer') %>
+    </footer>

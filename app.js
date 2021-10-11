@@ -1,19 +1,21 @@
 const express = require('express');
 const app = express();
 
+
 const routerProductDetail = require('./routes/routeProductDetail');
 const routerProductCart = require('./routes/routeProductCart');
 const routerHome = require('./routes/routeHome');
 const routeLogin = require('./routes/routeLogin');
 const routeRegister = require('./routes/routeRegister');
 const routerUsers = require('./routes/routeUsers');
+const routerProduct = require('./routes/routeProduct');
 const methodOverride = require('method-override');
 
-
+app.set('view engine', 'ejs')
 app.use(express.static('public'))
-app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
-app.use(express.urlencoded({ extended: false })); // Para que se usa??
-app.use(express.json()); // Para que se usa??
+app.use(methodOverride('_method'));
+app.use(express.urlencoded({ extended: false })); 
+app.use(express.json()); 
 
 app.use('/', routerHome);
 app.use('/products',routerProduct);
