@@ -6,14 +6,15 @@
     </header>
 
     <main class="nav-main">
-        <div class="cotenedor">
+        <div class="cotenedor-2" style="display: flex; flex-wrap: wrap; padding:5%;">
+            
             <% products.forEach(function(product){ %>
                 <div class="box-products">
                     <div class="product">
-                       <img class="product-img" src=<%=product.image %> alt="<%=product.image %>">
-                       <div class="box-text-off">
+                   
+                        <p><%=product.name %></p>
                        <p><%=product.offer %></p>
-                       </div>
+                
                        <p class="prize-through"><%=product.price %></p>
                        <div class="box-prize-off">
                        <p><%=product.price %></p>
@@ -25,9 +26,7 @@
                  <% }) %>
         </div>
     </main>
-
-    <footer class="nav-footer">
-        <%- include('../partials/footer'); %>
-    </footer>
+ 
+  
 </body>
 </html>

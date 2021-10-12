@@ -1040,7 +1040,8 @@ p {
     #f0f0f0 10px,
     #f2f2f2 10px,
     #f2f2f2 20px
-  );
+  );  
+  padding-bottom: 50px;
 }
 
 .title {
@@ -1052,8 +1053,6 @@ p {
 }
 
 .home-hr {
-  margin-left: 20%;
-  margin-right: 20%;
   border: solid var(--main-hr-color) 1px;
 }
 
@@ -1182,7 +1181,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* background-color:var(--main-bg-products-color); */
+  background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 2px 1px black;
   color: var(--main-title-text-color);
   height: 20vh;
@@ -1227,10 +1226,10 @@ p {
   );
 }
 
-.banner-footer nav ul {
+.banner-footer nav div {
+  list-style-type:none;
   display: flex;
   justify-content: space-evenly;
-  margin: 25px;
 }
 
 .banner {
@@ -1250,7 +1249,7 @@ p {
 
 @media (min-width: 768px) {
   .slider {
-    height: 600px;
+    height: 500px;
   }
   .header-burger {
     opacity: 0;
@@ -1274,25 +1273,18 @@ p {
   .box-prize-off {
     justify-content: flex-start;
   }
-  /* ---------- CATEGORIAS DESTACADAS ---------- */
   .art-categorias {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     height: 100%;
   }
-}
-/* ---------- MEDIA-QUERIES ---------- */
-
-@media (min-width: 768px) {
   .grid-container-home {
     display: grid;
     grid-template:
       "header" 80px
       "nav" 40px;
   }
-  .slider {
-    height: auto;
-  }
+  
   .products-off {
     justify-content: space-around;
   }
@@ -1513,6 +1505,21 @@ p {
   border: none;
   background-color: var(--contrastColor);
 }
+.button-standar:hover{
+  cursor:pointer;
+}
+.button-standar-warning{
+  height: 2rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: var(--contrastColor);
+  cursor: no-drop;
+}
+.button-standar-warning:hover{
+  background-color: red;
+  transition: all 1s;
+  
+}
 /**********************************************/
 
 .action-button {
@@ -1546,3 +1553,9 @@ a.link-form-button:visited {
   color: var(--textPrimaryColor);
   text-decoration: none;
 }
+
+
+.home-edit{
+  background-color: #3b8b66;
+}
+

@@ -298,25 +298,25 @@
  },
  {
   "id": 28,
-  "name": "Granite",
-  "category": "RF Shielding",
-  "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
-  "brand": "Plasterers",
-  "offer": true,
-  "discount": 0.32,
-  "price": 6152,
-  "image": "http://dummyimage.com/159x100.png/cc0000/ffffff"
+  "name": "Nombre: Granite",
+  "category": "Categoria: RF Shielding",
+  "description": "Descripcion: Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+  "brand": "Marca: Plasterers",
+  "offer": "Oferta: true",
+  "discount": "Descuento: %0.32",
+  "price": "Precio $6152",
+  "image": "Imagen: http://dummyimage.com/159x100.png/cc0000/ffffff"
  },
  {
   "id": 29,
-  "name": "Glass",
-  "category": "Retaining Wall and Brick Pavers",
-  "description": null,
-  "brand": "Tile Setter",
-  "offer": false,
-  "discount": 0.88,
-  "price": 2217,
-  "image": "http://dummyimage.com/163x100.png/ff4444/ffffff"
+  "name": "Nombre: Glass",
+  "category": "Categoria: Retaining Wall and Brick Pavers",
+  "description": "Descripcion: ",
+  "brand": "Marca: Tile Setter",
+  "offer": "Oferta: false",
+  "discount": "Descuento: %0.88",
+  "price": "Precio $2217",
+  "image": "Imagen: http://dummyimage.com/163x100.png/ff4444/ffffff"
  },
  {
   "id": 34,

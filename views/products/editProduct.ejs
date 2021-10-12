@@ -1,9 +1,13 @@
 <%-include('../partials/head') %>
-<body>
+<body class="home-edit">
+    <div class="grid-container-home">
     <header class="nav-header">
         <%-include('../partials/header') %>
-    </header>
     
+    </header>
+
+  <%-include('../partials/nav-bar') %>
+</div>
     <main class="main-content">
         <section class="section-container">
                 <div class="section-container-inner">
@@ -11,11 +15,9 @@
                         <input class='input-type-text' type='text' name="name" value="Nombre: <%= productToEdit.name %>">
                         <input class='input-type-text' type='text' name="category" value="Categoria: <%= productToEdit.category %>">
                         <input class='input-type-text' type='text' name="description" value="Descripcion: <%= productToEdit.description %>">
-
                         <input class='input-type-text' type='text' name="brand" value="Marca: <%= productToEdit.brand %>">
                         <input class='input-type-text' type='text' name="offer" value="Oferta: <%= productToEdit.offer %>">
-                        <input class='input-type-text' type='text' name="discount" value="Descuento: %<%= productToEdit.discount %>">
-
+                        <input class='input-type-text' type='text' name="discount" value="Descuento: % <%= productToEdit.discount %>">
                         <input class='input-type-text' type='text' name="price" value="Precio $<%= productToEdit.price %>">
                         <input class='input-type-text' type='text' name="image" value="Imagen: <%= productToEdit.image %>">
                         <img src="<%= productToEdit.image %>" alt="">
@@ -26,16 +28,17 @@
                         
                     </form>
                     <div class="form-button-container">
-                        <form action='/products/delete/<%= productToEdit.id %>?_method=DELETE' method='POST'>
-                        <button class="button-standar" type="submit" value="">Borrar producto</button>
+                        <form class="form-show-data-rows"   action='/products/delete/<%= productToEdit.id %>?_method=DELETE' method='POST'>
+                        <button class="button-standar-warning" type="submit" value="">Borrar producto</button>
                         </form>
                     </div>
                 </div>
         </section>
     </main>
-    
 
-</body>
-    <footer>
+    <footer class="nav-footer">
         <%-include('../partials/footer') %>
     </footer>
+
+    </body>
+    </html>
