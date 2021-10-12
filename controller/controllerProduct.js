@@ -51,7 +51,7 @@ const controller = {
                 }
                 return product;
             })
-            console.log(newProducts);
+            console.log("Articulo ID:"+id+" se modifico");
     
             fs.writeFileSync(productPath, JSON.stringify(newProducts, null, ' '));
             res.redirect('/products');
@@ -61,6 +61,7 @@ const controller = {
         let id = req.params.id;
         let products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
 		let productFilter = products.filter(product => product.id != id);
+        console.log("Articulo ID:"+id+" se elimino");
 		fs.writeFileSync(productPath, JSON.stringify(productFilter, null, ' '));
         res.redirect('/products');
 

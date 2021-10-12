@@ -23,11 +23,13 @@
                             <a href="/products" class="link-form-button">Cancelar</a>
                             <button class="button-standar" type="submit" value="">Guardar cambios</button>
                         </div>
-                        <div class="form-button-container">
-                            <form action='/products/delete/<%= productToEdit.id %>?_method=DELETE' method='post'>
-                            <button class="button-standar" type="submit" value="">Borrar producto</button>
-                        </div>
+                        
                     </form>
+                    <div class="form-button-container">
+                        <form action='/products/delete/<%= productToEdit.id %>?_method=DELETE' method='POST'>
+                        <button class="button-standar" type="submit" value="">Borrar producto</button>
+                        </form>
+                    </div>
                 </div>
         </section>
     </main>

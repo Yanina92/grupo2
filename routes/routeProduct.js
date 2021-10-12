@@ -13,6 +13,6 @@ router.post('/',upload.single('image'),controller.save);
 router.get('/edit/:id', controller.editProduct);
 router.patch('/edit/:id',controller.updateProduct);
 
-router.delete('delete/:id',controller.delete);
+router.delete('/delete/:id',controller.delete);
 
 module.exports = router;

@@ -319,49 +319,6 @@
   "image": "http://dummyimage.com/163x100.png/ff4444/ffffff"
  },
  {
-  "id": 30,
-  "name": "Glass",
-  "category": "Construction Clean and Final Clean",
-  "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
-  "brand": "Refridgeration",
-  "offer": true,
-  "discount": 0.16,
-  "price": 2135,
-  "image": "http://dummyimage.com/115x100.png/dddddd/000000"
- },
- {
-  "id": 31,
-  "name": "Steel",
-  "category": "Termite Control",
-  "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
-  "brand": "Equipment Operator",
-  "offer": false,
-  "discount": 0.27,
-  "price": 4663,
-  "image": "http://dummyimage.com/106x100.png/5fa2dd/ffffff"
- },
- {
-  "id": 32,
-  "name": "Nombre: Nombre: Martillazo",
-  "category": "Categoria: Categoria: Herramientas de mano",
-  "description": "Descripcion: Descripcion: martillo cabezon de 60grs",
-  "brand": "Marca: Marca: martillito",
-  "offer": "Oferta: Oferta: false,false",
-  "discount": "Descuento: %Descuento: %10",
-  "price": "Precio $Precio $1200",
-  "image": "Imagen: Imagen: "
- },
- {
-  "id": 33,
-  "name": "asd",
-  "description": "asd",
-  "category": "asd",
-  "brand": "",
-  "price": "",
-  "discount": "",
-  "offer": "true"
- },
- {
   "id": 34,
   "name": "",
   "description": "asda",
@@ -373,14 +330,14 @@
  },
  {
   "id": 35,
-  "name": "Nombre: ",
-  "category": "Categoria: asd",
-  "description": "Descripcion: ",
-  "brand": "Marca: ",
-  "offer": "Oferta: true",
-  "discount": "Descuento: %",
-  "price": "Precio $",
-  "image": "Imagen: "
+  "name": "Nombre: Nombre: ",
+  "category": "Categoria: Categoria: asd",
+  "description": "Descripcion: Descripcion: ",
+  "brand": "Marca: Marca: ",
+  "offer": "Oferta: Oferta: true",
+  "discount": "Descuento: %Descuento: %",
+  "price": "Precio $Precio $",
+  "image": "Imagen: Imagen: "
  },
  {
   "id": 36,
