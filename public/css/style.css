@@ -37,9 +37,9 @@
   border: 2px solid black;
   width: 100%;
   height: 100%;
+  margin-top: 10px;
 }
-
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -49,13 +49,10 @@
   scrollbar-color: transparent transparent; /* thumb and track color */
   scrollbar-width: 0px;
 }
-
 .body-productDetail {
-
   font-family: 'Lato', sans-serif;
 }
-
-.head {
+.head{
   background-color: var(--header);
   display: flex;
   align-items: center;
@@ -219,193 +216,202 @@ div.google-location {
 }
 
 .detalle{
-  margin-top: 12px;
+  display: flex;
 }
 
+.primero{
+  display: block;
+  margin-right: 5px;
+  text-align: center;
+  width: 40vw;
+}
+
+.seccion{
+  display: flex;
+}
+
+.nombre{
+  font-size: 12px;
+  margin-top:5px;
+  width: 40vw;
+  margin-left:5px; 
+ 
+}
+.precio{
+  font-size: 12px;
+  padding: 2px;
+  margin:5px;
+  text-align:center;
+}
+.products-1{ 
+  display: block;
+  width: 10vw;
+  height: 50%;
+  margin-top: 5px;
+  margin-left: 15px;
+  padding: 0;
+}
+.prod{
+  margin: 0;
+  padding:0;
+  width: 30vw;
+}
+.products2{
+  display:flex;
+  flex-direction:row;
+}
+.box-prod{
+  width: 60%;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+}
 .primer{
     display: flex;
     justify-content:space-between ;
     margin-right: 5px;
-}
-.prod{
-    width:40%;
-    height:100px;
-    background-color: rgba(202, 200, 200, 0.938);
-    margin: 10px;
-}
-.log{
-padding: 20px;
-}
-.detProd{
     text-align: center;
-    border-bottom: solid 2px grey;
-    font-weight: bold;
-    font-size: 17px;
-    padding-top: 5px;
-  }
-
+    width: 70vw;
+}
+.cont{
+  display: flex;
+  margin-left: 30px;
+  margin-top: 15px;
+}
 .inner-addonl{
     padding: 10px;
     width: 30px;
     margin-left: 20px;
 }
+.imagen{
+  display: flex;
+  width: 70vw;
+}
+.detProd{
+  font-weight: bold;
+  font-size: 14px;
+  width: 70vw;
+}
 .cantidad{
     width: 25%;
 }
-
 .titulo{
   font-weight: bold;
-  font-size: 17px;
+  font-size: 10px;
+  
 }
 .desc{
-  margin: 10px; 
+  display: none;
 }
+
 .especif{
   margin: 10px;  
+  display: none;
+}
+.product1{
+  border-radius:5px ;
+  width: 100%;   
+  margin-top: 10px;
+  background-color:var(--main-btn-color);
+  box-shadow: 0px 0px 5px 1px black;
+  text-align:center;
+}
+.produc1{
+  border: 1px solid black;
+  position: relative;
+  background-color: white;
+  flex-direction:row;
+}
+.art3, .art4{
+  display: none;
+}
+.art{
+padding: 20px;
+display:block;
+width: 100%;
+margin-left:10px;
 }
 
 
-  
-  #carrusel {
-    float:left;
-    width:100vw;
-    overflow:hidden;
-    height:150px;
-    position:relative;
-    margin-top:20px;
-    margin-bottom:20px;
-}
- 
-#carrusel .fa-chevron-left {
-    position:absolute;
-    left:10px;
-    z-index:1;
-    top:50%;
-    margin-top:-9px;
-}
- 
-#carrusel .fa-chevron-right {
-    position:absolute;
-    right:10px;
-    z-index:1;
-    top:50%;
-    margin-top:-9px;
-}
- 
-.carrusel {
-    width:100vw;
-    left:0px;
-    position:absolute;
-    z-index:0;
-}
- 
-.carrusel img {
-  width: 60%;
-}
-
-.product {
-  border:#CCCCCC 1px solid;
-  width: 30vw;
-  float: left;
-  margin-right: 5px;
-  text-align: center;
-  margin-left: 6px;
-  }
-
-
-  @media (min-width: 361px) { /* Tablet */
-
-.prod{
-      width:30%;
-      height:150px;
-  }
-.detalle{
-    margin-top: 15px; 
-  }
-.primer{
-    justify-content: left;
-    margin: 15px;  
-}
-.nombre{
-  font-size: 24px;
-  padding: 2px;
-}
-.precio{
-  font-size: 24px;
-  padding: 2px;
-}
-.cantidad{
-  width: 60%;
-}
-.caja{
-  margin-left: 50px;
-  left: 20px;
-}
-.carrusel img {
-  width: 45%;
-}
-.titulo{
-  font-weight: bold;
-  font-size: 24px;
-}
-.texto{
-  font-size: 20px;
-}
-.detProd{
-  font-weight: bold;
-  font-size: 24px;
-}
-.foot{
-  display: flex;
-}
-  }
   @media (min-width: 768px) { /* Tablet */
-  
-    .prod{
-      width:30%;
-      height:250px;
+    .art{
+    padding: 12px;
+    width: 32vw;
+    margin-left: 5px;
+    }
+    .art3{
+      display: block;
+    }
+    .detProd{
+      font-size: 24px;
+    }
+    .nombre{
+      font-size: 18px;
+    }
+    .precio{
+      font-size: 18px;
+    }
+   .titulo{
+    font-size: 18px;
+   }
   }
-  
-  .detalle{
-    margin-top: 15px; 
+  @media (min-width: 1200px) { /* PC */
+    .art{
+     padding: 15px;
+     width: 23%;
+     margin-left: 15px;
+     }
+     .art4{
+      display: block;
+     }
+     .detProd{
+       font-size: 26px;
+     }
+     .nombre{
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: left;
+      margin-left: 35px;
+     }
+     .cant{
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: left;
+      margin-left: 45px;
+      width: 100%;
+     }
+     .cantidad{
+      width: 35%;
+      padding: 2px;
+      margin: 5px;
   }
-.primer{
-    justify-content: left;
-    margin: 15px;
-    padding: 5px;  
-}
-.nombre{
-  font-size: 24px;
-  padding: 2px;
-}
-.precio{
-  font-size: 24px;
-  padding: 2px;
-}
-.cantidad{
-  width: 60%;
-}
-.caja{
-  margin-left: 50px;
-  left: 20px;
-}
-.carrusel img {
-  width: 25%;
-}
-.carrusel{
-  margin-left: 40px;
-}
-.titulo{
-  font-weight: bold;
-  font-size: 24px;
-}
-.texto{
-  font-size: 20px;
-}
-.detProd{
-  font-weight: bold;
-  font-size: 24px;
-}
+     
+     }
+     .precio{
+      font-size: 24px;
+      padding: 10px;
+      margin-bottom: 20px;
+      margin-left: 105px;
+      text-align: left;
+    }
+    .titulo{
+     font-size: 24px;
+     padding: 10px;
+     margin-left: 15px;
+     text-align: center;
+    
+    }
+    .imagen{
+      margin-left: 15px;
+    }
+    .cont{
+      width: 50vw;
+      margin-left: 25px;
+      text-align: center;
+    }
+    .primero{
+      margin-left: 35px;
+    }
   }
 /* Yani */
 .mainProductCart{
@@ -1100,7 +1106,7 @@ main{
   display:inline-block;
   text-align: center;
   margin-bottom: 20px;;
-
+  margin-top: 40px;;
 }
 /* 
 hr{
@@ -1280,10 +1286,6 @@ footer{
 .banner a{
   margin-top:15px;
 }
-
-
-
-
 
 
 /* ---------- MEDIA-QUERIES ---------- */
