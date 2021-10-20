@@ -1533,9 +1533,7 @@ p {
 .input-type-text:focus{
   border-bottom: 1px solid var(--primaryDarkColor);  
 }
-input:invalid{
-  border-bottom: 2px solid red;
-}
+
 
 .form-select-container {
   width: 100%;
