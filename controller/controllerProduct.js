@@ -4,6 +4,16 @@ const productPath = path.join(__dirname, "../data/productsData.json");
 // const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
 
 const controller = {
+
+
+    productsDetail:(req, res) => {
+        let identy = req.params.id
+        const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
+        let product = products.find(p=>p.id==identy);
+        let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
+        res.render('./products/productDetail',{product, productosRelacionados})
+    },
+
   productsList: (req, res) => {
     let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
     res.render("./products/productList", { products });
@@ -11,6 +21,7 @@ const controller = {
   addProduct: (req, res) => {
     res.render("./products/addProduct");
   },
+
 
   save: (req, res) => {
     let products = JSON.parse(fs.readFileSync(productPath, "utf8"));

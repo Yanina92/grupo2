@@ -8,7 +8,8 @@
   "offer": false,
   "discount": 0.12,
   "price": 7352,
-  "image": "http://dummyimage.com/242x100.png/5fa2dd/ffffff"
+  "image": "http://dummyimage.com/242x100.png/5fa2dd/ffffff",
+  "productosRelacionados": [2,3,4]
  },
  {
   "id": 2,

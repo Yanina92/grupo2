@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 
-
-const routerProductDetail = require('./routes/routeProductDetail');
 const routerProductCart = require('./routes/routeProductCart');
 const routerHome = require('./routes/routeHome');
 const routeLogin = require('./routes/routeLogin');
@@ -19,7 +17,6 @@ app.use(express.json());
 
 app.use('/', routerHome);
 app.use('/products',routerProduct);
-app.use('/productDetail',routerProductDetail)
 app.use('/productCart',routerProductCart)
 app.use('/users', routerUsers);
 app.use('/login', routeLogin);

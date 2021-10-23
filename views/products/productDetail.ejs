@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet">
-  <title>ProductDetail</title>
-</head>
+ <%- include('../partials/head'); %>
 
 <body class="body-productDetail">
   <header class="nav-header">
     <%- include('../partials/header') %>
   </header>
-
   <main>
     <div class="hola">
       <div class="primer">
@@ -59,8 +47,8 @@
           </div>
         </div>
         <div class="primero">
-          <p class="nombre">Sierra sensitiva DeWalt 14”</p>
-          <p class="precio">$29.000</p>
+          <p class="nombre"><%=product.name %></p>
+          <p class="precio"><%=product.price %></p>
           <div class="cant">
             <i class="fas fa-plus-circle"></i>
             <input class="cantidad">
@@ -102,24 +90,24 @@
         <div class="products2">
           <!-- <div class="arrow-left"><i class="fas fa-angle-left"></i></div>
           <div class="arrow-right"><i class="fas fa-angle-right"></i></div> -->
-
-          <article class="art1">
-            <div class="produc1">
+          <% productosRelacionados.forEach(function(product){ %>
+          <article class="art">
+            <div class="produc">
               <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
                 alt="Foto de producto">
               <div class="box-text-off">
-                <p>Oferta del dia</p>
+                <p><%=product.offer %></p>
               </div>
-              <p class="prize-through">$2750</p>
+              <p class="prize-through"><%=product.price %></p>
               <div class="box-prize-off">
-                <p>$1750</p>
-                <p>30% OFF</p>
+                <p><%=product.price %></p>
+                <p><%=product.discount %></p>
               </div>
-              <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
+              <p class="product-footer"><%=product.name %></p>
             </div>
           </article>
-
-          <article class="art2">
+          <% }) %>
+          <!-- <article class="art2">
             <div class="produc1">
               <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
                 alt="Foto de producto">
@@ -165,7 +153,7 @@
               </div>
               <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
             </div>
-          </article>
+          </article> -->
 
         </div>
       </section>
