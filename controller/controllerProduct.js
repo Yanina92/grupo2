@@ -8,6 +8,13 @@ const controller = {
         let products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
         res.render('./products/productList',{products})
     },
+    productsDetail:(req, res) => {
+        let identy = req.params.id
+        const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
+        let product = products.find(p=>p.id==identy);
+        let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
+        res.render('./products/productDetail',{product, productosRelacionados})
+    },
     addProduct:(req, res) => {
         res.render('./products/addProduct')
     },
