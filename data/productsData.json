@@ -210,17 +210,6 @@
   "image": "http://dummyimage.com/214x100.png/ff4444/ffffff"
  },
  {
-  "id": 20,
-  "name": "Steel",
-  "category": "Roofing (Asphalt)",
-  "description": "",
-  "brand": "Tile Setter",
-  "offer": true,
-  "discount": 0.24,
-  "price": 7847,
-  "image": "http://dummyimage.com/231x100.png/cc0000/ffffff"
- },
- {
   "id": 21,
   "name": "Glass",
   "category": "Exterior Signage",
@@ -274,17 +263,6 @@
   "discount": 0.98,
   "price": 5505,
   "image": "http://dummyimage.com/159x100.png/ff4444/ffffff"
- },
- {
-  "id": 26,
-  "name": "Steel",
-  "category": "Plumbing & Medical Gas",
-  "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-  "brand": "Terrazzo",
-  "offer": false,
-  "discount": 0.85,
-  "price": 3683,
-  "image": "http://dummyimage.com/234x100.png/5fa2dd/ffffff"
  },
  {
   "id": 27,
@@ -382,5 +360,16 @@
   "discount": "",
   "offer": "true",
   "image": "/upload/0e4fffa4604b07bc270629feb7720672"
+ },
+ {
+  "id": 40,
+  "name": "martillo",
+  "description": "asdas",
+  "category": "buloneria",
+  "brand": "",
+  "price": "12312",
+  "discount": "",
+  "offer": "true",
+  "image": "/upload/092acccc949bf3c929e6685d8b2a74fa"
  }
 ]

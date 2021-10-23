@@ -8,31 +8,60 @@
 
   <%-include('../partials/nav-bar') %>
 </div>
+
     <main class="main-content">
-        <section class="section-container">
-                <div class="section-container-inner">
+        
+        <section class="section-container-edit"> 
+            <div class="title-edit">
+            <p>Edicion de producto</p>
+            <hr class="home-hr">
+        </div>
                     <form class="form-show-data-rows"  action="/products/edit/<%= productToEdit.id %>?_method=PATCH" method="POST">
-                        <input class='input-type-text' type='text' name="name" value="Nombre: <%= productToEdit.name %>">
-                        <input class='input-type-text' type='text' name="category" value="Categoria: <%= productToEdit.category %>">
-                        <input class='input-type-text' type='text' name="description" value="Descripcion: <%= productToEdit.description %>">
-                        <input class='input-type-text' type='text' name="brand" value="Marca: <%= productToEdit.brand %>">
-                        <input class='input-type-text' type='text' name="offer" value="Oferta: <%= productToEdit.offer %>">
-                        <input class='input-type-text' type='text' name="discount" value="Descuento: % <%= productToEdit.discount %>">
-                        <input class='input-type-text' type='text' name="price" value="Precio $<%= productToEdit.price %>">
-                        <input class='input-type-text' type='text' name="image" value="Imagen: <%= productToEdit.image %>">
+                        <div class="form-select-container">
+                            <label for="name" class="label-text">Nombre:</label>
+                            <input class='input-type-text' type='text' name="name" value="<%= productToEdit.name %>"  required>
+                        </div>
+                        <div class="form-select-container">
+                            <label for="category" class="label-text">Categoria:</label>
+                            <input class='input-type-text' type='text' name="category" value="<%= productToEdit.category %>" required>
+                        </div>
+                        <div class="form-select-container">
+                            <label for="description" class="label-text">Descripcion:</label>
+                        <input class='input-type-text' type='text' name="description" value="<%= productToEdit.description %>">
+                        </div> 
+                        <div class="form-select-container">
+                            <label for="brand" class="label-text">Marca:</label>
+                        <input class='input-type-text' type='text' name="brand" value="<%= productToEdit.brand %>">
+                        </div>
+                        <div class="form-select-container">
+                            <label for="offer" class="label-text">Oferta:</label>
+                        <input class='input-type-text' type='text' name="offer" value="<%= productToEdit.offer %>" required>
+                        </div>
+                        <div class="form-select-container">
+                            <label for="discount" class="label-text">Descuento:</label>
+                        <input class='input-type-text' type='text' name="discount" value="<%= productToEdit.discount %>">
+                        </div>
+                        <div class="form-select-container">
+                            <label for="price" class="label-text">Precio:</label>
+                        <input class='input-type-text' type='text' name="price" value="<%= productToEdit.price %>" required>
+                        </div>
+                      
+                        <div class="form-select-container">
+                            <label for="image" class="label-text">Imagen:</label>
+                        <input class='input-type-text' type='file' name="image" value="<%= productToEdit.image %>" required>
+                        </div>
                         <img src="<%= productToEdit.image %>" alt="">
                         <div class="form-button-container">
+                            
                             <a href="/products" class="link-form-button">Cancelar</a>
                             <button class="button-standar" type="submit" value="">Guardar cambios</button>
                         </div>
-                        
                     </form>
                     <div class="form-button-container">
                         <form class="form-show-data-rows"   action='/products/delete/<%= productToEdit.id %>?_method=DELETE' method='POST'>
                         <button class="button-standar-warning" type="submit" value="">Borrar producto</button>
                         </form>
                     </div>
-                </div>
         </section>
     </main>
 

@@ -1,43 +1,23 @@
 :root {
-  --amarillo: #eac926;
-  --azul: #03264c;
-  --celeste: #1259c3;
+  --number: 'Jostfamily';
+  --letter: "Raleway", sans-serif;
+ 
+  
+  --primaryDarkColor: #3b8b66;
+  --primaryColor: #73c39e;
+  --contrastColor: #fab73d;
+  --textPrimaryColor: #212121;
+  --white: #ffffff;
+  
+  --hr-color: #212121;
   --grisOscuro: #666;
-  --grisClaro: #ebebeb;
   --verde: #39b54a;
   --negro: #000;
-  --blanco: #fff;
-  --marronOscuro: #646464;
-  --azulClaro: #0022aa;
-  --dark_primary_color: #512da8;
-  --light_primary_color: #d1c4e9;
-  --primary_color: #673ab7;
-  --acent_color: #cddc39;
-  --text_icons_color: #ffffff;
-  --text_primary_color: #212121;
-  --text_secondary_color: #757575;
-  --divider_color: #bdbdbd;
-  --header: #73c39e;
-  --boton: #fab73d;
   --bordeBoton: #b9aa1c;
   --sobreBoton: #b83e06;
   --footer: #dedede;
-  --primaryDarkColor: #3b8b66;
-  --primaryLightColor: #9ae7c3;
-  --primaryColor: #73c39e;
-  --contrastColor: #fab73d;
-  --textIconsColors: #ffffff;
-  --textPrimaryColor: #212121;
-  --textSecondaryColor: #757575;
-  --dividerColor: #bdbdbd;
-  --main-bg-color: #f2f2f2;
-  --main-text-color: black;
-  --main-hr-color: #212121;
-  --main-products-color: #fab73d;
-  --main-linea-color: #bdbdbd;
-  --main-btn-color: #fab73d;
-  --main-header-color: #73c39e;
-  --main-footer-color: #73c39e;
+
+
 }
 .logoPerrito{
   border-radius: 5%;
@@ -63,7 +43,7 @@
 }
 
 .head {
-  background-color: var(--header);
+  background-color: var(--primaryColor);
   display: flex;
   align-items: center;
   width: 100%;
@@ -500,7 +480,7 @@ margin-left:10px;
   margin: auto;
   width: 90%;
   box-shadow: 0px 0px 10px #646464;
-  background-color: white;
+  background-color:var(--white);
 }
 
 .masMenosProductCart {
@@ -558,7 +538,7 @@ margin-left:10px;
   border-radius: 5px;
   width: 60vw;
   height: 8vh;
-  background-color: var(--boton);
+  background-color: var(--contrastColor);
   color: var(--negro);
 }
 
@@ -578,7 +558,7 @@ margin-left:10px;
   border-radius: 5px;
   width: 60vw;
   height: 4vh;
-  background-color: var(--blanco);
+  background-color: var(--white);
 }
 
 .titulosListaProductCart {
@@ -811,7 +791,7 @@ body {
   height: 2rem;
   outline: none;
   border: none;
-  background-color: var(--textIconsColors);
+  background-color: var(--white);
   border-radius: 0px 0.3rem 0.3rem 0px;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 25%);
 }
@@ -1052,21 +1032,23 @@ p {
 
 /******* NICOLAS *******/
 
+
 .grid-container-home {
   display: grid;
   grid-template:
     "header" 80px
     "nav" 0px;
+    font-family: var(--letter);
 }
 
 .banner a,
 .banner-footer a {
   text-decoration: none;
-  color: var(--main-title-text-color);
+  color: var(--main--textPrimaryColor);
 }
 .cat a {
   text-decoration: none;
-  color: var(--main-title-text-color);
+  color: var(--main--textPrimaryColor)
 }
 
 /* ---------- SLIDER ---------- */
@@ -1124,7 +1106,7 @@ p {
 }
 
 .home-hr {
-  border: solid var(--main-hr-color) 1px;
+  border: solid var(hr-color) 1px;
 }
 
 .products-off {
@@ -1155,7 +1137,7 @@ p {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 50px;
-  background-color: var(--main-btn-color);
+  background-color: var(--contrastColor);
   box-shadow: 0px 0px 5px 1px black;
   text-align: center;
 }
@@ -1226,12 +1208,12 @@ p {
   display: flex;
   color: black;
   text-decoration: line-through;
-  font-family: Jostfamily;
+  font-family: var(--number);
 }
 
 .box-prize-off {
   display: flex;
-  font-family: Jostfamily;
+  font-family: var(--number);
   justify-content: center;
   justify-content: flex-start;
   font-size: 18px;
@@ -1241,7 +1223,7 @@ p {
   font-size: 20px;
   position: relative;
   margin-right: 10px;
-  font-family: Jostfamily;
+  font-family: var(--number);
 }
 
 /* ---------- ARTICLE-CATEGORIAS ---------- */
@@ -1265,7 +1247,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--main-btn-color);
+  background-color: var(--contrastColor);
   height: 150px;
   border-radius: 5px;
   box-shadow: 0px 0px 2px 1px black;
@@ -1368,7 +1350,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-btn-color);
+    background-color: var(--contrastColor);
     height: 250px;
     border-radius: 5px;
     flex-basis: 25%;
@@ -1409,7 +1391,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-btn-color);
+    background-color: var(--contrastColor);
     height: 250px;
     border-radius: 5px;
     flex-basis: 25%;
@@ -1432,7 +1414,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-btn-color);
+    background-color: var(--contrastColor);
     height: 250px;
     border-radius: 5px;
     flex-basis: 25%;
@@ -1483,9 +1465,9 @@ p {
 
 .section-container {
   max-width: 600px;
-  max-height: 600px;
+  max-height: 800px;
   width: 98%;
-  height: 90%;
+  height: 100%;
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: white;
@@ -1529,11 +1511,11 @@ p {
 /** FORM STANDAR ******************************/
 .form-show-data-rows {
   max-width: 600px;
-  max-height: 600px;
+  max-height: 800px;
   width: 98%;
   display: grid;
-  gap: 0.5rem;
-  grid-template-columns: 0.8fr;
+  gap: 1rem;
+  grid-template-columns: 0.8fr  ;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   justify-content: center;
@@ -1546,7 +1528,13 @@ p {
   border: none;
   border-bottom: 1px solid rgb(0 0 0 / 15%);
   font-size: 1.2rem;
+  transition:  0.5s;
 }
+
+.input-type-text:focus{
+  border-bottom: 1px solid var(--primaryDarkColor);  
+}
+
 
 .form-select-container {
   width: 100%;
@@ -1561,6 +1549,8 @@ p {
   border-bottom: 1px solid rgb(0 0 0 / 15%);
   font-size: 1.2rem;
   padding-top: 0.1rem;
+  margin-right: 5px; 
+  color:grey;
 }
 
 .form-button-container {
@@ -1630,3 +1620,47 @@ a.link-form-button:visited {
   background-color: #3b8b66;
 }
 
+.title-edit{
+    text-align: center;
+    background-color: var(--contrastColor);
+    border-radius: 5px 5px 0 0;
+
+}
+
+.main-content-edit {
+  grid-area: "main";
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #f2f2f2 10px,
+    #f2f2f2 20px
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:700px;
+}
+
+.section-container-edit {
+  max-width: 600px;
+  width: 98%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 15%);
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  align-content: space-between;
+  /* overflow: scroll; */
+}
+
+.title-edit p{
+  display:flex;
+  font-size: 20px;
+  height: 3em;
+  align-items:center;
+  justify-content:center;
+}

@@ -1,54 +1,65 @@
 <html>
-    <%- include('../partials/head'); %>
-<body class="grid-container">
-    <header class="nav-header">
-        <%- include('../partials/header'); %>
-    </header>
+<%- include('../partials/head'); %>
 
-    <nav class="support-bar">
+    <body class="grid-container">
+        <header class="nav-header">
+            <%- include('../partials/header'); %>
+        </header>
 
-        <span class="products-bar">Productos</span>
-        <span></span>
-        <span class="user-bar">
-            <i class="material-icons">account_circle</i>Register
-        </span>
-        <span class="login-bar">Login</span>
+        <%- include('../partials/nav-bar') %>
 
-    </nav>
-
-    <main class="main-content">
-        <section class="section-container">
-                <div class="section-container-inner">
-                <form class="form-show-data-rows" action="/products" method="POST" enctype="multipart/form-data">
-                        <input class='input-type-text' placeholder="Nombre del producto" type='text' name="name" id="name" > 
-                        <input class='input-type-text' placeholder="Descripcion" type='text' name="description" id="description">          
-                        <input class='input-type-text' placeholder="Categoria" type='text' name="category" id="category">
-                        <input class='input-type-text' placeholder="Marca" type='text' name="brand" id="brand">
-                        <input class='input-type-text' placeholder="Precio" type='number' name="price" id="price">
-                        <input class='input-type-text' placeholder="De cuanto es su descuento? " type="number" name="discount">
-                        <input class='input-type-text' placeholder="Agregar imagen" type="file" name="image">
+            <main class="main-content-edit">
+                <section class="section-container-edit">
+                    <div class="title-edit">
+                        <p>Creacion de producto</p>
+                        <hr class="home-hr" />
+                    </div>
+                    <form class="form-show-data-rows" action="/products" method="POST" enctype="multipart/form-data">
+                        <div class="form-select-container">
+                            <label for="name" class="label-text">Nombre:</label>
+                            <input class="input-type-text" type="text" name="name" id="name" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="description" class="label-text">Descripcion:</label>
+                            <input class="input-type-text" type="text" name="description" id="description" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="category" class="label-text">Categoria:</label>
+                            <input class="input-type-text" type="text" name="category" id="category" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="brand" class="label-text">Marca:</label>
+                            <input class="input-type-text" type="text" name="brand" id="brand" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="price" class="label-text">Precio:</label>
+                            <input class="input-type-text" type="number" name="price" id="price" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="discount" class="label-text">Descuento:</label>
+                            <input class="input-type-text" type="number" name="discount" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="image" class="label-text">Imagen:</label>
+                            <input class="input-type-text" type="file" name="image" />
+                        </div>
                         <div class="form-select-container">
                             <label for="offer" class="label-text">En oferta?</label>
-                        <select id="offer" class='input-type-text' name="offer" placeholder="Esta en oferta ? ">
-                            <option value="true">Si</option>
-                            <option value="false">No</option>
-                        </select>
+                            <select id="offer" class="input-type-" name="offer" placeholder="Esta en oferta ? ">
+                                <option value="true">Si</option>
+                                <option value="false">No</option>
+                            </select>
                         </div>
-                        
                         <div class="form-button-container">
                             <button class="button-standar" type="submit">Ingresar</button>
                         </div>
-                </form>
-            </div>
-        </section>
-    </main>
+                    </form>
+                </section>
+            </main>
 
+            <footer class="nav-footer">
+                <%- include('../partials/footer'); %>
+            </footer>
+    </body>
 
-
-
-
-    <footer class="nav-footer">
-        <%- include('../partials/footer'); %>
-    </footer>
-</body>
 </html>
