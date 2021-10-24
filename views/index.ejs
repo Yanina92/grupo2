@@ -1,190 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/c91d94187c.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost&family=Raleway:wght@300&display=swap" rel="stylesheet">
+<%- include('./partials/head') %>
 
-    <title>Home</title>
-</head>
-<body>
-  <div class="grid-container-home">
-    <header class="nav-header">
-      <%- include('./partials/header') %>
-  </header>
+   <body class="body-home">
+      <div class="grid-container-home">
+         <header class="nav-header">
+            <%- include('./partials/header') %>
+         </header>
 
-  <nav class="support-bar">
-
-   <span class="products-bar">Productos</span>
-   <span></span>
-   <span class="user-bar">
-       <i class="material-icons">account_circle</i>Register
-   </span>
-   <span class="login-bar">Login</span>
-
-</nav>
-</div>   
+         <%- include('./partials/nav-bar') %>
+      </div>
 
 
       <section class="carrucel">
-            <div class="slider">
+         <div class="slider">
             <ul>
-             <li><img src="/images-home/img-slider-2.png"></li>
-             <li><img src="/images-home/img-motosierra.jpg"></li>
-             <li><img src="/images-home/img-walt-large.jpg"></li>
-             </ul>
-         
-          <div class="arrows"><i class="fas fa-angle-left"></i><i class="fas fa-angle-right"></i></div> 
+               <li><img src="/images-home/img-slider-2.png"></li>
+               <li><img src="/images-home/img-motosierra.jpg"></li>
+               <li><img src="/images-home/img-walt-large.jpg"></li>
+            </ul>
+
+            <div class="arrows"><i class="fas fa-angle-left"></i><i class="fas fa-angle-right"></i></div>
          </div>
       </section>
 
-      
-   <main class="main-home">
-      <div class="title">
-      <p>APROVECHA ESTOS DESCUENTAZOS</p>
-      <hr class="home-hr">
-      </div>
-      <article class="products-off">
-         <div class="arrow-left"><i class="fas fa-angle-left"></i></div>
-         <div class="arrow-right"><i class="fas fa-angle-right"></i></div>
 
-         <div class="box-products">
-         <div class="product">
-            <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
-            <div class="box-text-off">
-            <p>Oferta del dia</p>
+      <main class="main-home">
+         <div class="title">
+            <p>APROVECHA ESTOS DESCUENTAZOS</p>
+            <hr class="home-hr">
+         </div>
+         <article class="products-off">
+            <div class="arrow-left"><i class="fas fa-angle-left"></i></div>
+            <div class="arrow-right"><i class="fas fa-angle-right"></i></div>
+
+            <div class="box-products">
+               <div class="product">
+                  <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
+                     alt="Foto de producto">
+                  <div class="box-text-off">
+                     <p>Oferta del dia</p>
+                  </div>
+                  <p class="prize-through">$2750</p>
+                  <div class="box-prize-off">
+                     <p>$1750</p>
+                     <p>30% OFF</p>
+                  </div>
+                  <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
+               </div>
             </div>
-            <p class="prize-through">$2750</p>
-            <div class="box-prize-off">
-            <p>$1750</p>
-            <p>30% OFF</p>
+
+            <div class="box-products-2">
+               <div class="product">
+                  <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
+                     alt="Foto de producto">
+                  <div class="box-text-off">
+                     <p>Oferta del dia</p>
+                  </div>
+                  <p class="prize-through">$2750</p>
+                  <div class="box-prize-off">
+                     <p>$1750</p>
+                     <p>30% OFF</p>
+                  </div>
+                  <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
+               </div>
             </div>
-            <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
-         </div>
-      </div>
 
- <div class="box-products-2">
-         <div class="product">
-            <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
-            <div class="box-text-off">
-            <p>Oferta del dia</p>
+
+            <div class="box-products-3">
+               <div class="product">
+                  <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
+                     alt="Foto de producto">
+                  <div class="box-text-off">
+                     <p>Oferta del dia</p>
+                  </div>
+                  <p class="prize-through">$2750</p>
+                  <div class="box-prize-off">
+                     <p>$1750</p>
+                     <p>30% OFF</p>
+                  </div>
+                  <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
+               </div>
             </div>
-            <p class="prize-through">$2750</p>
-            <div class="box-prize-off">
-            <p>$1750</p>
-            <p>30% OFF</p>
+
+
+            <div class="box-products-4">
+               <div class="product">
+                  <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
+                     alt="Foto de producto">
+                  <div class="box-text-off">
+                     <p>Oferta del dia</p>
+                  </div>
+                  <p class="prize-through">$2750</p>
+                  <div class="box-prize-off">
+                     <p>$1750</p>
+                     <p>30% OFF</p>
+                  </div>
+                  <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
+               </div>
             </div>
-            <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
-         </div>
-      </div>
+      </main>
 
-      
-      <div class="box-products-3">
-         <div class="product">
-            <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
-            <div class="box-text-off">
-            <p>Oferta del dia</p>
+      <main class="main-home">
+         <article>
+            <div class="title">
+               <p>CATEGORIAS DESTACADAS</p>
+               <hr class="home-hr">
             </div>
-            <p class="prize-through">$2750</p>
-            <div class="box-prize-off">
-            <p>$1750</p>
-            <p>30% OFF</p>
+            <div class="art-categorias">
+               <div class="cat-box">
+                  <div class="cat"><a href="/products">Electricidad</a><i class="fas fa-bolt"></i></div>
+               </div>
+               <div class="cat-box">
+                  <div class="cat"><a href="/products">Buloneria</a></div>
+               </div>
+
+               <div class="cat-box-2">
+                  <div class="cat"><a href="/producst">Sanitarios</a> <i class="fas fa-toilet"></i></div>
+               </div>
+               <div class="cat-box-2">
+                  <div class="cat"><a href="/products">Jardineria</a> <i class="fas fa-tree"></i></div>
+               </div>
+
+               <div class="cat-box-3">
+                  <div class="cat"><a href="/products">Quimicos</a> <i class="fas fa-flask"></i> </div>
+               </div>
+               <div class="cat-box-3">
+                  <div class="cat"><a href="/products">Pintura</a> <i class="fas fa-brush"></i></div>
+               </div>
+
+               <div class="cat-box-4">
+                  <div class="cat"><a href="/products">Iluminacion</a> <i class="far fa-lightbulb"></i></div>
+               </div>
+               <div class="cat-box-4">
+                  <div class="cat"><a href="/products">Herramientas</a> <i class="fas fa-tools"></i></div>
+               </div>
+
+               <div class="cat-box-5">
+                  <div class="cat"><a href="/products">Cerrajeria</a> <i class="fas fa-key"></i></div>
+               </div>
+               <div class="cat-box-5">
+                  <div class="cat"><a href="/products">Elementos de Seguridad</a> <i class="fas fa-hard-hat"></i></div>
+               </div>
             </div>
-            <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
-         </div>
-      </div>
+         </article>
+      </main>
 
-      
-      <div class="box-products-4">
-         <div class="product">
-            <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
-            <div class="box-text-off">
-            <p>Oferta del dia</p>
+
+      <section class="banner-footer">
+         <nav>
+            <div>
+               <p> <a href="/login"> MI CUENTA </a> </p>
+               <p> <a href="/productCart"> CARRITO </a> </p>
             </div>
-            <p class="prize-through">$2750</p>
-            <div class="box-prize-off">
-            <p>$1750</p>
-            <p>30% OFF</p>
-            </div>
-            <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
-         </div>
-      </div>
-   </main>
+         </nav>
 
-<main class="main-home">
-   <article>
-      <div class="title">
-         <p>CATEGORIAS DESTACADAS</p>
-         <hr class="home-hr">
-      </div>
-      <div class="art-categorias">
-         <div class="cat-box">
-            <div class="cat"><a href="/productList">Electricidad</a><i class="fas fa-bolt"></i></div>
+         <div class="banner">
+            <img src="/images/banner-footer.png" alt="">
          </div>
-         <div class="cat-box">
-            <div class="cat"><a href="/productList">Buloneria</a></div>
-         </div>
+         <hr>
+      </section>
 
-         <div class="cat-box-2">
-            <div class="cat"><a href="/productList">Sanitarios</a> <i class="fas fa-toilet"></i></div>
-         </div>
-         <div class="cat-box-2">
-            <div class="cat"><a href="/productList">Jardineria</a> <i class="fas fa-tree"></i></div>
-         </div>
+      <footer class="nav-footer">
 
-         <div class="cat-box-3">
-            <div class="cat"><a href="/productList">Quimicos</a> <i class="fas fa-flask"></i> </div>
-         </div>
-         <div class="cat-box-3">
-            <div class="cat"><a href="/productList">Pintura</a> <i class="fas fa-brush"></i></div>
-         </div>
-
-         <div class="cat-box-4">
-            <div class="cat"><a href="/productList">Iluminacion</a> <i class="far fa-lightbulb"></i></div>
-         </div>
-         <div class="cat-box-4">
-            <div class="cat"><a href="/productList">Herramientas</a> <i class="fas fa-tools"></i></div>
-         </div>
-
-         <div class="cat-box-5">
-            <div class="cat"><a href="/productList">Cerrajeria</a> <i class="fas fa-key"></i></div>
-         </div>
-         <div class="cat-box-5">
-            <div class="cat"><a href="/productList">Elementos de Seguridad</a> <i class="fas fa-hard-hat"></i></div>
-         </div>
-      </div>
-   </article>
-</main>
-
-
-   <section class="banner-footer">
-      <nav>
-         <ul>
-            <li> <a href="/login"> MI CUENTA </a> </li>
-            <li> <a href="/productCart"> CARRITO </a> </li>
-         </ul>
-      </nav>
-
-      <div class="banner">
-         <img src="/images/banner-footer.png" alt="">
-      </div>
-      <a href="#head">Volver Arriba</a>
-      <hr>
-   </section>
-
-   <footer class="nav-footer">
-      
          <%- include('./partials/footer'); %>
-     
-   </footer>
-</body>
+
+      </footer>
+   </body>
+
 </html>

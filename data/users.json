@@ -7,16 +7,6 @@
   "profile": "customer"
  },
  {
-  "id": 8,
-  "firstName": "Maia",
-  "lastName": "Raeburn",
-  "email": "mraeburn7@hao123.com",
-  "gender": "Genderfluid",
-  "password": "vqBdaBG",
-  "image": "https://robohash.org/dolorumpossimusodit.png?size=50x50&set=set1",
-  "profile": "Administrator"
- },
- {
   "id": 9,
   "firstName": "Ralph",
   "lastName": "Holehouse",

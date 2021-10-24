@@ -1,0 +1,32 @@
+<html>
+    <%- include('../partials/head'); %>
+<body class="grid-container">
+    <header class="nav-header">
+        <%- include('../partials/header'); %>
+    </header>
+    <%- include('../partials/nav-bar') %>
+    <main class="nav-main">
+        <div class="cotenedor-2" style="display: flex; flex-wrap: wrap; padding:5%;">
+            
+            <% products.forEach(function(product){ %>
+                <div class="box-products">
+                    <div class="product">
+                   
+                        <p><%=product.name %></p>
+                       <p><%=product.offer %></p>
+                
+                       <p class="prize-through"><%=product.price %></p>
+                       <div class="box-prize-off">
+                       <p><%=product.price %></p>
+                       <p><%=product.discount %></p>
+                       </div>
+                       <p class="product-footer"><%=product.description %></p>
+                    </div>
+                 </div>
+                 <% }) %>
+        </div>
+    </main>
+ 
+  
+</body>
+</html>

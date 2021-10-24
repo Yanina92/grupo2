@@ -15,3 +15,12 @@
 * *Continuar haciendo:* Continuar con las reuniones una vez por semana o más de ser necesario.
 * *Hacer menos:* No tenemos comentarios por el momento.
 * *Dejar de hacer:* No tenemos comentarios por el momento.
+
+
+**Sprint 3:**
+
+* *Comenzar a hacer:* Ordenar el CSS.
+* *Hacer más:* Dedicarle mas tiempo al proyecto.
+* *Continuar haciendo:* Continuar con las reuniones una vez por semana o más de ser necesario.
+* *Hacer menos:* No tenemos comentarios por el momento.
+* *Dejar de hacer:* No tenemos comentarios por el momento.

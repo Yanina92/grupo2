@@ -1,0 +1,65 @@
+<html>
+<%- include('../partials/head'); %>
+
+    <body class="grid-container">
+        <header class="nav-header">
+            <%- include('../partials/header'); %>
+        </header>
+
+        <%- include('../partials/nav-bar') %>
+
+            <main class="main-content-edit">
+                <section class="section-container-edit">
+                    <div class="title-edit">
+                        <p>Creacion de producto</p>
+                        <hr class="home-hr" />
+                    </div>
+                    <form class="form-show-data-rows" action="/products" method="POST" enctype="multipart/form-data">
+                        <div class="form-select-container">
+                            <label for="name" class="label-text">Nombre:</label>
+                            <input class="input-type-text" type="text" name="name" id="name" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="description" class="label-text">Descripcion:</label>
+                            <input class="input-type-text" type="text" name="description" id="description" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="category" class="label-text">Categoria:</label>
+                            <input class="input-type-text" type="text" name="category" id="category" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="brand" class="label-text">Marca:</label>
+                            <input class="input-type-text" type="text" name="brand" id="brand" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="price" class="label-text">Precio:</label>
+                            <input class="input-type-text" type="number" name="price" id="price" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="discount" class="label-text">Descuento:</label>
+                            <input class="input-type-text" type="number" name="discount" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="image" class="label-text">Imagen:</label>
+                            <input class="input-type-text" type="file" name="image" />
+                        </div>
+                        <div class="form-select-container">
+                            <label for="offer" class="label-text">En oferta?</label>
+                            <select id="offer" class="input-type-" name="offer" placeholder="Esta en oferta ? ">
+                                <option value="true">Si</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="form-button-container">
+                            <button class="button-standar" type="submit">Ingresar</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+
+            <footer class="nav-footer">
+                <%- include('../partials/footer'); %>
+            </footer>
+    </body>
+
+</html>
