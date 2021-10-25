@@ -14,10 +14,16 @@
                         <p>Creacion de producto</p>
                         <hr class="home-hr" />
                     </div>
+                    <% if (locals.error) { %> 
+                    <% error.forEach(element => { %>
+                        <p class ="msg-error"><%= element.msg%> </p>                        
+                    <%  });
+                       } 
+                    %>
                     <form class="form-show-data-rows" action="/products" method="POST" enctype="multipart/form-data">
                         <div class="form-select-container">
                             <label for="name" class="label-text">Nombre:</label>
-                            <input class="input-type-text" type="text" name="name" id="name" />
+                            <input class="input-type-text" type="text" name="name" id="name" value="<%=locals.old && old.name?old.name:""%>" />
                         </div>
                         <div class="form-select-container">
                             <label for="description" class="label-text">Descripcion:</label>
@@ -25,15 +31,15 @@
                         </div>
                         <div class="form-select-container">
                             <label for="category" class="label-text">Categoria:</label>
-                            <input class="input-type-text" type="text" name="category" id="category" />
+                            <input class="input-type-text" type="text" name="category" id="category" value="<%=locals.old && old.category?old.category:""%>" />
                         </div>
                         <div class="form-select-container">
                             <label for="brand" class="label-text">Marca:</label>
-                            <input class="input-type-text" type="text" name="brand" id="brand" />
+                            <input class="input-type-text" type="text" name="brand" id="brand" value="<%=locals.old && old.brand?old.brand:""%>" />
                         </div>
                         <div class="form-select-container">
                             <label for="price" class="label-text">Precio:</label>
-                            <input class="input-type-text" type="number" name="price" id="price" />
+                            <input class="input-type-text" type="number" name="price" id="price" value="<%=locals.old && old.price?old.price:""%>" />
                         </div>
                         <div class="form-select-container">
                             <label for="discount" class="label-text">Descuento:</label>
@@ -45,9 +51,9 @@
                         </div>
                         <div class="form-select-container">
                             <label for="offer" class="label-text">En oferta?</label>
-                            <select id="offer" class="input-type-" name="offer" placeholder="Esta en oferta ? ">
-                                <option value="true">Si</option>
-                                <option value="false">No</option>
+                            <select id="offer" class="input-type-" name="offer" placeholder="Esta en oferta ? " >
+                                <option value="false" <%= locals.old && old.offer === 'false' ?'selected':""%> >No</option>
+                                <option value="true"  <%= locals.old && old.offer === 'true' ?'selected':""%> >Si</option>
                             </select>
                         </div>
                         <div class="form-button-container">

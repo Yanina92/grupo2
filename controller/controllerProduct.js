@@ -1,3 +1,4 @@
+const {validationResult } = require ('express-validator')
 const fs = require("fs");
 const path = require("path");
 const productPath = path.join(__dirname, "../data/productsData.json");
@@ -8,11 +9,22 @@ const controller = {
     let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
     res.render("./products/productList", { products });
   },
-  addProduct: (req, res) => {
+  createForm: (req, res) => {
     res.render("./products/addProduct");
   },
 
-  save: (req, res) => {
+  saveProduct: (req, res) => {
+    // Se guarda el resultado de las validacioes
+    let error = validationResult(req, res); 
+    
+    // Si ERROR no esta vacio, se envian los errores
+    if (!error.isEmpty()) {
+      res.render("./products/addProduct",
+      {
+        error:error.array(),
+        old:req.body
+      }); 
+    }
     let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
     let newProduct = {
       id: products[products.length - 1].id + 1,
