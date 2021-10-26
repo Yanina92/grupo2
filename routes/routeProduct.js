@@ -8,8 +8,8 @@ const upload = multer({ dest: './public/upload' });
 router.get('/',controller.productsList);
 router.get('/:id',controller.productsDetail);
 
-router.get('/create', controller.addProduct);
-router.post('/',upload.single('image'),controller.save);
+router.get('/create', controller.saveProduct);
+router.post('/',upload.single('image'),controller.editProduct);
 
 router.get('/edit/:id', controller.editProduct);
 router.patch('/edit/:id',controller.updateProduct);

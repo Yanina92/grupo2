@@ -1,29 +1,40 @@
+
+const {validationResult } = require ('express-validator')
 const fs = require("fs");
 const path = require("path");
 const productPath = path.join(__dirname, "../data/productsData.json");
 // const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
 
 const controller = {
-
-
-    productsDetail:(req, res) => {
-        let identy = req.params.id
-        const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
-        let product = products.find(p=>p.id==identy);
-        let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
-        res.render('./products/productDetail',{product, productosRelacionados})
-    },
-
+  productsDetail:(req, res) => {
+    let identy = req.params.id
+    const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
+    let product = products.find(p=>p.id==identy);
+    let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
+    res.render('./products/productDetail',{product, productosRelacionados})
+},
+  
   productsList: (req, res) => {
     let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
     res.render("./products/productList", { products });
   },
-  addProduct: (req, res) => {
+ 
+
+  createForm: (req, res) => {
     res.render("./products/addProduct");
   },
 
+  saveProduct: (req, res) => {
+    let error = validationResult(req, res); 
+    
+    if (!error.isEmpty()) {
+      res.render("./products/addProduct",
+      {
+        error:error.array(),
+        old:req.body
+      }); 
+    }
 
-  save: (req, res) => {
     let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
     let newProduct = {
       id: products[products.length - 1].id + 1,
