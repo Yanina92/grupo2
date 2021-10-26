@@ -5,19 +5,27 @@ const productPath = path.join(__dirname, "../data/productsData.json");
 // const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
 
 const controller = {
+  productsDetail:(req, res) => {
+    let identy = req.params.id
+    const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
+    let product = products.find(p=>p.id==identy);
+    let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
+    res.render('./products/productDetail',{product, productosRelacionados})
+},
+  
   productsList: (req, res) => {
     let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
     res.render("./products/productList", { products });
   },
+ 
+
   createForm: (req, res) => {
     res.render("./products/addProduct");
   },
 
   saveProduct: (req, res) => {
-    // Se guarda el resultado de las validacioes
     let error = validationResult(req, res); 
     
-    // Si ERROR no esta vacio, se envian los errores
     if (!error.isEmpty()) {
       res.render("./products/addProduct",
       {

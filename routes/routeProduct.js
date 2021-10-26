@@ -2,7 +2,8 @@ const express = require('express');
 const  router = express.Router();
 const controller = require('../controller/controllerProduct');
 const multer = require('multer');
-const upload = multer({ dest: 'E:/proyectoFerreteria/grupo_2_ferreteria/public/upload' });
+// const upload = multer({ dest: 'E:/proyectoFerreteria/grupo_2_ferreteria/public/upload' });
+const upload = multer({ dest: './public/upload' });
 const {body} = require('express-validator');
 
 // Validaciones
@@ -15,11 +16,10 @@ const validateFormCreate = [
     .notEmpty().withMessage('Tenes que completar el campo Precio').bail()
     .isNumeric().withMessage('Tenes que completar el campo Precio expresado en numeros'),
     body('offer').notEmpty().withMessage('Tenes que decir Si esta,o No en oferta')
-
-] 
-
+]
 
 router.get('/',controller.productsList);
+router.get('/:id',controller.productsDetail);
 
 router.get('/create', controller.createForm);
 

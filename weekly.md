@@ -9,3 +9,9 @@
 * Unir archivo .css
 
 * Unimos paginas
+
+**12/10/2021 (sprint 4)**
+
+* Division de tareas.
+* Actualizar Trello.
+* Revision del proyecto hasta el momento.
