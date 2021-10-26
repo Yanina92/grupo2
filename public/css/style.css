@@ -1099,7 +1099,7 @@ p {
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 24px;
   font-weight: bold;
   display: inline-block;
   text-align: center;
@@ -1116,7 +1116,15 @@ p {
   width: 100vw;
   text-align: center;
 }
-
+.products-list {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  text-align: center;
+  flex-direction: initial;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
 .box-products,
 .box-products-2,
 .box-products-3,
@@ -1124,6 +1132,7 @@ p {
   width: 40%;
   text-align: center;
   transition: all 0.8s;
+  margin: 10px;
 }
 
 .box-products-2,
@@ -1146,29 +1155,38 @@ p {
 .product-footer {
   display: none;
   margin-top: 10px;
+  text-overflow: Ellipsis;
+  white-space: nowrap;
   overflow: hidden;
 }
 
-.box-products:hover {
-  transform: scale(1.1);
-}
-
-.box-products:hover .product-footer {
+.box-products:hover .product-footer { 
   display: block;
 }
 
 .box-products-2:hover .product-footer {
   display: block;
+} 
+.box-products-3:hover .product-footer { 
+  display: block;
+}
+
+.box-products-4:hover .product-footer {
+  display: block;
+}
+
+.box-products:hover {
+  transform: scale(1.05);
 }
 
 .box-products-2:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .box-products-3:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .box-products-4:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .arrow-left,
@@ -1196,9 +1214,8 @@ p {
 .box-text-off p {
   display: flex;
   position: absolute;
-  bottom: 10px;
+  bottom: 1px ;
   background-color: red;
-  width: 90px;
   border-radius: 0px 5px 5px 0px;
 }
 .box-prize-off p:last-child {
@@ -1321,9 +1338,6 @@ p {
     flex-basis: 20%;
   }
 
-  .product-footer {
-    display: block;
-  }
 
   .box-prize-off {
     justify-content: flex-start;
@@ -1671,3 +1685,13 @@ a.link-form-button:visited {
   text-align: center;
   color: var(--warning);
 }
+
+a:link {
+  text-decoration: none
+ }
+a:hover { 
+  color: black;  text-decoration: none
+ }
+a:visited {
+  color: black;  text-decoration: none
+ }
