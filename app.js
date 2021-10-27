@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const session = require('express-session')
+const userLoggedMiddlewares = require('./middlewares/userLoggedMiddlewares')
 
 const routerProductCart = require('./routes/routeProductCart');
 const routerHome = require('./routes/routeHome');
@@ -14,7 +16,12 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
+app.use(userLoggedMiddlewares);
+app.use(session({
+    secret: 'persiana',
+    resave: false,
+    saveUninitialized:false
+}));
 app.use('/', routerHome);
 app.use('/products',routerProduct);
 app.use('/productCart',routerProductCart)
