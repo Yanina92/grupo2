@@ -6,15 +6,15 @@
     </header>
     <%- include('../partials/nav-bar') %>
     <main class="nav-main">
-        <div class="cotenedor-2" style="display: flex; flex-wrap: wrap; padding:5%;">
-            
-            <% products.forEach(function(product){ %>
-                <div class="box-products">
-                    <div class="product">
-                   
+         <article class="products-list">
+            <% products.forEach(function(product,index){ %>
+                <div class="box-products <%= index %>" >
+                    <div class="product" >
+                        <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
+                        <div class="box-text-off">
+                            <p>Oferta del dia</p>
+                            </div>
                         <p><%=product.name %></p>
-                       <p><%=product.offer %></p>
-                
                        <p class="prize-through"><%=product.price %></p>
                        <div class="box-prize-off">
                        <p><%=product.price %></p>
@@ -24,9 +24,12 @@
                     </div>
                  </div>
                  <% }) %>
-        </div>
+        
     </main>
  
+    <footer class="nav-footer">
+        <%-include('../partials/footer') %>
+    </footer>
   
 </body>
 </html>

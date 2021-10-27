@@ -1,4 +1,3 @@
-
 const {validationResult } = require ('express-validator')
 const fs = require("fs");
 const path = require("path");
@@ -34,7 +33,6 @@ const controller = {
         old:req.body
       }); 
     }
-
     let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
     let newProduct = {
       id: products[products.length - 1].id + 1,
