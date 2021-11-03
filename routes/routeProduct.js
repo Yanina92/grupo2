@@ -19,7 +19,7 @@ const validateFormCreate = [
 ]
 
 router.get('/',controller.productsList);
-router.get('/:id',controller.productsDetail);
+router.get('/detail/:id',controller.productsDetail);
 router.get('/productCart',controller.productsCart);
 
 router.get('/create', controller.createForm);
