@@ -12,7 +12,11 @@ const controller = {
     let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
     res.render('./products/productDetail',{product, productosRelacionados})
 },
-  
+
+  productsCart: (req, res) => {
+    res.render('./products/productCart');
+  },
+
   productsList: (req, res) => {
     let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
     res.render("./products/productList", { products });
