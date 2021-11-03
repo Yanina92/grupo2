@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 
-const routerProductCart = require('./routes/routeProductCart');
 const routerHome = require('./routes/routeHome');
 const routeLogin = require('./routes/routeLogin');
 const routeRegister = require('./routes/routeRegister');
@@ -17,7 +16,6 @@ app.use(express.json());
 
 app.use('/', routerHome);
 app.use('/products',routerProduct);
-app.use('/productCart',routerProductCart)
 app.use('/users', routerUsers);
 app.use('/login', routeLogin);
 app.use('/register', routeRegister);
