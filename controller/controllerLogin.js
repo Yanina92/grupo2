@@ -32,7 +32,7 @@ const controller = {
         }})
 
     },
-    logout: (res,res)=>{
+    logout: (req,res)=>{
         req.session.destroy();
         return redirect('/');
     }

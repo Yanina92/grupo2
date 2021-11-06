@@ -4,7 +4,6 @@ const controller = require('../controller/controllerProduct');
 const multer = require('multer');
 // const upload = multer({ dest: 'E:/proyectoFerreteria/grupo_2_ferreteria/public/upload' });
 const upload = multer({ dest: './public/upload' });
-const {body} = require('express-validator');
 const validateFormCreate = require('../middlewares/validationFormProduct');
 
 // Validaciones
@@ -12,7 +11,7 @@ const validateFormCreate = require('../middlewares/validationFormProduct');
 
 
 router.get('/',controller.productsList);
-router.get('/:id',controller.productsDetail);
+router.get('/detail/:id',controller.productsDetail);
 
 router.get('/create', controller.createForm);
 

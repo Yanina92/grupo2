@@ -4,6 +4,7 @@ const routerHome = require('./routes/routeHome');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const userLoggedMiddlewares = require('./middlewares/userLoggedMiddlewares');
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -16,6 +17,7 @@ app.use(session({
 	saveUninitialized: false,
 }));
 app.use(cookies());
+app.use(userLoggedMiddlewares)
 
 app.use('/', routerHome);
 

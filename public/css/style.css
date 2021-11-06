@@ -31,7 +31,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
+  /* font-size: 16px; */
   font-family: "Jost", sans-serif;
   box-sizing: border-box;
   scrollbar-color: transparent transparent; /* thumb and track color */
@@ -876,6 +876,16 @@ body {
   border: none;
   background-color: var(--contrastColor);
 }
+.button-remember::selection{
+  background-color: black;
+}
+
+.button-remember {
+  width: 20%; 
+  height: 15%;  
+  border: none;
+  background-color:var(--contrastColor);
+}
 
 .nav-footer {
   grid-area: "header";
@@ -969,19 +979,19 @@ p {
     display: grid;
     grid-template: "product login register";
     gap: 5px;
-    grid-template-columns: max-content 1fr max-content max-content;
+    grid-template-columns: max-content 1fr max-content max-content max-content;
     background-color: var(--primaryDarkColor);
   }
   .products-bar {
     grid-area: "product";
     align-self: center;
+    margin-left: 20px; 
   }
 
   .user-bar {
     grid-area: "register";
     align-self: center;
     position: relative;
-    top: -3px;
   }
 
   span i:nth-child(1) {
@@ -993,6 +1003,7 @@ p {
   .login-bar {
     grid-area: "login";
     align-self: center;
+    margin-right: 30px;
   }
   /* SECONDARY BAR END *******************************/
 
@@ -1081,7 +1092,13 @@ p {
   height: auto;
   object-fit: contain;
 }
-
+.msg-slider{
+  background-color:var(--grisOscuro);
+  height:6vh;
+  font-size: 18px;
+  text-align: center;
+  padding-top:10px;
+}
 /* ---------- MAIN-DESCUENTAZOS ---------- */
 
 .main-home {
@@ -1099,11 +1116,15 @@ p {
 }
 
 .title {
-  font-size: 24px;
+  
   font-weight: bold;
   display: inline-block;
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 20px;
+}
+title p{
+  font-size: 30px;
 }
 
 .home-hr {
@@ -1113,7 +1134,7 @@ p {
 .products-off {
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   text-align: center;
 }
 .products-list {
@@ -1201,8 +1222,9 @@ p {
 
 .product-img {
   width: 100%;
-  height: 70%;
+  max-height: 70%;
   border-radius: 5px 5px 0 0;
+  object-fit:cover;
 }
 
 .box-text-off {
@@ -1235,11 +1257,11 @@ p {
   font-family: var(--number);
   justify-content: center;
   justify-content: flex-start;
-  font-size: 18px;
+  font-size: 15px;
 }
 .box-prize-off p:first-child {
   display: flex;
-  font-size: 20px;
+  font-size: 25px;
   position: relative;
   margin-right: 10px;
   font-family: var(--number);
@@ -1695,3 +1717,10 @@ a:hover {
 a:visited {
   color: black;  text-decoration: none
  }
+
+
+.nav-footer-list{
+  display: flex;
+  justify-content: center;
+  height:50px;
+}

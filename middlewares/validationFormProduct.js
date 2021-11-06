@@ -1,3 +1,5 @@
+const {body} = require('express-validator');
+
 const validateFormCreate = [
   body('name').notEmpty().withMessage('Tenes que completar el campo de Nombre'),
   body('category').notEmpty().withMessage('Tenes que completar el campo de Categoria'),
