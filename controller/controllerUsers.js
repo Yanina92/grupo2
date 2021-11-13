@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const usersFile = path.join(__dirname, '../data/users.json');
+const {validationResult} =require('express-validator');
 
 const controller = {
     index:function(req, res) {
@@ -59,7 +60,19 @@ const controller = {
 		users.push(newUser)
 		fs.writeFileSync(usersFile, JSON.stringify(users, null, ' '));
 		res.redirect('/');
-    }
+    },
+
+    register:function(req, res) {
+        res.render('./user/register');
+    },
+
+    processRegister:function(req, res) {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0){
+            return res.render('./user/register');
+            errors: resultValidation.mapped();
+        };
+    },
 }
 
 module.exports = controller;

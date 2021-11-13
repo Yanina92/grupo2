@@ -322,5 +322,13 @@
   "lastName": "Wink",
   "email": "pwink1d@mlb.com",
   "profile": "Administrator"
+ },
+ {
+  "id": 51,
+  "firstName": "Yanina",
+  "lastName": "Gonzalez",
+  "email": "yanivgonzalez@yahoo.com.ar",
+  "phone": "0111559760339",
+  "password": "yanina123"
  }
 ]
