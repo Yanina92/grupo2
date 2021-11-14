@@ -4,6 +4,7 @@ const usersFile = path.join(__dirname, '../data/users.json');
 const {validationResult} =require('express-validator');
 
 const controller = {
+    
     index:function(req, res) {
         let users = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
         res.render('./user/user-table', {users: users});
@@ -63,7 +64,7 @@ const controller = {
     },
 
     register:function(req, res) {
-        res.render('./user/register');
+        return res.render('./user/register');
     },
 
     processRegister:function(req, res) {
@@ -71,7 +72,13 @@ const controller = {
         if (resultValidation.errors.length > 0){
             return res.render('./user/register');
             errors: resultValidation.mapped();
+            oldData: req.body;
         };
+        return res.send('Validacion y grabacion de datos correcta');
+    },
+
+    login:function(req, res) {
+        return res.render('./user/login');
     },
 }
 

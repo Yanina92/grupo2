@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const routerHome = require('./routes/routeHome');
-const routeLogin = require('./routes/routeLogin');
+//const routeLogin = require('./routes/routeLogin');
 //const routeRegister = require('./routes/routeRegister');
 const routerUsers = require('./routes/routeUsers');
 const routerProduct = require('./routes/routeProduct');
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use('/', routerHome);
 app.use('/products',routerProduct);
 app.use('/users', routerUsers);
-app.use('/login', routeLogin);
+//app.use('/login', routeLogin);
 //app.use('/register', routeRegister);
 
 const port = process.env.PORT || 3030;

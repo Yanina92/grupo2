@@ -33,7 +33,7 @@
             
                 <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
                     <div class='div-formbox-user'>
-                        <input class='input-user-name' name="firstName" placeholder="Nombre" type='text'>
+                        <input name="firstName" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.firstName : null %>" >
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
                     <% if (locals.errors && errors.firstName){ %>
