@@ -69,12 +69,14 @@ const controller = {
 
     processRegister:function(req, res) {
         const resultValidation = validationResult(req);
+        //  return res.send(resultValidation.mapped())
         if (resultValidation.errors.length > 0){
-            return res.render('./user/register');
-            errors: resultValidation.mapped();
-            oldData: req.body;
-        };
-        return res.send('Validacion y grabacion de datos correcta');
+            return res.render('./user/register', {
+            errors: resultValidation.mapped()
+            // oldData: req.body;
+        });
+    }
+     return res.send('Validacion y grabacion de datos correcta');
     },
 
     login:function(req, res) {
