@@ -1,6 +1,6 @@
 const authMiddlewares = (req, res, next) => {
-  if(!req.session.user){
-    return res.redirect('user/profile')
+  if(!req.session.userLogged){
+    return res.redirect('./user/login');
   }
   next();
 }

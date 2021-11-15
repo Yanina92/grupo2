@@ -874,18 +874,14 @@ body {
   width: 20%;
   height: 15%;
   border: none;
+  text-align:center;
   background-color: var(--contrastColor);
+  font-size:1rem;
 }
-.button-remember::selection{
-  background-color: black;
+.button-login:hover{
+  cursor:pointer;
 }
 
-.button-remember {
-  width: 20%; 
-  height: 15%;  
-  border: none;
-  background-color:var(--contrastColor);
-}
 
 .nav-footer {
   grid-area: "header";
@@ -1152,7 +1148,7 @@ title p{
 .box-products-4 {
   width: 40%;
   text-align: center;
-  transition: all 0.8s;
+  transition: all 1s;
   margin: 10px;
 }
 
@@ -1179,24 +1175,29 @@ title p{
   text-overflow: Ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  transition: all 1s;
 }
 
 .box-products:hover .product-footer { 
   display: block;
+  transition: all 1s;
 }
 
 .box-products-2:hover .product-footer {
   display: block;
+  transition: all 1s;
 } 
 .box-products-3:hover .product-footer { 
   display: block;
+  transition: all 1s;
 }
 
 .box-products-4:hover .product-footer {
   display: block;
+  transition: all 1s;
 }
 
-.box-products:hover {
+/* .box-products:hover {
   transform: scale(1.05);
 }
 
@@ -1208,7 +1209,7 @@ title p{
 }
 .box-products-4:hover {
   transform: scale(1.05);
-}
+} */
 
 .arrow-left,
 .arrow-right {
@@ -1596,6 +1597,7 @@ title p{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 0.5rem 0.2rem;
+
 }
 
 .button-standar {
@@ -1603,6 +1605,7 @@ title p{
   border-radius: 0.2rem;
   border: none;
   background-color: var(--contrastColor);
+  font-size: 1rem;
 }
 .button-standar:hover{
   cursor:pointer;
@@ -1614,7 +1617,7 @@ title p{
   background-color: var(--contrastColor);
   cursor: no-drop;
 }
-.button-standar-warning:hover{
+.link-form-button-container:hover{
   background-color: red;
   transition: all 1s;
   
@@ -1709,7 +1712,8 @@ a.link-form-button:visited {
 }
 
 a:link {
-  text-decoration: none
+  text-decoration: none;
+  color: black;
  }
 a:hover { 
   color: black;  text-decoration: none

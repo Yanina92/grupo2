@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcryptjs');
 const usersFile = path.join(__dirname, '../data/users.json');
+const User = require('../models/User');
 
 const controller = {
     index:function(req, res) {
@@ -52,13 +54,28 @@ const controller = {
     create:function(req, res) {
         console.log("ENTRE")
         let users = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
+        let userCompare = User.findByField("email",req.body.email)
         let newUser = {
 			id: users[users.length - 1].id + 1,
 			...req.body,
+            password: bcrypt.hashSync(req.body.password,10)
 		};
+        console.log(User.findByField("email",req.body.email));
+
+        if(userCompare) {
+            return res.render('./user/register', {
+                errors: {
+                    email: {
+                        msg:'Este mail ya esta registrado'
+                    }
+                },
+            oldData: req.body
+            });
+        }else{
 		users.push(newUser)
 		fs.writeFileSync(usersFile, JSON.stringify(users, null, ' '));
-		res.redirect('/');
+		res.redirect('/login');
+    }
     }
 }
 

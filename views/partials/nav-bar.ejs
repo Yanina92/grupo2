@@ -2,11 +2,11 @@
     <span class="products-bar">Productos</span>
     <span></span>
     <% if (locals.logged) { %>      
-    <span class="user-bar"> <i class="material-icons">account_circle</i></span>
-    <% }else{%>
+    <span class="user-bar"> <i class="material-icons">account_circle</i></span><span class="user-bar"><a href="/login/out">Logout</a></span>
+    <% }else{ %>
       <span class="user-bar">
        <a href="/register"> Register </a>
-    </span>
-    <span class="login-bar"><a href="/login">Login </span> </a>
+        </span>
+       <span class="login-bar"><a href="/login">Login </span> </a>
     <% } %>
  </nav>
