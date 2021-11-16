@@ -12,6 +12,7 @@ const validateFormCreate = require('../middlewares/validationFormProduct');
 
 router.get('/',controller.productsList);
 router.get('/detail/:id',controller.productsDetail);
+router.get('/productCart',controller.productsCart);
 
 router.get('/create', controller.createForm);
 

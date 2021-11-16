@@ -20,6 +20,10 @@ app.use(cookies());
 app.use(userLoggedMiddlewares)
 
 app.use('/', routerHome);
+app.use('/products',routerProduct);
+app.use('/users', routerUsers);
+app.use('/login', routeLogin);
+app.use('/register', routeRegister);
 
 const port = process.env.PORT || 3030;
 

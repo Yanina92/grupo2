@@ -24,3 +24,12 @@
 * *Continuar haciendo:* Continuar con las reuniones una vez por semana o más de ser necesario.
 * *Hacer menos:* No tenemos comentarios por el momento.
 * *Dejar de hacer:* No tenemos comentarios por el momento.
+
+
+**Sprint 4:**
+
+* *Comenzar a hacer:* Repasar mas los contenidos.
+* *Hacer más:* Completar el archivos de las weeklys.
+* *Continuar haciendo:* Dividir tareas para el sprint y seguir ordenando el CSS para que funcione de forma integral a todo el proyecto.
+* *Hacer menos:* No tenemos comentarios por el momento.
+* *Dejar de hacer:* No tenemos comentarios por el momento.

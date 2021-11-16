@@ -464,7 +464,8 @@ margin-left:10px;
       }
   }
 
-/* Yani */
+/* Yani - Product Cart */
+
 .mainProductCart {
   background: repeating-linear-gradient(
     45deg,
@@ -480,6 +481,7 @@ margin-left:10px;
   width: 90%;
   box-shadow: 0px 0px 10px #646464;
   background-color:var(--white);
+  border-radius: 2rem;
 }
 
 .masMenosProductCart {
@@ -490,6 +492,9 @@ margin-left:10px;
 .destornilladorProductCart {
   width: 35vw;
   height: 25vh;
+  border-radius: 2rem;
+  position: relative;
+  left: 3%;
 }
 
 .productoProductCart {
@@ -506,11 +511,16 @@ margin-left:10px;
 
 .descripcionProductCart {
   align-items: center;
+  position: relative;
+  left: 20%;
+  top: 10%;
 }
 
 .preciosCantidadesProductCart {
   display: flex;
   justify-content: space-around;
+  position: relative;
+  top: 40%;
 }
 
 .lineaProductCart {
@@ -596,12 +606,16 @@ margin-left:10px;
 }
 
 i.fas.fa-trash-alt:hover {
-  color: var(--verde);
+  color: var(--warning);
+}
+
+.descripcionProductCartHidden{
+  display: none;
 }
 
 /*Product Cart*/
 
-@media (min-width: 361px) {
+@media (min-width: 768px) {
   /* Tablet */
 
   .titulosListaProductCart {
@@ -612,16 +626,20 @@ i.fas.fa-trash-alt:hover {
   .escritosLista3ProductCart {
     display: flex;
     position: relative;
-    left: 9rem;
+    left: 21%;
   }
   .escritosLista4ProductCart {
     display: flex;
     position: relative;
-    left: 6rem;
+    left: 14%;
   }
 
   .descripcionProductCart {
     order: 1;
+    font-size: 1.2rem;
+    position: relative;
+    top: 70%;
+    left: 40%;
   }
 
   .destornilladorProductCart {
@@ -651,7 +669,7 @@ i.fas.fa-trash-alt:hover {
 
 /*Product Cart*/
 
-@media (min-width: 769px) {
+@media (min-width: 1200px) {
   /*Desktop */
 
   .destornilladorProductCart {
@@ -660,7 +678,7 @@ i.fas.fa-trash-alt:hover {
   }
 
   .descripcionProductCart {
-    order: 0;
+    display: none;
   }
 
   .entradaProductCart {
@@ -676,22 +694,20 @@ i.fas.fa-trash-alt:hover {
   .escritosLista1ProductCart {
     display: flex;
     position: relative;
-    left: 22rem;
+    left: 30%;
   }
 
   .escritosLista2ProductCart {
     display: flex;
     position: relative;
-    left: 11rem;
+    left: 9.5%;
     color: var(--grisOscuro);
   }
   .escritosLista3ProductCart {
-    position: relative;
-    left: 1.8rem;
+    left: -8.5%;
   }
   .escritosLista4ProductCart {
-    position: relative;
-    left: -38px;
+    left: -13%;
     color: var(--grisOscuro);
   }
 
@@ -699,17 +715,16 @@ i.fas.fa-trash-alt:hover {
     display: block;
   }
 
-  .datosProdProductCart {
-    flex-direction: row;
-    justify-content: space-around;
-    width: 75%;
-  }
-
   .preciosCantidadesProductCart {
     display: flex;
-    justify-content: space-around;
-    width: 70%;
+    justify-content: space-between;
+    width: 95%;
   }
+
+  .descripcionProductCartHidden{
+    display: flex;
+  }
+
 }
 
 /* mauro */
