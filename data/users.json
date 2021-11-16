@@ -322,5 +322,13 @@
   "lastName": "Wink",
   "email": "pwink1d@mlb.com",
   "profile": "Administrator"
+ },
+ {
+  "id": 51,
+  "firstName": "Nicolas",
+  "lastName": "Rivero",
+  "email": "nicolas.rivero94@gmail.com",
+  "phone": "01131381919",
+  "password": "$2a$10$JiZXHlNFoLU4co/arM.CEuggEJmx2cw.2jk/IIzt25MoyyHgq6TIu"
  }
 ]

@@ -6,6 +6,13 @@
     </header>
     <%- include('../partials/nav-bar') %>
     <main class="nav-main">
+        <div class="nav-bar-list">
+            <p>Filtar por</p>
+            <ul>
+                <li>Precio</li>
+                <li>Marca</li>
+            </ul>
+        </div>
          <article class="products-list">
             <% products.forEach(function(product,index){ %>
                 <div class="box-products <%= index %>" >
@@ -23,9 +30,17 @@
                        <p class="product-footer"><%=product.description %></p>
                     </div>
                  </div>
+                 
                  <% }) %>
+                 
+                 
         
     </main>
+
+<div class="nav-footer-list">
+    <div>1 de 10</div>
+    <div>... Siguiente ></div>
+</div>
  
     <footer class="nav-footer">
         <%-include('../partials/footer') %>

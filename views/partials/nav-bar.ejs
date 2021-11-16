@@ -1,10 +1,12 @@
-<nav class="support-bar">
-
+<nav class="support-bar"> 
     <span class="products-bar">Productos</span>
     <span></span>
-    <span class="user-bar">
-       <i class="material-icons">account_circle</i> <a href="/login"> Register </a>
-    </span>
-    <span class="login-bar"><a href="/login">Login </span> </a>
- 
+    <% if (locals.logged) { %>      
+    <span class="user-bar"> <i class="material-icons">account_circle</i></span><span class="user-bar"><a href="/login/out">Logout</a></span>
+    <% }else{ %>
+      <span class="user-bar">
+       <a href="/register"> Register </a>
+        </span>
+       <span class="login-bar"><a href="/login">Login </span> </a>
+    <% } %>
  </nav>
