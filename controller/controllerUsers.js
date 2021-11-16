@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const usersFile = path.join(__dirname, '../data/users.json');
+const User = require('../models/User')
 const {validationResult} =require('express-validator');
 
 const controller = {
@@ -72,11 +73,17 @@ const controller = {
         //  return res.send(resultValidation.mapped())
         if (resultValidation.errors.length > 0){
             return res.render('./user/register', {
-            errors: resultValidation.mapped()
-            // oldData: req.body;
+            errors: resultValidation.mapped(),
+            //oldData: req.body
         });
     }
-     return res.send('Validacion y grabacion de datos correcta');
+
+     let userToCreate = {
+         ...req.body,
+         image: req.file.filename
+     }
+     User.create(userToCreate);
+     return res.send('ok, se creo el usuario');
     },
 
     login:function(req, res) {

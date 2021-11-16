@@ -325,10 +325,11 @@
  },
  {
   "id": 51,
-  "firstName": "Yanina",
-  "lastName": "Gonzalez",
-  "email": "yanivgonzalez@yahoo.com.ar",
+  "firstName": "Lucia",
+  "lastName": "Torres",
+  "email": "LuciT@yahoo.com.ar",
   "phone": "0111559760339",
-  "password": "yanina123"
+  "password": "Luci123",
+  "image": "1637027085441_img.jpg"
  }
 ]
