@@ -18,4 +18,5 @@ router.post('/create', controller.create);
 router.get('/register', controller.register);
 router.post('/register', uploadFile.single('image'), validations, controller.processRegister);
 router.get('/login', controller.login);
+router.post('/login', controller.loginProcess);
 module.exports = router;
