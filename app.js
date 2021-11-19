@@ -2,8 +2,6 @@ const express = require('express');
 const app = express();
 
 const routerHome = require('./routes/routeHome');
-//const routeLogin = require('./routes/routeLogin');
-//const routeRegister = require('./routes/routeRegister');
 const routerUsers = require('./routes/routeUsers');
 const routerProduct = require('./routes/routeProduct');
 const methodOverride = require('method-override');
