@@ -2,9 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const usersFile = path.join(__dirname, '../data/users.json');
-const User = require('../models/User');
+const User = require('../models/User')
+const {validationResult} =require('express-validator');
+const bcryptjs = require('bcryptjs');
 
 const controller = {
+    
     index:function(req, res) {
         let users = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
         res.render('./user/user-table', {users: users});
@@ -74,8 +77,64 @@ const controller = {
         }else{
 		users.push(newUser)
 		fs.writeFileSync(usersFile, JSON.stringify(users, null, ' '));
-		res.redirect('/login');
     }
+		res.redirect('/');
+    },
+
+    register:function(req, res) {
+        return res.render('./user/register');
+    },
+
+    processRegister:function(req, res) {
+
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0){
+            return res.render('./user/register', {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+        });
+    }
+
+    let userInDb = User.findByField('email',req.body.email);
+
+    if (userInDb) {
+        return res.render('./user/register', {
+        errors: {
+            email:{
+                msg: 'Este email ya esta registrado'
+            }
+        },
+        oldData: req.body
+        });
+    }
+
+     let userToCreate = {
+         ...req.body,
+         password: bcryptjs.hashSync(req.body.password,10),
+         image: req.file.filename
+     }
+     User.create(userToCreate);
+     return res.send('ok, se creo el usuario');
+    },
+
+    login:function(req, res) {
+        return res.render('./user/login');
+    },
+
+    loginProcess:function(req, res) {
+        let userToLogin = User.findByField('email'.req.body.email);
+
+        if (userToLogin){
+            
+        }
+
+        return res.render('./user/login',{
+            email:{
+                msg:'No se encuentra este email en la base de datos'
+            }
+        })
+
     }
 }
 

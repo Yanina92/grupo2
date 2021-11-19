@@ -11,7 +11,9 @@
 
     <main class="main-content">
         <section class="section-login-container">
-                <form class="form-login" action="/login" method="POST">
+
+                <form name="firstName" class="form-login" action="/users/login" method="POST">
+
                     <div class='div-formbox-user'>
                         <% if (locals.errors && errors.email){ %>
                             <div><%= errors.email.msg %></div> 
@@ -20,7 +22,9 @@
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
                     <div class ='div-formbox-password'>
+
                         <input class='input-user-pass' name="password" placeholder="Password" type='password' required>
+
                         <i class="material-icons-outlined icon-login">lock</i>
                     </div>
                     <br>
