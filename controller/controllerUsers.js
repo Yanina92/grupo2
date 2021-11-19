@@ -118,7 +118,7 @@ const controller = {
                 msg:'No se encuentra este email en la base de datos'
             }
         })
-    },
+    }
 }
 
 module.exports = controller;
