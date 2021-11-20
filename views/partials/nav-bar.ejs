@@ -1,12 +1,15 @@
 <nav class="support-bar"> 
-    <span class="products-bar">Productos</span>
+    <span class="items-bar">Productos</span>
+    <a class="items-bar" href="/"> Home </a>
     <span></span>
     <% if (locals.logged) { %>      
-    <span class="user-bar"> <i class="material-icons">account_circle</i></span><span class="user-bar"><a href="/login/out">Logout</a></span>
+    <div class="registerUser-bar">
+    <img src='/images/avatars/<%= user.image%>' width="50" class="image-bar">
+    <span class="greeting-bar">Hi <%= user.firstName %>!</span>
+    <span class="logout-bar"><a href="/users/logout">Logout</a></span>
+    </div>
     <% }else{ %>
-      <span class="user-bar">
-       <a href="/register"> Register </a>
-        </span>
-       <span class="login-bar"><a href="/login">Login </span> </a>
+      <span class="user-bar"><a href="/users/register"> Register </a></span>
+      <span class="login-bar"><a href="/users/login">Login</a></span>
     <% } %>
  </nav>

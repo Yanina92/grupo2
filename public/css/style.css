@@ -992,8 +992,28 @@ p {
     grid-template-columns: max-content 1fr max-content max-content max-content;
     background-color: var(--primaryDarkColor);
   }
-  .products-bar {
-    grid-area: "product";
+
+  .registerUser-bar{
+    display:flex;
+  }
+
+  .image-bar{
+    border-radius:50%;
+    align-self: center;
+    margin-right: 20px; 
+  }
+
+  .greeting-bar{
+    align-self: center;
+    margin-right: 20px;
+  }
+
+  .logout-bar{
+    align-self: center;
+    margin-right: 30px;
+  }
+
+  .items-bar {
     align-self: center;
     margin-left: 20px; 
   }
@@ -1001,7 +1021,13 @@ p {
   .user-bar {
     grid-area: "register";
     align-self: center;
-    position: relative;
+    margin-right: 20px;
+  }
+
+  .login-bar {
+    grid-area: "login";
+    align-self: center;
+    margin-right: 30px;
   }
 
   span i:nth-child(1) {
@@ -1010,11 +1036,6 @@ p {
     left: -3px;
   }
 
-  .login-bar {
-    grid-area: "login";
-    align-self: center;
-    margin-right: 30px;
-  }
   /* SECONDARY BAR END *******************************/
 
   .nav-header {

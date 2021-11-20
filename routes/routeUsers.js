@@ -6,6 +6,8 @@ const path = require('path');
 
 const storage = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validationRegisterMiddleware');
+const guestMiddlewares = require('../middlewares/guestMiddlewares');
+const authMiddlewares = require('../middlewares/authMiddlewares');
 
 const uploadFile = multer({storage});
 
@@ -14,8 +16,11 @@ router.delete('/delete/:id', controller.delete);
 router.patch('/edit/:id', controller.put);
 router.get('/edit/:id', controller.edit);
 router.post('/create', controller.create);
-router.get('/register', controller.register);
+router.get('/register',guestMiddlewares, controller.register);
 router.post('/register', uploadFile.single('image'), validations, controller.processRegister);
-router.get('/login', controller.login);
+router.get('/login',guestMiddlewares, controller.login);
 router.post('/login', controller.loginProcess);
+router.get('/profile',authMiddlewares, controller.profile);
+router.get('/logout', controller.logout);
+
 module.exports = router;

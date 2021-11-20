@@ -123,19 +123,43 @@ const controller = {
     },
 
     loginProcess:function(req, res) {
-        let userToLogin = User.findByField('email'.req.body.email);
+        let userToLogin = User.findByField('email',req.body.email);
 
         if (userToLogin){
-            
+            let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
+            if (isOkThePassword){
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                if(req.body.remember_user){
+                    res.cookie('userEmail',req.body.email,{maxAge:(1000*60)*2})
+                }
+                return res.redirect('/users/profile');
+            }     
         }
 
         return res.render('./user/login',{
-            email:{
-                msg:'No se encuentra este email en la base de datos'
-            }
-        })
+            errors:{
+                email:{
+                    msg:'Las credenciales son invalidas'
+                }
+            }  
+        });
+    },
 
-    }
+    profile:function(req, res) {
+
+        console.log(req.cookies.userEmail);
+
+        return res.render('./user/profile',{
+            user: req.session.userLogged
+        });
+    },
+
+    logout:function(req, res) {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/');
+    },
 }
 
 module.exports = controller;
