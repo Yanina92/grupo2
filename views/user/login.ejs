@@ -15,9 +15,6 @@
                 <form name="firstName" class="form-login" action="/users/login" method="POST">
 
                     <div class='div-formbox-user'>
-                        <% if (locals.errors && errors.email){ %>
-                            <div><%= errors.email.msg %></div> 
-                        <% } %>
                         <input class='input-user-name' placeholder="Email" type='text' name='email' required>
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
@@ -27,6 +24,10 @@
 
                         <i class="material-icons-outlined icon-login">lock</i>
                     </div>
+                    <br>
+                    <% if (locals.errors && errors.email){ %>
+                        <div class="text-danger"><%= errors.email.msg %></div> 
+                    <% } %>
                     <br>
                     <label><input type="checkbox" name="remember_user">  Recordar mi usuario</input></label>
                     <br>

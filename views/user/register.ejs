@@ -24,57 +24,52 @@
 
 
     <main class="main-content">        
-        <section class="section-login-container">
-            <% if (locals.errors) { %>
-                <% for (let oneError in errors) { %>
-                    <p><%=errors[oneError].msg%></p>
-                <% } %>
-            <% } %>
-            
+        <section class="section-login-container">           
                 <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
+                    <br> 
                     <div class='div-formbox-user'>
                         <input name="firstName" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.firstName : null %>" >
                         <i class="material-icons icon-login">perm_identity</i>       
+                    </div>
                     <% if (locals.errors && errors.firstName) { %>
                         <div class="text-danger">
                             <%= errors.firstName.msg %>
                         </div>
                     <% } %>
-                </div>
                     <div class='div-formbox-user'>
                         <input class='input-user-name' name="lastName" placeholder="Apellido" type='text'>
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
-                    <% if (locals.errors && errors.lastName){ %>
+                    <% if (locals.errors && errors.lastName) { %>
                         <div class='text-danger'>
-                            <% errors.lastName.msg %>
+                            <%= errors.lastName.msg %>
                         </div>
                     <% } %>
                     <div class ='div-formbox-email'>
                         <input class='input-user-email' name="email" placeholder="Email" type='email'>
                         <i class="material-icons-outlined icon-login">email</i>
                     </div>
-                    <% if (locals.errors && errors.email){ %>
+                    <% if (locals.errors && errors.email) { %>
                         <div class='text-danger'>
-                            <% errors.email.msg %>
+                            <%= errors.email.msg %>
                         </div>
                     <% } %>
                     <div class ='div-formbox-phone'>
                         <input class='input-user-phone' name="phone" placeholder="Telefono" type='tel'>
                         <i class="material-icons-outlined icon-login">phone</i>
                     </div>
-                    <% if (locals.errors && errors.phone){ %>
+                    <% if (locals.errors && errors.phone) { %>
                         <div class='text-danger'>
-                            <% errors.phone.msg %>
+                            <%= errors.phone.msg %>
                         </div>
                     <% } %>
                     <div class ='div-formbox-password'>
                         <input class='input-user-pass' name="password" placeholder="Contraseña" type='password'>
                         <i class="material-icons-outlined icon-login">lock</i>
                     </div>
-                    <% if (locals.errors && errors.password){ %>
+                    <% if (locals.errors && errors.password) { %>
                         <div class='text-danger'>
-                            <% errors.password.msg %>
+                            <%= errors.password.msg %>
                         </div>
                     <% } %>
                     <br>
@@ -88,6 +83,7 @@
                         <a href="/" class="link-form-button">Cancelar</a>
                         <button class="button-standar" type="submit" value="">Register</button>
                     </div>
+                    <br>
                 </form>
         </section>
     </main>

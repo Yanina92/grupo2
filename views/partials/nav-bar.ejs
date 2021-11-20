@@ -2,10 +2,10 @@
     <span class="items-bar">Productos</span>
     <a class="items-bar" href="/"> Home </a>
     <span></span>
-    <% if (locals.logged) { %>      
+    <% if (locals.isLogged) { %>      
     <div class="registerUser-bar">
-    <img src='/images/avatars/<%= user.image%>' width="50" class="image-bar">
-    <span class="greeting-bar">Hi <%= user.firstName %>!</span>
+    <img src='/images/avatars/<%= userLogged.image%>' width="50" class="image-bar">
+    <span class="greeting-bar">Hi <%= userLogged.firstName %>!</span>
     <span class="logout-bar"><a href="/users/logout">Logout</a></span>
     </div>
     <% }else{ %>
