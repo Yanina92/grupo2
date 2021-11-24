@@ -1771,3 +1771,9 @@ a:visited {
 .text-danger{
   color: red;
 }
+
+
+.profile{
+  margin-top:5%;
+  text-align: center;
+}
