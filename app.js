@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const routerHome = require('./routes/routeHome');
+const routerProduct = require('./routes/routeProduct');
+const routerUsers = require('./routes/routeUsers');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
@@ -17,9 +19,11 @@ app.use(session({
 	saveUninitialized: false,
 }));
 app.use(cookies());
-app.use(userLoggedMiddlewares)
+app.use(userLoggedMiddlewares);
 
 app.use('/', routerHome);
+app.use('/products',routerProduct);
+app.use('/users', routerUsers);
 
 const port = process.env.PORT || 3030;
 

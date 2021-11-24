@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+</head>
+<body class="grid-container">
+    <header class="nav-header">
+        <%- include('../partials/header') %>
+    </header>
+
+        <%- include('../partials/nav-bar') %>
+    <main class="profile">
+        <h2>Hi <%= user.firstName %>!</h2>
+        <img src='/images/avatars/<%= user.image%>'>
+        <br>
+        <br>
+        <div>Mail registrado</div>
+        <div><%=user.email%></div>
+      
+    </main>
+    <footer class="nav-footer">
+        <%- include('../partials/footer') %>
+    </footer>
+</body>
+</html>
