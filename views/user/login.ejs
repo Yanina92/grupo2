@@ -10,12 +10,15 @@
         <%- include('../partials/nav-bar') %>
 
     <main class="main-content">
+        
         <section class="section-login-container">
-                <form class="form-login" action="/login" method="POST">
+            <% if (locals.errors && errors.email){ %>
+                <div style="position: absolute"><%= errors.email.msg %></div> 
+            <% } %>
+            
+                <form class="form-login" action="/users/login" method="POST">
                     <div class='div-formbox-user'>
-                        <% if (locals.errors && errors.email){ %>
-                            <div><%= errors.email.msg %></div> 
-                        <% } %>
+                        
                         <input class='input-user-name' placeholder="Email" type='text' name='email' required>
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
@@ -25,8 +28,11 @@
                     </div>
                     <br>
                     <button class="button-login" type="submit" value="">Login</button>
-                    <button class="button-login" type="checkbox" name="rememberUser">Recordar</button>
-                    
+                
+                    <label class='button-login' id="rememberUser" >Recordarme
+                    <input class="input-user-pass" type="checkbox" value="true" name="rememberUser" id="rememberUser"></input>
+                    </label>
+               
                 </form>
         </section>
     </main>

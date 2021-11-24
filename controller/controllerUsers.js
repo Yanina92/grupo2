@@ -3,6 +3,8 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 const usersFile = path.join(__dirname, '../data/users.json');
 const User = require('../models/User');
+const multer = require('multer');
+const upload = multer({ dest: './public/upload/userImg' });
 
 const controller = {
     index:function(req, res) {
@@ -50,6 +52,9 @@ const controller = {
 
         res.redirect('/users');
     },
+    register:function(req, res) {
+        res.render('./user/register');
+    },
 
     create:function(req, res) {
         console.log("ENTRE")
@@ -74,9 +79,59 @@ const controller = {
         }else{
 		users.push(newUser)
 		fs.writeFileSync(usersFile, JSON.stringify(users, null, ' '));
-		res.redirect('/login');
+		res.redirect('./users/login');
     }
-    }
-}
+    },
+    login: function (req, res) {
+      console.log(req.cookies.testing);
+        res.render("./user/login");
+      },
+      logged: (req, res) => {
+        let userToLogin = User.findByField("email", req.body.email);
+        console.log(req.body.rememberUser);
+    
+        if (userToLogin) {
+          let password = bcrypt.compareSync(
+            req.body.password,
+            userToLogin.password
+          );
+          if (password) {
+            delete userToLogin.password;
+            req.session.userLogged = userToLogin
+            
+          if(req.body.rememberUser) {
+              res.cookie('userMail',req.body.email,{ maxAge: (1000 * 60) * 5})
+          }
+          return res.render('index', {
+            user: req.session.userLogged
+        })
+      }
+          {
+            return res.render("./user/login", {
+              errors: {
+                email: {
+                  msg: "Los datos ingresados son incorrectos",
+                },
+              },
+            });
+          }
+        }
+        {
+          return res.render("./user/login", {
+            errors: {
+              email: {
+                msg: "Los datos ingresados son incorrectos",
+              },
+            },
+          });
+        }
+      },
+    
+      logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect("/");
+      },
+    };
+
 
 module.exports = controller;

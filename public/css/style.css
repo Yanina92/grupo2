@@ -1574,6 +1574,9 @@ title p{
   border-bottom: 1px solid var(--primaryDarkColor);  
 }
 
+.input-file{
+  display: none;
+}
 
 .form-select-container {
   width: 100%;
