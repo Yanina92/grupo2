@@ -362,5 +362,14 @@
   "email": "11@gmail.com",
   "phone": "11",
   "password": "$2a$10$/zum12wo8vqA5a1NqWdIW.ZSg6V.lF4B1QQnnp5f5DzQmeD6YsLPG"
+ },
+ {
+  "id": 56,
+  "firstName": "Nicolas",
+  "lastName": "Rivero",
+  "email": "niko@gmail.com",
+  "phone": "01131381919",
+  "password": "$2a$10$NBk2GJqYEY6Ym.uSzaKVYuybSqMejwcBVZjvofIXzRm4685fBWVIu",
+  "image": "ProjectSql.png"
  }
 ]
