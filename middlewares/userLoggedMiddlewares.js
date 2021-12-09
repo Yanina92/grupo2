@@ -1,13 +1,4 @@
 const User = require('../models/User')
-<<<<<<< HEAD
-const userLoggedMiddlewares = (req, res, next) => {  
-  res.locals.logged = false;
-
-  let emailInCookie = req.cookies.userEmail;
-  let userFromCookie = User.findByField("email",emailInCookie);
-
-  if (userFromCookie) {
-=======
 
 const userLoggedMiddlewares = (req, res, next) => {
   
@@ -17,7 +8,6 @@ const userLoggedMiddlewares = (req, res, next) => {
   let userFromCookie = User.findByField('email',emailInCookie);
 
   if(userFromCookie){
->>>>>>> master
     req.session.userLogged = userFromCookie;
   }
 
