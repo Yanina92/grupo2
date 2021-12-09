@@ -287,65 +287,7 @@
   "image": "http://dummyimage.com/159x100.png/ff4444/ffffff",
   "productosRelacionados": [23,24,22]
  },
- {
-  "id": 27,
-  "name": "Brass",
-  "category": "Casework",
-  "description": "",
-  "brand": "Waterproofer",
-  "offer": false,
-  "discount": 0.24,
-  "price": 8348,
-  "image": "http://dummyimage.com/122x100.png/ff4444/ffffff",
-  "productosRelacionados": [23,24,25]
- },
- {
-  "id": 28,
-  "name": "Nombre: Granite",
-  "category": "Categoria: RF Shielding",
-  "description": "Descripcion: Curabitur in libero ut massa volutpat convallis.",
-  "brand": "Marca: Plasterers",
-  "offer": "Oferta: true",
-  "discount": "Descuento: %0.32",
-  "price": "Precio $6152",
-  "image": "Imagen: http://dummyimage.com/159x100.png/cc0000/ffffff",
-  "productosRelacionados": [27,24,25]
- },
- {
-  "id": 29,
-  "name": "Nombre: Glass",
-  "category": " Retaining Wall and Brick Pavers",
-  "description": "assa volutpat convallis",
-  "brand": "Tile Setter ",
-  "offer": "Oferta: false",
-  "discount": "Descuento: %0.88",
-  "price": "Precio $2217",
-  "image": "Imagen: http://dummyimage.com/163x100.png/ff4444/ffffff",
-  "productosRelacionados": [27,28,25]
- },
- {
-  "id": 34,
-  "name": " Glass",
-  "description": "urabitur in libero ut m.",
-  "category": " Retaining Wall and Brick Pavers",
-  "brand": "Tile Setter",
-  "price": "",
-  "discount": "",
-  "offer": "true",
-  "productosRelacionados": [27,28,29]
- },
- {
-  "id": 35,
-  "name": "Nombre: Nombre: ",
-  "category": "Categoria: Categoria: asd",
-  "description": "Descripcion: Descripcion: ",
-  "brand": "Marca: Marca: ",
-  "offer": "Oferta: Oferta: true",
-  "discount": "Descuento: %Descuento: %",
-  "price": "Precio $Precio $",
-  "image": "Imagen: Imagen: ",
-  "productosRelacionados": [27,28,29]
- },
+
  {
   "id": 36,
   "name": "dasda",
