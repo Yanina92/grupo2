@@ -1,4 +1,4 @@
-const User = require('../models/User')
+const User = require('../modelsUsers/User')
 
 const userLoggedMiddlewares = (req, res, next) => {
   
