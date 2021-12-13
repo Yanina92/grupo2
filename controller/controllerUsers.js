@@ -5,6 +5,7 @@ const usersFile = path.join(__dirname, '../data/users.json');
 const User = require('../modelsUsers/User')
 const {validationResult} =require('express-validator');
 const bcryptjs = require('bcryptjs');
+const db = require('../database/models')
 
 const controller = {
     
@@ -59,34 +60,31 @@ const controller = {
 
   create: function (req, res) {
     console.log("ENTRE");
-    let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    let userCompare = User.findByField("email", req.body.email);
-    let newUser = {
-      id: users[users.length - 1].id + 1,
-      ...req.body,
-      password: bcrypt.hashSync(req.body.password, 10),
-    };
-    console.log(User.findByField("email", req.body.email));
+    let userCompare = db.User.findOne({where:{email: req.body.email}});
 
-        if(userCompare) {
-            return res.render('./user/register', {
-                errors: {
-                    email: {
+    if(userCompare) {
+        return res.render('./user/register', {
+            errors: {
+                email: {
                         msg:'Este mail ya esta registrado'
-                    }
-                },
+                }
+            },
             oldData: req.body
-            });
-        }else{
-		users.push(newUser)
-		fs.writeFileSync(usersFile, JSON.stringify(users, null, ' '));
-    }
+        });
+    }else{
+		db.User.create({
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        phone: req.body.phone,
+        image: req.body.image,
+        admin: req.body.admin
+      });
 		res.redirect('/');
-    },
+    }},
 
-    register:function(req, res) {
-        return res.render('./user/register');
-    },
+    register:(req , res) => res.render('./user/register'),
 
     processRegister:function(req, res) {
 

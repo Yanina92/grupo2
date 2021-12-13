@@ -19,6 +19,10 @@
 -- Table structure for table `brands`
 --
 
+DROP database IF EXISTS ferreteria;
+CREATE database ferreteria;
+use ferreteria;
+
 DROP TABLE IF EXISTS `brands`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;

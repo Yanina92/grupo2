@@ -9,6 +9,7 @@ const validations = [
         .isEmail().withMessage('Tienes que escribir un formato de email válido'),
     body('phone').notEmpty().withMessage('Tienes que escribir un telefono'),
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
+    body('admin').notEmpty().withMessage('Debes indicar la modalidad del usuario'),
     body('image').custom((value,{req}) => {
         let file = req.file;
         let accepptedExtensions = ['.jpg','.gif','.png'];
