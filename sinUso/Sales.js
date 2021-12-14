@@ -1,35 +1,38 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = 'Storage';
+  let alias = 'Sales';
   let cols = {
       id: {
           type: dataTypes.INTEGER,
           primaryKey: true,
           autoIncrement: true,
       },
-      amount: {
-          type: dataTypes.INTEGER,
+      date: {
+          type: dataTypes.date,
           allowNull: false
+      },
+      id_user: {
+        type:dataTypes.INTEGER
       },
       id_product:{
         type:dataTypes.INTEGER
       }
   }
   let config = {
-      tableName: 'Brands',
+      tableName: 'Sales',
       timestamps: false
   };
-  const Storage = sequelize.define(alias, cols, config);
+  const Sales = sequelize.define(alias, cols, config);
 
   
-  Storage.associate = (models) => {  
-    Storage.belongsTo(models.Products,
+  Sales.associate = (models) => {  
+    Sales.hasMany(models.Products,
       {
         as:"products",
-        foreignKey:"id",
+        foreignKey:"id_product",
         timestamps: false
       })
   }
 
-  return Storage
+  return Sales
 }
 

@@ -30,10 +30,20 @@ module.exports = (sequelize, dataTypes) => {
     }
   };
   let config = {
-      tableName: 'Users',
+      tableName: 'User',
       timestamps: false
   };
-  const User = sequelize.define(alias, cols, config)
+  const User = sequelize.define(alias, cols, config);
+
+  User.associate = (models) => {
+      User.belongsToMany(models.Products,{
+          as: "products",
+          through: "products_users",
+          foreignKey: "product_id",
+          otherKey: "user_id",
+          timestamps: false
+      });
+  }
 
   return User
 }
