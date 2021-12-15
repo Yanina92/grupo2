@@ -17,7 +17,7 @@ router.patch('/edit/:id', controller.put);
 router.get('/edit/:id', controller.edit);
 router.post('/create', controller.create);
 router.get('/register',guestMiddlewares, controller.register);
-router.post('/register', uploadFile.single('image'), validations, controller.processRegister);
+router.post('/register',validations, uploadFile.single('image') , controller.processRegister);
 router.get('/login',guestMiddlewares, controller.login);
 router.post('/login', controller.loginProcess);
 router.get('/profile',authMiddlewares, controller.profile);

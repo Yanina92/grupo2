@@ -2,6 +2,7 @@ const {validationResult } = require ('express-validator')
 const fs = require("fs");
 const path = require("path");
 const productPath = path.join(__dirname, "../data/productsData.json");
+
 // const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
 
 const controller = {

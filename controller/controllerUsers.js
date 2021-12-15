@@ -5,29 +5,44 @@ const usersFile = path.join(__dirname, '../data/users.json');
 const User = require('../modelsUsers/User')
 const {validationResult} =require('express-validator');
 const bcryptjs = require('bcryptjs');
+const db = require('../database/models'); ;
+const sequelize = db.sequelize;
+const Users = db.User;
+
+
 
 const controller = {
     
-    index:function(req, res) {
-        let users = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
-        res.render('./user/user-table', {users: users});
+  index:function(req, res) {
+        Users.findAll()
+            .then(users => {
+                res.render('../views/user/user-table',{users})
+            })
     },
 
   delete: function (req, res) {
     let id = req.params.id;
-    let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    let finalUsers = users.filter((user) => user.id != id);
-    fs.writeFileSync(usersFile, JSON.stringify(finalUsers, null, " "));
-    res.redirect("/users");
-  },
+    // let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
+    Users.destroy({where: {id:id}, force:true})
+    .then(() =>{
+       return res.redirect("/users");
+    })
+    .catch(error => res.send(error))
+    // let finalUsers = users.filter((user) => user.id != id);
+    // fs.writeFileSync(usersFile, JSON.stringify(finalUsers, null, " "));
+    
+  }, 
 
   edit: function (req, res) {
     let userId = req.params.id;
-    let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    let editUser = users.filter((user) => user.id == userId);
-    console.log(editUser[0].firstName);
-    res.render("./user/user-edit", { user: editUser[0] });
-  },
+    // let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
+    // let editUser = users.filter((user) => user.id == userId);
+    // console.log(editUser[0].firstName);
+    let user = Users.findByPk(userId)
+    .then((user) => {
+        return res.render("../views/user/user-edit", { user },console.log(user));
+  })
+},
 
   put: function (req, res) {
     let id = req.params.id;
