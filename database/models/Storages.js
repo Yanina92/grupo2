@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
 
   
   Storages.associate = (models) => {  
-    Storages.belongsTo(models.Products,
+    Storages.belongsTo(models.Product,
       {
         as:"products",
         foreignKey:"id_product",
