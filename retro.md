@@ -41,3 +41,11 @@
 * *Continuar haciendo:* Dividir tareas para el sprint y buscar mejoras para la estructura de carpetas del proyecto en general.
 * *Hacer menos:*  No tenemos comentarios por el momento.
 * *Dejar de hacer:* No tenemos comentarios por el momento.
+
+**Sprint 6:**
+
+* *Comenzar a hacer:* Comenzar a hacer las tareas con mas tiempo.
+* *Hacer más:* Tener mas reuniones grupales.
+* *Continuar haciendo:* Dividir tareas para el sprint y buscar mejoras para la estructura del proyecto en general.
+* *Hacer menos:*  No tenemos comentarios por el momento.
+* *Dejar de hacer:* Olvidarse de la weekly.
