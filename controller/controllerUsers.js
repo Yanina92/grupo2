@@ -21,9 +21,9 @@ const controller = {
     },
 
   delete: function (req, res) {
-    let id = req.params.id;
+    let userId = req.params.id;
     // let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    Users.destroy({where: {id:id}, force:true})
+    Users.destroy({where: {id:userId}, force:true})
     .then(() =>{
        return res.redirect("/users");
     })
@@ -43,30 +43,25 @@ const controller = {
         return res.render("../views/user/user-edit", { user },console.log(user));
   })
 },
-
-  put: function (req, res) {
-    let id = req.params.id;
-    let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    let userToEdit = users.find((user) => user.id == id);
-
-    userToEdit = {
-      id: userToEdit.id,
-      ...req.body,
-    };
-    console.log(req.body);
-    console.log(userToEdit);
-    let newUsers = users.map((user) => {
-      if (user.id == userToEdit.id) {
-        return (user = { ...userToEdit });
-      }
-      return user;
-    });
-
-    console.log(newUsers);
-
-    fs.writeFileSync(usersFile, JSON.stringify(newUsers, null, " "));
-
-    res.redirect("/users");
+    update:  (req,res) => {
+        let userId = req.params.id;
+        Users
+        .update(
+            {
+                first_name: req.body.title,
+                last_name: req.body.rating,
+                email: req.body.awards,
+                password: req.body.release_date,
+                phone: req.body.length,
+                image: req.body.genre_id,
+                admin: req.body.genre_id
+            },
+            {
+                where: {id: userId}
+            })
+        .then(()=> {
+            return res.redirect('/users')})            
+        .catch(error => res.send(error))
   },
   register: function (req, res) {
     res.render("./user/register");

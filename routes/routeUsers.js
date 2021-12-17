@@ -13,7 +13,7 @@ const uploadFile = multer({storage});
 
 router.get('/', controller.index);
 router.delete('/delete/:id', controller.delete);
-router.patch('/edit/:id', controller.put);
+router.patch('/edit/:id', controller.update);
 router.get('/edit/:id', controller.edit);
 router.post('/create', controller.create);
 router.get('/register',guestMiddlewares, controller.register);

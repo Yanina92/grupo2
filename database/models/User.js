@@ -26,12 +26,12 @@ module.exports = (sequelize, dataTypes) => {
       },
       admin: {
         type: dataTypes.BOOLEAN,
-        defaultValue: 0
+        defaultValue: false
     }
   };
   let config = {
       tableName: 'users',
-      timestamps: false
+      timestamps: true
   };
   const User = sequelize.define(alias, cols, config);
 
