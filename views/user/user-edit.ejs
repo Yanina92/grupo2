@@ -27,11 +27,12 @@
                         <input class='input-type-text' type='text' name="firstName" value="<%= user.first_name %>">
                         <input class='input-type-text' type='text' name="lastName" value="<%= user.last_name %>">
                         <input class='input-type-text' type='text' name="email" value="<%= user.email %>">
+                        <input class='input-type-text' type='tel' name="phone" value="<%= user.phone %>">
                         <div class="form-select-container">
                             <label for="profile" class="label-text">Perfil:</label>
                             <select name="profile" class="input-type-text" name="profile">
-                                <option value="Administrator">Administrador</option>
-                                <option value="Customer">Cliente</option>
+                                <option value="1">Administrador</option>
+                                <option value="0">Cliente</option>
                             </select>
                         </div>
                         <div class="form-button-container">
