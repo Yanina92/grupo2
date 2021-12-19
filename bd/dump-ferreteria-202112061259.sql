@@ -15,6 +15,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+DROP database IF EXISTS ferreteria_db;
+CREATE database ferreteria_db;
+use ferreteria_db;
+
 --
 -- Table structure for table `brands`
 --

@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
-const usersFile = path.join(__dirname, '../data/users.json');
-const User = require('../modelsUsers/User')
+//const usersFile = path.join(__dirname, '../data/users.json');
+const User = require('../database/models/User');
 const {validationResult} =require('express-validator');
 const bcryptjs = require('bcryptjs');
-const db = require('../database/models'); ;
+const db = require('../database/models');
 const sequelize = db.sequelize;
 const Users = db.User;
 
@@ -22,29 +22,23 @@ const controller = {
 
   delete: function (req, res) {
     let id = req.params.id;
-    // let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
     Users.destroy({where: {id:id}, force:true})
     .then(() =>{
        return res.redirect("/users");
     })
-    .catch(error => res.send(error))
-    // let finalUsers = users.filter((user) => user.id != id);
-    // fs.writeFileSync(usersFile, JSON.stringify(finalUsers, null, " "));
-    
+    .catch(error => res.send(error))    
   }, 
 
   edit: function (req, res) {
     let userId = req.params.id;
-    // let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    // let editUser = users.filter((user) => user.id == userId);
-    // console.log(editUser[0].firstName);
     let user = Users.findByPk(userId)
     .then((user) => {
         return res.render("../views/user/user-edit", { user },console.log(user));
-  })
-},
+    })
+    .catch(error => res.send(error))
+  },
 
-  put: function (req, res) {
+/**  put: function (req, res) {
     let id = req.params.id;
     let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
     let userToEdit = users.find((user) => user.id == id);
@@ -67,7 +61,23 @@ const controller = {
     fs.writeFileSync(usersFile, JSON.stringify(newUsers, null, " "));
 
     res.redirect("/users");
+  },**/
+
+  put: function (req, res) {
+    let id = req.params.id;
+    Users.update(
+        {
+            ...req.body,
+        },
+        {
+            where: {id: id}
+        })
+        .then(()=> {
+            return res.redirect('/users')})            
+        .catch(error => res.send(error))
+
   },
+
   register: function (req, res) {
     res.render("./user/register");
   },
