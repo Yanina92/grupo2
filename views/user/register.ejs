@@ -28,7 +28,7 @@
                 <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
                     <br> 
                     <div class='div-formbox-user'>
-                        <input name="firstName" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.firstName : null %>" >
+                        <input name="first_name" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.firstName : null %>" >
                         <i class="material-icons icon-login">perm_identity</i>       
                     </div>
                     <% if (locals.errors && errors.firstName) { %>
@@ -37,7 +37,7 @@
                         </div>
                     <% } %>
                     <div class='div-formbox-user'>
-                        <input class='input-user-name' name="lastName" placeholder="Apellido" type='text'>
+                        <input class='input-user-name' name="last_name" placeholder="Apellido" type='text'>
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
                     <% if (locals.errors && errors.lastName) { %>
@@ -74,9 +74,9 @@
                     <% } %>
                     <div>
                         <input class='input-user-phone' id='administrator' name="admin" value='1' type='radio'>
-                        <label for="administrator">Administrator</label>
+                        <label for="administrator">Administrador</label>
                         <input class='input-user-phone' id='customer' name="admin" value='0' type='radio'>
-                        <label for="customer">Customer</label>
+                        <label for="customer">Cliente</label>
                     </div>
                     <% if (locals.errors && errors.admin) { %>
                         <div class='text-danger'>
