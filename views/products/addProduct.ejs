@@ -20,7 +20,7 @@
                     <%  });
                        } 
                     %>
-                    <form class="form-show-data-rows" action="/products" method="POST" enctype="multipart/form-data">
+                    <form class="form-show-data-rows" action="/create" method="POST" enctype="multipart/form-data">
                         <div class="form-select-container">
                             <label for="name" class="label-text">Nombre:</label>
                             <input class="input-type-text" type="text" name="name" id="name" value="<%=locals.old && old.name?old.name:""%>" />
@@ -30,31 +30,38 @@
                             <input class="input-type-text" type="text" name="description" id="description" />
                         </div>
                         <div class="form-select-container">
-                            <label for="category" class="label-text">Categoria:</label>
-                            <input class="input-type-text" type="text" name="category" id="category" value="<%=locals.old && old.category?old.category:""%>" />
-                        </div>
-                        <div class="form-select-container">
-                            <label for="brand" class="label-text">Marca:</label>
-                            <input class="input-type-text" type="text" name="brand" id="brand" value="<%=locals.old && old.brand?old.brand:""%>" />
-                        </div>
-                        <div class="form-select-container">
-                            <label for="price" class="label-text">Precio:</label>
-                            <input class="input-type-text" type="number" name="price" id="price" value="<%=locals.old && old.price?old.price:""%>" />
+                            <label for="offer" class="label-text">Oferta:</label>
+                            <select name="offer" class="input-type-text">
+                                <option value="1">Sí</option>
+                                <option value="0">No</option>
+                            </select>
                         </div>
                         <div class="form-select-container">
                             <label for="discount" class="label-text">Descuento:</label>
-                            <input class="input-type-text" type="number" name="discount" />
+                            <select name="discount" class="input-type-text">
+                                <option value="1">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div class="form-select-container">
+                            <label for="price" class="label-text">Precio:</label>
+                            <input class="input-type-text" type="number" name="price" id="price">
+                        </div>
+                        <div class="form-select-container">
+                            <label for="stock" class="label-text">Stock:</label>
+                            <input class="input-type-text" type="number" name="stock">
+                        </div>
+                        <div class="form-select-container">
+                            <label for="id_category" class="label-text">Cat(id):</label>
+                            <input class="input-type-text" type="number" name="id_category" id="id_category"/>
+                        </div>
+                        <div class="form-select-container">
+                            <label for="id_brand" class="label-text">Marc(id):</label>
+                            <input class="input-type-text" type="number" name="id_brand" id="id_brand"/>
                         </div>
                         <div class="form-select-container">
                             <label for="image" class="label-text">Imagen:</label>
                             <input class="input-type-text" type="file" name="image" />
-                        </div>
-                        <div class="form-select-container">
-                            <label for="offer" class="label-text">En oferta?</label>
-                            <select id="offer" class="input-type-" name="offer" placeholder="Esta en oferta ? " >
-                                <option value="false" <%= locals.old && old.offer === 'false' ?'selected':""%> >No</option>
-                                <option value="true"  <%= locals.old && old.offer === 'true' ?'selected':""%> >Si</option>
-                            </select>
                         </div>
                         <div class="form-button-container">
                             <button class="button-standar" type="submit">Ingresar</button>
