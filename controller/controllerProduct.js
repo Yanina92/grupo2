@@ -1,17 +1,19 @@
 const {validationResult } = require ('express-validator')
 const fs = require("fs");
 const path = require("path");
-const productPath = path.join(__dirname, "../data/productsData.json");
+const db = require('../database/models'); ;
+const sequelize = db.sequelize;
+const Product = db.Product;
 
-// const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
+
 
 const controller = {
   productsDetail:(req, res) => {
-    let identy = req.params.id
-    const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
-    let product = products.find(p=>p.id==identy);
-    // let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
-    res.render('./products/productDetail',{product})
+    let productId = req.params.id
+    Product.findByPk(productId)
+      .then((Product) => {
+        return res.render('./products/productDetail',{Product})
+    })
 },
 
   productsCart: (req, res) => {
@@ -19,8 +21,9 @@ const controller = {
   },
 
   productsList: (req, res) => {
-    let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
-    res.render("./products/productList", { products });
+    Product.findAll()
+    .then((Product) => {
+     return res.render("./products/productList", { Product })});
   },
  
 

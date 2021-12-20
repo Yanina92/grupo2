@@ -22,22 +22,17 @@ const controller = {
 
   delete: function (req, res) {
     let userId = req.params.id;
-    // let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
     Users.destroy({where: {id:userId}, force:true})
     .then(() =>{
        return res.redirect("/users");
     })
     .catch(error => res.send(error))
-    // let finalUsers = users.filter((user) => user.id != id);
-    // fs.writeFileSync(usersFile, JSON.stringify(finalUsers, null, " "));
+
     
   }, 
 
   edit: function (req, res) {
     let userId = req.params.id;
-    // let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    // let editUser = users.filter((user) => user.id == userId);
-    // console.log(editUser[0].firstName);
     let user = Users.findByPk(userId)
     .then((user) => {
         return res.render("../views/user/user-edit", { user },console.log(user));
