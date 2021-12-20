@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
-//const usersFile = path.join(__dirname, '../data/users.json');
 const User = require('../database/models/User');
 const {validationResult} =require('express-validator');
 const bcryptjs = require('bcryptjs');
@@ -13,100 +12,11 @@ const Users = db.User;
 
 const controller = {
     
-  index:function(req, res) {
+    index:function(req, res) {
         Users.findAll()
             .then(users => {
                 res.render('../views/user/user-table',{users})
             })
-    },
-
-  delete: function (req, res) {
-    let id = req.params.id;
-    Users.destroy({where: {id:id}, force:true})
-    .then(() =>{
-       return res.redirect("/users");
-    })
-    .catch(error => res.send(error))    
-  }, 
-
-  edit: function (req, res) {
-    let userId = req.params.id;
-    let user = Users.findByPk(userId)
-    .then((user) => {
-        return res.render("../views/user/user-edit", { user },console.log(user));
-    })
-    .catch(error => res.send(error))
-  },
-
-/**  put: function (req, res) {
-    let id = req.params.id;
-    let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    let userToEdit = users.find((user) => user.id == id);
-
-    userToEdit = {
-      id: userToEdit.id,
-      ...req.body,
-    };
-    console.log(req.body);
-    console.log(userToEdit);
-    let newUsers = users.map((user) => {
-      if (user.id == userToEdit.id) {
-        return (user = { ...userToEdit });
-      }
-      return user;
-    });
-
-    console.log(newUsers);
-
-    fs.writeFileSync(usersFile, JSON.stringify(newUsers, null, " "));
-
-    res.redirect("/users");
-  },**/
-
-  put: function (req, res) {
-    let id = req.params.id;
-    Users.update(
-        {
-            ...req.body,
-        },
-        {
-            where: {id: id}
-        })
-        .then(()=> {
-            return res.redirect('/users')})            
-        .catch(error => res.send(error))
-
-  },
-
-  register: function (req, res) {
-    res.render("./user/register");
-  },
-
-  create: function (req, res) {
-    console.log("ENTRE");
-    let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    let userCompare = User.findByField("email", req.body.email);
-    let newUser = {
-      id: users[users.length - 1].id + 1,
-      ...req.body,
-      password: bcrypt.hashSync(req.body.password, 10),
-    };
-    console.log(User.findByField("email", req.body.email));
-
-        if(userCompare) {
-            return res.render('./user/register', {
-                errors: {
-                    email: {
-                        msg:'Este mail ya esta registrado'
-                    }
-                },
-            oldData: req.body
-            });
-        }else{
-		users.push(newUser)
-		fs.writeFileSync(usersFile, JSON.stringify(users, null, ' '));
-    }
-		res.redirect('/');
     },
 
     register:function(req, res) {
@@ -115,36 +25,84 @@ const controller = {
 
     processRegister:function(req, res) {
 
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password,10),
+            image: req.file.filename
+        }
+        Users.create(userToCreate);
+        //return res.send('ok, se creo el usuario');
+        res.redirect('/');
+    },
+
+    /**processRegister:function(req, res) {
+
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0){
+            console.log("aca")
             return res.render('./user/register', {
             errors: resultValidation.mapped(),
+            oldData: req.body,
+        });
+        }
+
+        let userInDb = User.findByField('email',req.body.email);
+
+        if (userInDb) {
+            return res.render('./user/register', {
+            errors: {
+                email:{
+                    msg: 'Este email ya esta registrado'
+                }
+            },
             oldData: req.body
-        });
-    }
+            });
+        }
 
-    let userInDb = User.findByField('email',req.body.email);
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password,10),
+            image: req.file.filename
+        }
+        Users.create(userToCreate);
+        return res.send('ok, se creo el usuario');
+    //res.redirect('/');
+    },**/
 
-    if (userInDb) {
-        return res.render('./user/register', {
-        errors: {
-            email:{
-                msg: 'Este email ya esta registrado'
-            }
-        },
-        oldData: req.body
-        });
-    }
-
-     let userToCreate = {
-         ...req.body,
-         password: bcryptjs.hashSync(req.body.password,10),
-         image: req.file.filename
-     }
-     User.create(userToCreate);
-     return res.send('ok, se creo el usuario');
+    edit: function (req, res) {
+        let userId = req.params.id;
+        let user = Users.findByPk(userId)
+        .then((user) => {
+            return res.render("../views/user/user-edit", { user },console.log(user));
+        })
+        .catch(error => res.send(error))
     },
+
+    update: function (req, res) {
+        Users.update(
+            {
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                phone: req.body.phone,
+                admin: req.body.admin,
+            },
+            {
+                where: {id: req.params.id}
+            })
+            .then(()=> {
+                return res.redirect('/users')})            
+            .catch(error => res.send(error));
+    },
+
+    delete: function (req, res) {
+        Users.destroy({where: {id:req.params.id}, force:true})
+        .then(() =>{
+        return res.redirect("/users");
+        })
+        .catch(error => res.send(error))    
+    }, 
 
     login:function(req, res) {
         return res.render('./user/login');

@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = 'Storages';
+  let alias = 'Storage';
   let cols = {
       id: {
           type: dataTypes.INTEGER,
@@ -15,21 +15,20 @@ module.exports = (sequelize, dataTypes) => {
       }
   }
   let config = {
-      tableName: 'Storages',
+      tableName: 'storages',
       timestamps: false
   };
-  const Storages = sequelize.define(alias, cols, config);
+  const Storage = sequelize.define(alias, cols, config);
 
   
-  Storages.associate = (models) => {  
-    Storages.belongsTo(models.Product,
+  Storage.associate = (models) => {  
+    Storage.belongsTo(models.Product,
       {
-        as:"products",
+        as:"product",
         foreignKey:"id_product",
-        timestamps: false
       })
   }
 
-  return Storages
+  return Storage
 }
 

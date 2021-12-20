@@ -39,38 +39,39 @@ module.exports = (sequelize, dataTypes) => {
       tablenName:'products',
       timestamps: false
   };
-  const Products = sequelize.define(alias, cols, config);
+  const Product = sequelize.define(alias, cols, config);
 
-  Products.associate =  function (models){  
-    Products.hasOne(models.Category,
+  Product.associate =  function (models){  
+    Product.hasOne(models.Category, // Relacion de Producto => Category
         { 
-                  // Relacion de Productos => Categories
+        as:"category",
         foreignKey:"id"
-        }),
+        });
 
-    Products.belongsTo(models.Brands,
+    Product.belongsTo(models.Brand, // Relacion de Producto => Brand
         {
-          as:"brands",                  // Relacion de Productos => Brand
-          foreignKey:"id_brand",
-        }),
+          as:"brand",                
+          foreignKey:"id_brand"
+        });
 
 
-    Products.hasOne(models.Storages,
-              {
-                as:"storages",              // Relacion de Productos => Storages
-                foreignKey:"id_product",
-              })
+    Product.hasOne(models.Storage,  // Relacion de Producto => Storage
+        {
+            as:"storage",              
+            foreignKey:"id_product"
+        });
 
-    Products.belongsToMany(models.User,{
-            as: "user",
-            through: "products_users",
-            foreignKey: "user_id",
-            otherKey: "product_id",
-            timestamps: false
+    Product.belongsToMany(models.User,  // Relacion de Productos => Usuarios
+        {   
+          as: "users",
+          through: "products_users",
+          foreignKey:"product_id",
+          otherKey:"user_id",
+          timestamps: false
         });
   }
 
-  return Products
+  return Product
 }
 
 
