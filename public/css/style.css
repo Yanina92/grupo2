@@ -1167,8 +1167,11 @@ title p{
 .products-off {
   display: flex;
   justify-content: center;
-  width: 100%;
-  text-align: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  overflow:hidden;
+
 }
 .products-list {
   display: flex;
@@ -1179,16 +1182,14 @@ title p{
   flex-wrap: wrap;
   align-items: baseline;
 }
-.box-products,
-.box-products-2,
-.box-products-3,
-.box-products-4 {
+
+.box-products-0{
   width: 40%;
   text-align: center;
   transition: all 1s;
   margin: 10px;
 }
-
+.box-products-1
 .box-products-2,
 .box-products-3,
 .box-products-4 {

@@ -9,7 +9,7 @@ router.get('/detail/:id',controller.productsDetail);
 router.get('/productCart',controller.productsCart);
 //Create
 router.get('/create', controller.createForm);
-router.post('/create',upload.single('image'),validateFormCreate,controller.saveProduct);
+router.post('/create',validateFormCreate,upload.single('image'),controller.saveProduct);
 //Read
 router.get('/',controller.productsList);
 //Update
