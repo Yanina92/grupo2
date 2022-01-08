@@ -34,50 +34,35 @@ const controller = {
 
   saveProduct:function(req, res) {
 
-    let productToCreate = {
+    let errors = validationResult(req);
+
+    if (errors.errors.length > 0) {
+
+      res.render("./products/addProduct",{ errors:errors.mapped(), oldData:req.body}); 
+
+    } else {
+
+      let productToCreate = {
         ...req.body,
-        image: req.file.filename
-    }
-    Products.create(productToCreate);
-    res.redirect('/products');
+        imageProd: req.file.filename
+      };
+
+      Products.create(productToCreate);
+      res.redirect('/products');
+      
+    };
   },
 
-  /**saveProduct: (req, res) => {
-    let error = validationResult(req, res); 
-    
-    if (!error.isEmpty()) {
-      res.render("./products/addProduct",
-      {
-        error:error.array(),
-        old:req.body
-      }); 
-    }
-    let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
-    let newProduct = {
-      id: products[products.length - 1].id + 1,
-      ...req.body,
+  /**
       image: "/upload/" + req.file.filename,
-    };
-    console.log(req.body);
-    products.push(newProduct);
-    fs.writeFileSync(productPath, JSON.stringify(products, null, " "));
-    res.redirect("/products");
   },**/
 
-  /**editProduct: (req, res) => {
-    let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
-    let identy = req.params.id;
-    let productToEdit = products.find((product) => product.id == identy);
-    console.log(productToEdit);
-    res.render("./products/editProduct", { productToEdit });
-  },**/
-
-  editProduct: function (req, res) {
+  editProduct: (req, res) => {
     let product = Products.findByPk(req.params.id)
-    .then((product) => {
+      .then((product) => {
         return res.render("./products/editProduct", { product });
-    })
-    .catch(error => res.send(error))
+      })
+      .catch(error => res.send(error));
   },
 
   updateProduct: function (req, res) {
