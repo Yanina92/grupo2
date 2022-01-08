@@ -20,14 +20,16 @@
                     <%  });
                        } 
                     %>
+                    <!-- .form-login -->
+                    <!-- form-show-data-rows -->
                     <form class="form-show-data-rows" action="/create" method="POST" enctype="multipart/form-data">
                         <div class="form-select-container">
                             <label for="name" class="label-text">Nombre:</label>
-                            <input class="input-type-text" type="text" name="name" id="name" value="<%=locals.old && old.name?old.name:""%>" />
+                            <input class="input-type-text" type="text" name="name" id="name" value="<%=locals.old && old.name?old.name:""%>" required pattern="^[a-zA-Z\s]{5,}$" title="El Nombre ebe tener al menos 5 caracteres" />
                         </div>
                         <div class="form-select-container">
                             <label for="description" class="label-text">Descripcion:</label>
-                            <input class="input-type-text" type="text" name="description" id="description" />
+                            <input class="input-type-text" type="text" name="description" id="description" required  pattern='^[a-zA-Z\s]{20,}$' title="Descripcion debe tener al menos 20 caracteres" />
                         </div>
                         <div class="form-select-container">
                             <label for="offer" class="label-text">Oferta:</label>
@@ -45,23 +47,24 @@
                         </div>
                         <div class="form-select-container">
                             <label for="price" class="label-text">Precio:</label>
-                            <input class="input-type-text" type="number" name="price" id="price">
+                            <input class="input-type-text" type="number" name="price" id="price" required pattern='^[\w]{2,}$' title>
                         </div>
                         <div class="form-select-container">
-                            <label for="stock" class="label-text">Stock:</label>
+                            <label for="stock" class="label-text">Cantidad:</label>
                             <input class="input-type-text" type="number" name="stock">
                         </div>
+                        
                         <div class="form-select-container">
-                            <label for="id_category" class="label-text">Cat(id):</label>
-                            <input class="input-type-text" type="number" name="id_category" id="id_category"/>
+                            <label for="id_category" class="label-text">Categoria:</label>
+                            <input class="input-type-text" type="text" name="id_category" id="id_category"/>
                         </div>
                         <div class="form-select-container">
-                            <label for="id_brand" class="label-text">Marc(id):</label>
+                            <label for="id_brand" class="label-text">Marca:</label>
                             <input class="input-type-text" type="number" name="id_brand" id="id_brand"/>
                         </div>
                         <div class="form-select-container">
                             <label for="image" class="label-text">Imagen:</label>
-                            <input class="input-type-text" type="file" name="image" />
+                            <input class="input-type-text" type="file" name="image" required pattern="(?i)\.(jpg|png|gif)$" />
                         </div>
                         <div class="form-button-container">
                             <button class="button-standar" type="submit">Ingresar</button>
@@ -73,6 +76,7 @@
             <footer class="nav-footer">
                 <%- include('../partials/footer'); %>
             </footer>
+            <script src="/js/productsValidations.js"></script>
     </body>
 
 </html>

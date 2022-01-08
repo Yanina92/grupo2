@@ -16,12 +16,12 @@
                 <form name="firstName" class="form-login" action="/users/login" method="POST">
 
                     <div class='div-formbox-user'>
-                        <input class='input-user-name' placeholder="Email" type='text' name='email' required>
+                        <input class='input-user-name' placeholder="Email" type='text' name='email' required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" title='Tiene que ser un formato de mail valido "Ejemplo@example.com"'>
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
                     <div class ='div-formbox-password'>
 
-                        <input class='input-user-pass' name="password" placeholder="Password" type='password' required>
+                        <input class='input-user-pass' name="password" placeholder="Password" type='password' required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"  title='Mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número'>
 
                         <i class="material-icons-outlined icon-login">lock</i>
                     </div>
@@ -36,7 +36,7 @@
                 </form>
         </section>
     </main>
-
+    <script src="/js/usersValidations.js"></script>
     <footer class="nav-footer">
         <%- include('../partials/footer'); %>
     </footer>
