@@ -44,7 +44,7 @@ const controller = {
 
       let productToCreate = {
         ...req.body,
-        imageProd: req.file.filename
+        image: req.file.filename
       };
 
       Products.create(productToCreate);
@@ -58,31 +58,50 @@ const controller = {
   },**/
 
   editProduct: (req, res) => {
-    let product = Products.findByPk(req.params.id)
+    let productId = req.params.id;
+    let product = Products.findByPk(productId)
       .then((product) => {
-        return res.render("./products/editProduct", { product });
+        return res.render("../views/products/editProduct", { product },console.log(product));
       })
       .catch(error => res.send(error));
   },
 
   updateProduct: function (req, res) {
-    Products.update(
-      {
-        name: req.body.name,
-        description: req.body.description,
-        offer: req.body.offer,
-        discount: req.body.discount,
-        price: req.body.price,
-        stock: req.body.stock,
-        id_category: req.body.id_category,
-        id_brand: req.body.id_brand,
-      },
-      {
-        where: {id: req.params.id}
-      })
-      .then(()=> {
-        return res.redirect('/products')})            
-      .catch(error => res.send(error));
+
+    let errors = validationResult(req);
+
+    if (errors.errors.length > 0) {
+
+      console.log(errors)
+      console.log("aqui toy")
+
+      res.render("./products/editProduct",{ errors:errors.mapped(), product:req.body}); 
+
+      console.log("llegue aqui")
+
+    } else {
+
+      Products.update(
+        {
+          name: req.body.name,
+          description: req.body.description,
+          offer: req.body.offer,
+          discount: req.body.discount,
+          price: req.body.price,
+          stock: req.body.stock,
+          id_category: req.body.id_category,
+          id_brand: req.body.id_brand,
+          image: req.file.filename,
+        },
+        {
+          where: {id: req.params.id}
+        })
+        .then(()=> {
+          return res.redirect('/products')})            
+        .catch(error => res.send(error));
+        console.log("nop, toy aqui")
+    };
+    
   },
 
   /**updateProduct: (req, res) => {

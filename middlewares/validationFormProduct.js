@@ -5,7 +5,7 @@ const validationFormProduct = [
   body('name').notEmpty().withMessage('Tenes que completar el campo de Nombre').bail()
   .isLength({ min: 5}).withMessage('El nombre debe tener como mínimo 5 caracteres'),
 
-  body('descripcion').notEmpty().withMessage('Tenes que completar el campo de Categoria').bail()
+  body('description').notEmpty().withMessage('Tenes que completar el campo de la descripcion').bail()
   .isLength({ min: 20}).withMessage('La descripcion debe tener como mínimo 20 caracteres'),
 
   body('id_category').notEmpty().withMessage('Tenes que completar el campo del id de la categoria').bail()
@@ -22,7 +22,7 @@ const validationFormProduct = [
 
   body('offer').notEmpty().withMessage('Debes indicar si el producto está o no en oferta'),
 
-  body('imageProd').custom((value,{req}) => {
+  body('image').custom((value,{req}) => {
     let file = req.file;
     let accepptedExtensions = ['.jpg','.gif','.png','.jpeg'];
     if (!file){
