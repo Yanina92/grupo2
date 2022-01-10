@@ -16,7 +16,7 @@
             <p>Edicion de producto</p>
             <hr class="home-hr">
         </div>
-                    <form class="form-show-data-rows"  action="/products/edit/<%= product.id %>" method="POST"> 
+                    <form class="form-show-data-rows"  action="/products/edit/<%= product.id %>" method="POST" enctype="multipart/form-data"> 
                         <div class="form-select-container">
                             <label for="name" class="label-text">Nombre:</label>
                             <input class='input-type-text' type='text' name="name" value="<%= product.name ? product.name : null %>">
@@ -54,11 +54,6 @@
                                 <option value="0">No</option>
                             </select>
                         </div>
-                        <% if (locals.errors && errors.discount) { %>
-                            <div class="text-danger">
-                                <%= errors.discount.msg %>
-                            </div>
-                        <% } %>
                         <div class="form-select-container">
                             <label for="price" class="label-text">Precio:</label>
                             <input class='input-type-text' type='text' name="price" value="<%= product.price ? product.price : null %>">
@@ -83,7 +78,7 @@
                         </div>
                         <% if (locals.errors && errors.id_category) { %>
                             <div class="text-danger">
-                                <%= errors.imageProd.msg %>
+                                <%= errors.id_category.msg %>
                             </div>
                         <% } %>
                         <div class="form-select-container">

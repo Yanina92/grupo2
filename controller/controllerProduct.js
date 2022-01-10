@@ -1,4 +1,4 @@
-const {validationResult } = require ('express-validator')
+const { validationResult } = require ('express-validator')
 const fs = require("fs");
 const path = require("path");
 const productPath = path.join(__dirname, "../data/productsData.json");
