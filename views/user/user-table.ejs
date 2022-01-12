@@ -32,7 +32,7 @@
                                 <p><%=user.profile%></p>
                                 <p><%=user.email%></p>
                             </div>
-                            <form action='/users/delete/<%= user.id %>?_method=DELETE' method='post'>
+                            <form action='/users/delete/<%= user.id %>' method='post'>
                                 <button type="submit" class="action-button">
                                     <span class="material-icons-outlined icon-button-delete">
                                         delete_forever

@@ -33,3 +33,19 @@
 * *Continuar haciendo:* Dividir tareas para el sprint y seguir ordenando el CSS para que funcione de forma integral a todo el proyecto.
 * *Hacer menos:* No tenemos comentarios por el momento.
 * *Dejar de hacer:* No tenemos comentarios por el momento.
+
+**Sprint 5:**
+
+* *Comenzar a hacer:* Tener mas comunicación de las tareas que esta haciendo cada uno.
+* *Hacer más:* Completar el archivos de las weeklys.
+* *Continuar haciendo:* Dividir tareas para el sprint y buscar mejoras para la estructura de carpetas del proyecto en general.
+* *Hacer menos:*  No tenemos comentarios por el momento.
+* *Dejar de hacer:* No tenemos comentarios por el momento.
+
+**Sprint 6:**
+
+* *Comenzar a hacer:* Comenzar a hacer las tareas con mas tiempo.
+* *Hacer más:* Tener mas reuniones grupales.
+* *Continuar haciendo:* Dividir tareas para el sprint y buscar mejoras para la estructura del proyecto en general.
+* *Hacer menos:*  No tenemos comentarios por el momento.
+* *Dejar de hacer:* Olvidarse de la weekly.

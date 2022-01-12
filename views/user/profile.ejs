@@ -8,12 +8,14 @@
     </header>
 
         <%- include('../partials/nav-bar') %>
-    <main>
+    <main class="profile">
         <h2>Hi <%= user.firstName %>!</h2>
         <img src='/images/avatars/<%= user.image%>'>
         <br>
         <br>
-        <div><%= user.email%></div>
+        <div>Mail registrado</div>
+        <div><%=user.email%></div>
+      
     </main>
     <footer class="nav-footer">
         <%- include('../partials/footer') %>

@@ -16,49 +16,96 @@
             <p>Edicion de producto</p>
             <hr class="home-hr">
         </div>
-                    <form class="form-show-data-rows"  action="/products/edit/<%= productToEdit.id %>?_method=PATCH" method="POST">
+                    <form class="form-show-data-rows"  action="/products/edit/<%= product.id %>" method="POST" enctype="multipart/form-data"> 
                         <div class="form-select-container">
                             <label for="name" class="label-text">Nombre:</label>
-                            <input class='input-type-text' type='text' name="name" value="<%= productToEdit.name %>"  required>
+                            <input class='input-type-text' type='text' name="name" value="<%= product.name ? product.name : null %>">
                         </div>
-                        <div class="form-select-container">
-                            <label for="category" class="label-text">Categoria:</label>
-                            <input class='input-type-text' type='text' name="category" value="<%= productToEdit.category %>" required>
-                        </div>
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
                             <label for="description" class="label-text">Descripcion:</label>
-                        <input class='input-type-text' type='text' name="description" value="<%= productToEdit.description %>">
-                        </div> 
-                        <div class="form-select-container">
-                            <label for="brand" class="label-text">Marca:</label>
-                        <input class='input-type-text' type='text' name="brand" value="<%= productToEdit.brand %>">
+                            <input class="input-type-text" type="text" name="description" value="<%= product.description ? product.description : null %>">
                         </div>
+                        <% if (locals.errors && errors.description) { %>
+                            <div class="text-danger">
+                                <%= errors.description.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
                             <label for="offer" class="label-text">Oferta:</label>
-                        <input class='input-type-text' type='text' name="offer" value="<%= productToEdit.offer %>" required>
+                            <select name="offer" class="input-type-text">
+                                <option value="1">Sí</option>
+                                <option value="0">No</option>
+                            </select>
                         </div>
+                        <% if (locals.errors && errors.offer) { %>
+                            <div class="text-danger">
+                                <%= errors.offer.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
                             <label for="discount" class="label-text">Descuento:</label>
-                        <input class='input-type-text' type='text' name="discount" value="<%= productToEdit.discount %>">
+                            <select name="discount" class="input-type-text">
+                                <option value="1">Sí</option>
+                                <option value="0">No</option>
+                            </select>
                         </div>
                         <div class="form-select-container">
                             <label for="price" class="label-text">Precio:</label>
-                        <input class='input-type-text' type='text' name="price" value="<%= productToEdit.price %>" required>
+                            <input class='input-type-text' type='text' name="price" value="<%= product.price ? product.price : null %>">
                         </div>
-                      
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="text-danger">
+                                <%= errors.price.msg %>
+                            </div>
+                        <% } %>
+                        <div class="form-select-container">
+                            <label for="stock" class="label-text">Stock:</label>
+                            <input class="input-type-text" type="number" name="stock" value="<%= product.stock ? product.stock : null %>">
+                        </div>
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="text-danger">
+                                <%= errors.stock.msg %>
+                            </div>
+                        <% } %>
+                        <div class="form-select-container">
+                            <label for="id_category" class="label-text">Cat(id):</label>
+                            <input class='input-type-text' type='number' name="id_category" value="<%= product.id_category ? product.id_category : null %>">
+                        </div>
+                        <% if (locals.errors && errors.id_category) { %>
+                            <div class="text-danger">
+                                <%= errors.id_category.msg %>
+                            </div>
+                        <% } %>
+                        <div class="form-select-container">
+                            <label for="id_brand" class="label-text">Marca:</label>
+                        <input class='input-type-text' type='number' name="id_brand" value="<%= product.id_brand ? product.id_brand : null %>">
+                        </div>
+                        <% if (locals.errors && errors.id_brand) { %>
+                            <div class="text-danger">
+                                <%= errors.id_brand.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
                             <label for="image" class="label-text">Imagen:</label>
-                        <input class='input-type-text' type='file' name="image" value="<%= productToEdit.image %>" required>
+                            <input class="input-type-text" type="file" name="image">
                         </div>
-                        <img src="<%= productToEdit.image %>" alt="">
+                        <% if (locals.errors && errors.image) { %>
+                            <div class="text-danger">
+                                <%= errors.image.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-button-container">
-                            
                             <a href="/products" class="link-form-button">Cancelar</a>
                             <button class="button-standar" type="submit" value="">Guardar cambios</button>
                         </div>
                     </form>
                     <div class="form-button-container">
-                        <form class="form-show-data-rows"   action='/products/delete/<%= productToEdit.id %>?_method=DELETE' method='POST'>
+                        <form class="form-show-data-rows"   action='/products/delete/<%= product.id %>' method='POST'>
                         <button class="button-standar-warning" type="submit" value="">Borrar producto</button>
                         </form>
                     </div>

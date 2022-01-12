@@ -1,18 +1,23 @@
 <html>
     <%- include('../partials/head'); %>
-<body class="grid-container">
-    <header class="nav-header">
-        <%- include('../partials/header'); %>
-    </header>
-    <%- include('../partials/nav-bar') %>
-    <main class="nav-main">
-        <div class="nav-bar-list">
-            <p>Filtar por</p>
-            <ul>
-                <li>Precio</li>
-                <li>Marca</li>
-            </ul>
-        </div>
+<body class="body-home">
+    <div class="grid-container-home">
+        <header class="nav-header">
+           <%- include('../partials/header') %>
+        </header>
+
+        <%- include('../partials/nav-bar') %>
+     </div>
+
+     <div class="nav-bar-list">
+        <p>Filtar por</p>
+        <ul>
+            <li>Precio</li>
+            <li>Marca</li>
+        </ul>
+    </div>
+    <main class="main-content">
+ 
          <article class="products-list">
             <% products.forEach(function(product,index){ %>
                 <div class="box-products <%= index %>" >
@@ -31,15 +36,12 @@
                     </div>
                  </div>
                  
-                 <% }) %>
-                 
-                 
-        
+                 <% }) %>        
     </main>
 
 <div class="nav-footer-list">
     <div>1 de 10</div>
-    <div>... Siguiente ></div>
+    <button class="button-standar">Siguiente</button>
 </div>
  
     <footer class="nav-footer">

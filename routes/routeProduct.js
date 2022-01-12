@@ -1,26 +1,24 @@
 const express = require('express');
 const  router = express.Router();
 const controller = require('../controller/controllerProduct');
+const validationFormProduct = require('../middlewares/validationFormProduct');
 const multer = require('multer');
-// const upload = multer({ dest: 'E:/proyectoFerreteria/grupo_2_ferreteria/public/upload' });
-const upload = multer({ dest: './public/upload' });
-const validateFormCreate = require('../middlewares/validationFormProduct');
-
-// Validaciones
+const storageProd = require('../middlewares/multerProdMiddleware');
+const uploadFile = multer({storage: storageProd});
+//const upload = multer({ dest: './public/upload/productsImages' });
 
 
-
-router.get('/',controller.productsList);
 router.get('/detail/:id',controller.productsDetail);
 router.get('/productCart',controller.productsCart);
-
+//Create
 router.get('/create', controller.createForm);
-
-router.post('/',upload.single('image'),validateFormCreate,controller.saveProduct); // Se envia upload(MULTER) y  Validaciones por Middlewares 
-
+router.post('/create',uploadFile.single('image'),validationFormProduct,controller.saveProduct);
+//Read
+router.get('/',controller.productsList);
+//Update
 router.get('/edit/:id', controller.editProduct);
-router.patch('/edit/:id',controller.updateProduct);
-
-router.delete('/delete/:id',controller.delete);
+router.post('/edit/:id',uploadFile.single('image'),validationFormProduct,controller.updateProduct);
+//Delete
+router.post('/delete/:id',controller.delete);
 
 module.exports = router;

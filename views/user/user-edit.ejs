@@ -23,15 +23,16 @@
     <main class="main-content">
         <section class="section-container">
                 <div class="section-container-inner">
-                    <form class="form-show-data-rows"  action="/users/edit/<%= user.id %>?_method=PATCH" method="POST">
-                        <input class='input-type-text' type='text' name="firstName" value="<%= user.firstName %>">
-                        <input class='input-type-text' type='text' name="lastName" value="<%= user.lastName %>">
+                    <form class="form-show-data-rows"  action="/users/edit/<%= user.id %>" method="POST">
+                        <input class='input-type-text' type='text' name="first_name" value="<%= user.first_name %>">
+                        <input class='input-type-text' type='text' name="last_name" value="<%= user.last_name %>">
                         <input class='input-type-text' type='text' name="email" value="<%= user.email %>">
+                        <input class='input-type-text' type='tel' name="phone" value="<%= user.phone %>">
                         <div class="form-select-container">
-                            <label for="profile" class="label-text">Perfil:</label>
-                            <select name="profile" class="input-type-text" name="profile">
-                                <option value="Administrator">Administrador</option>
-                                <option value="Customer">Cliente</option>
+                            <label for="admin" class="label-text">Perfil:</label>
+                            <select name="admin" class="input-type-text">
+                                <option value="1">Administrador</option>
+                                <option value="0">Cliente</option>
                             </select>
                         </div>
                         <div class="form-button-container">
