@@ -14,12 +14,12 @@
                         <p>Creacion de producto</p>
                         <hr class="home-hr" />
                     </div>
-                    <% if (locals.error) { %> 
+                    <!-- <% if (locals.error) { %> 
                     <% error.forEach(element => { %>
                         <p class ="msg-error"><%= element.msg%> </p>                        
                     <%  });
                        } 
-                    %>
+                    %> -->
                     <form class="form-show-data-rows" action="/products" method="POST" enctype="multipart/form-data">
                         <div class="form-select-container">
                             <label for="name" class="label-text">Nombre:</label>

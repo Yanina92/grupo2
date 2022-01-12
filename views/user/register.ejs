@@ -28,7 +28,7 @@
                 <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
                     <br> 
                     <div class='div-formbox-user'>
-                        <input name="firstName" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.firstName : null %>" >
+                        <input name="firstName" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.firstName : null %>">
                         <i class="material-icons icon-login">perm_identity</i>       
                     </div>
                     <% if (locals.errors && errors.firstName) { %>
@@ -37,7 +37,7 @@
                         </div>
                     <% } %>
                     <div class='div-formbox-user'>
-                        <input class='input-user-name' name="lastName" placeholder="Apellido" type='text'>
+                        <input name="lastName" placeholder="Apellido" type='text' class="input-user-name <%= locals.errors && errors.lastName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.lastName : null %>">
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
                     <% if (locals.errors && errors.lastName) { %>
@@ -46,7 +46,7 @@
                         </div>
                     <% } %>
                     <div class ='div-formbox-email'>
-                        <input class='input-user-email' name="email" placeholder="Email" type='email'>
+                        <input name="email" placeholder="Email" type='email' class="input-user-email <%= locals.errors && errors.email ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.email : null %>">
                         <i class="material-icons-outlined icon-login">email</i>
                     </div>
                     <% if (locals.errors && errors.email) { %>
@@ -55,7 +55,7 @@
                         </div>
                     <% } %>
                     <div class ='div-formbox-phone'>
-                        <input class='input-user-phone' name="phone" placeholder="Telefono" type='tel'>
+                        <input name="phone" placeholder="Telefono" type='tel' class="input-user-phone <%= locals.errors && errors.phone ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.phone : null %>">
                         <i class="material-icons-outlined icon-login">phone</i>
                     </div>
                     <% if (locals.errors && errors.phone) { %>
@@ -64,7 +64,7 @@
                         </div>
                     <% } %>
                     <div class ='div-formbox-password'>
-                        <input class='input-user-pass' name="password" placeholder="Contraseña" type='password'>
+                        <input name="password" placeholder="Contraseña" type='password'class="input-user-pass <%= locals.errors && errors.password ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.password : null %>">
                         <i class="material-icons-outlined icon-login">lock</i>
                     </div>
                     <% if (locals.errors && errors.password) { %>
@@ -76,13 +76,19 @@
                     <div>
                         <label><b>Imagen de perfil</b></label>
                         <input name="image" type='file'>
-                        <i class="fas fa-portrait"></i>
+                        <i class="fas fa-portrait"> </i>
                     </div>
+                    <% if (locals.errors && errors.image) { %>
+                        <div class='text-danger'>
+                            <%= errors.image.msg %>
+                        </div>
+                    <% } %>
                     <br>
                     <div class="form-button-container">
                         <a href="/" class="link-form-button">Cancelar</a>
                         <button class="button-standar" type="submit" value="">Register</button>
                     </div>
+                  
                     <br>
                 </form>
         </section>
