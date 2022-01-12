@@ -1,3 +1,5 @@
+const express= require('express');
+const router= express.Router();
 const {body} =require('express-validator');
 const path = require('path');
 
@@ -12,17 +14,19 @@ const validations = [
     body('admin').notEmpty().withMessage('Debes indicar la modalidad del usuario'),
     body('image').custom((value,{req}) => {
         let file = req.file;
-        let accepptedExtensions = ['.jpg','.gif','.png'];
-        if (!file){
+        let acceptedExtensions = ['.jpg', '.jpeg', '.gif', '.png'];
+        
+
+        if (!file) {
             throw new Error('Tienes que subir una imagen');
         }else{
             let fileExtension = path.extname(file.originalname);
-            if (!accepptedExtensions.includes(fileExtension)) {
-                throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(", ")}`);
+            if (!acceptedExtensions.includes(fileExtension)) {
+                throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
             }
         }
         return true;
-    }),
+    })
 ]
 
 module.exports = validations;
