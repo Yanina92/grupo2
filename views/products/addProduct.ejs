@@ -14,23 +14,26 @@
                         <p>Creacion de producto</p>
                         <hr class="home-hr" />
                     </div>
-                    <% if (locals.error) { %> 
-                    <% error.forEach(element => { %>
-                        <p class ="msg-error"><%= element.msg%> </p>                        
-                    <%  });
-                       } 
-                    %>
-                    <!-- .form-login -->
-                    <!-- form-show-data-rows -->
-                    <form class="form-show-data-rows" action="/create" method="POST" enctype="multipart/form-data">
+                    <form class="form-show-data-rows" action="/products/create" method="POST" enctype="multipart/form-data">
                         <div class="form-select-container">
                             <label for="name" class="label-text">Nombre:</label>
-                            <input class="input-type-text" type="text" name="name" id="name" value="<%=locals.old && old.name?old.name:""%>" required pattern="^[a-zA-Z\s]{5,}$" title="El Nombre ebe tener al menos 5 caracteres" />
+                            <input class="input-type-text" type="text" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : null %>" value="<%=locals.old && old.name?old.name:""%>" required pattern="^[a-zA-Z\s]{5,}$" title="El Nombre ebe tener al menos 5 caracteres"  >
                         </div>
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
                             <label for="description" class="label-text">Descripcion:</label>
-                            <input class="input-type-text" type="text" name="description" id="description" required  pattern='^[a-zA-Z\s]{20,}$' title="Descripcion debe tener al menos 20 caracteres" />
+                            <input class="input-type-text" type="text" name="description" id="description" value="<%= locals.oldData && oldData.description ? oldData.description : null %>"
+                            required  pattern='^[a-zA-Z\s]{20,}$' title="Descripcion debe tener al menos 20 caracteres" />>
                         </div>
+                        <% if (locals.errors && errors.description) { %>
+                            <div class="text-danger">
+                                <%= errors.description.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
                             <label for="offer" class="label-text">Oferta:</label>
                             <select name="offer" class="input-type-text">
@@ -38,6 +41,11 @@
                                 <option value="0">No</option>
                             </select>
                         </div>
+                        <% if (locals.errors && errors.offer) { %>
+                            <div class="text-danger">
+                                <%= errors.offer.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
                             <label for="discount" class="label-text">Descuento:</label>
                             <select name="discount" class="input-type-text">
@@ -45,27 +53,56 @@
                                 <option value="0">No</option>
                             </select>
                         </div>
+                        <% if (locals.errors && errors.discount) { %>
+                            <div class="text-danger">
+                                <%= errors.discount.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
                             <label for="price" class="label-text">Precio:</label>
-                            <input class="input-type-text" type="number" name="price" id="price" required pattern='^[\w]{2,}$' title>
+                            <input class="input-type-text" type="number" name="price" id="price" value="<%= locals.oldData && oldData.price ? oldData.price : null %>"  required pattern='^[\w]{2,}$' title='Tiene que tener minimo 2 digitos'>
                         </div>
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="text-danger">
+                                <%= errors.price.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
-                            <label for="stock" class="label-text">Cantidad:</label>
-                            <input class="input-type-text" type="number" name="stock">
+                            <label for="stock" class="label-text">Stock:</label>
+                            <input class="input-type-text" type="number" name="stock" value="<%= locals.oldData && oldData.stock ? oldData.stock : null %>" >
                         </div>
-                        
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="text-danger">
+                                <%= errors.stock.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
-                            <label for="id_category" class="label-text">Categoria:</label>
-                            <input class="input-type-text" type="text" name="id_category" id="id_category"/>
+                            <label for="id_category" class="label-text">Cat(id):</label>
+                            <input class="input-type-text" type="number" name="id_category" id="id_category" value="<%= locals.oldData && oldData.id_category ? oldData.id_category : null %>" >
                         </div>
+                        <% if (locals.errors && errors.id_category) { %>
+                            <div class="text-danger">
+                                <%= errors.id_category.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
-                            <label for="id_brand" class="label-text">Marca:</label>
-                            <input class="input-type-text" type="number" name="id_brand" id="id_brand"/>
+                            <label for="id_brand" class="label-text">Marc(id):</label>
+                            <input class="input-type-text" type="number" name="id_brand" id="id_brand" value="<%= locals.oldData && oldData.id_brand ? oldData.id_brand : null %>" >
                         </div>
+                        <% if (locals.errors && errors.id_brand) { %>
+                            <div class="text-danger">
+                                <%= errors.id_brand.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-select-container">
                             <label for="image" class="label-text">Imagen:</label>
-                            <input class="input-type-text" type="file" name="image" required pattern="(?i)\.(jpg|png|gif)$" />
+                            <input class="input-type-text" type="file" name="image" required pattern="(?i)\.(jpg|png|gif)$"  >
                         </div>
+                        <% if (locals.errors && errors.image) { %>
+                            <div class="text-danger">
+                                <%= errors.image.msg %>
+                            </div>
+                        <% } %>
                         <div class="form-button-container">
                             <button class="button-standar" type="submit">Ingresar</button>
                         </div>

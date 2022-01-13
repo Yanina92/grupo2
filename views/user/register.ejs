@@ -37,7 +37,7 @@
                         </div>
                     <% } %>
                     <div class='div-formbox-user'>
-                        <input class='input-user-name' name="last_name" placeholder="Apellido" type='text' required  title='El nombre solo acepta letras y debe tener mas de 2 caracteres'>
+                        <input name="lastName" placeholder="Apellido" type='text' class="input-user-name <%= locals.errors && errors.lastName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.lastName : null %>" required  title='El nombre solo acepta letras y debe tener mas de 2 caracteres'>
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
                     <% if (locals.errors && errors.lastName) { %>
@@ -46,7 +46,7 @@
                         </div>
                     <% } %>
                     <div class ='div-formbox-email'>
-                        <input class='input-user-email' name="email" placeholder="Email" type='email' required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"  title='Tiene que ser un formato de mail valido "Ejemplo@example.com"'>
+                        <input name="email" placeholder="Email" type='email' class="input-user-email <%= locals.errors && errors.email ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.email : null %>" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"  title='Tiene que ser un formato de mail valido "Ejemplo@example.com"'>
                         <i class="material-icons-outlined icon-login">email</i>
                     </div>
                     <% if (locals.errors && errors.email) { %>
@@ -55,7 +55,7 @@
                         </div>
                     <% } %>
                     <div class ='div-formbox-phone'>
-                        <input class='input-user-phone' name="phone" placeholder="Telefono" type='tel'>
+                        <input name="phone" placeholder="Telefono" type='tel' class="input-user-phone <%= locals.errors && errors.phone ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.phone : null %>">
                         <i class="material-icons-outlined icon-login">phone</i>
                     </div>
                     <% if (locals.errors && errors.phone) { %>
@@ -64,7 +64,7 @@
                         </div>
                     <% } %>
                     <div class ='div-formbox-password'>
-                        <input class='input-user-pass' name="password" placeholder="Contraseña" type='password' required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"  title='Mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número'>
+                        <input name="password" placeholder="Contraseña" type='password'class="input-user-pass <%= locals.errors && errors.password ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.password : null %>" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"  title='Mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número>
                         <i class="material-icons-outlined icon-login">lock</i>
                     </div>
                     <% if (locals.errors && errors.password) { %>
@@ -86,14 +86,20 @@
                     <br>
                     <div>
                         <label><b>Imagen de perfil</b></label>
-                        <input name="image" type='file' pattern="(?i)\.(jpg|png|gif)$" required>
-                        <i class="fas fa-portrait"></i>
+                        <input name="image" type='file' required pattern="(?i)\.(jpg|png|gif)$" required>
+                        <i class="fas fa-portrait"> </i>
                     </div>
+                    <% if (locals.errors && errors.image) { %>
+                        <div class='text-danger'>
+                            <%= errors.image.msg %>
+                        </div>
+                    <% } %>
                     <br>
                     <div class="form-button-container">
                         <a href="/" class="link-form-button">Cancelar</a>
                         <button class="button-standar" type="submit" value="">Register</button>
                     </div>
+                  
                     <br>
                 </form>
         </section>

@@ -339,5 +339,23 @@
   "phone": "0111559760339",
   "password": "$2a$10$AxR6F7RUF2XnrYseXZEpGeaFPuFayy9WCjtlz5.cIMtOVCpBSXR9W",
   "image": "1637421293380_img.jpg"
+ },
+ {
+  "id": 53,
+  "firstName": "sofia",
+  "lastName": "soraire",
+  "email": "sofiasoraire13@gmail.com",
+  "phone": "3815892286",
+  "password": "$2a$10$9BBtcdvs3M14/OJG7X43zultL9c1MJII3meG4XerwEz1lXV/ZZubK",
+  "image": "1641906588458_img.jpeg"
+ },
+ {
+  "id": 54,
+  "firstName": "sofia",
+  "lastName": "soraire",
+  "email": "sofiasoraire19@gmail.com",
+  "phone": "3815892286",
+  "password": "$2a$10$mvxhKLjxQR9fdiGDtSTXdOjK43SogstNFjq9xSzlNwM.E41b.wMW2",
+  "image": "1641906759533_img.jpeg"
  }
 ]
