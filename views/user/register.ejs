@@ -28,7 +28,7 @@
                 <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
                     <br> 
                     <div class='div-formbox-user'>
-                        <input name="firstName" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.firstName : null %>">
+                        <input name="first_name" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.firstName : null %>"  required pattern="^[a-zA-Z\s]{4,}$" title="El Nombre debe tener al menos 4 caracteres"  >
                         <i class="material-icons icon-login">perm_identity</i>       
                     </div>
                     <% if (locals.errors && errors.firstName) { %>
@@ -37,7 +37,7 @@
                         </div>
                     <% } %>
                     <div class='div-formbox-user'>
-                        <input name="lastName" placeholder="Apellido" type='text' class="input-user-name <%= locals.errors && errors.lastName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.lastName : null %>">
+                        <input name="lastName" placeholder="Apellido" type='text' class="input-user-name <%= locals.errors && errors.lastName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.lastName : null %>" required pattern="^[a-zA-Z\s]{4,}$" title="El Apellido debe tener al menos 4 caracteres"  >
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
                     <% if (locals.errors && errors.lastName) { %>
@@ -46,7 +46,7 @@
                         </div>
                     <% } %>
                     <div class ='div-formbox-email'>
-                        <input name="email" placeholder="Email" type='email' class="input-user-email <%= locals.errors && errors.email ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.email : null %>">
+                        <input name="email" placeholder="Email" type='email' class="input-user-email <%= locals.errors && errors.email ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.email : null %>" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"  title='Tiene que ser un formato de mail valido "Ejemplo@example.com"'>
                         <i class="material-icons-outlined icon-login">email</i>
                     </div>
                     <% if (locals.errors && errors.email) { %>
@@ -64,7 +64,7 @@
                         </div>
                     <% } %>
                     <div class ='div-formbox-password'>
-                        <input name="password" placeholder="Contraseña" type='password'class="input-user-pass <%= locals.errors && errors.password ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.password : null %>">
+                        <input name="password" placeholder="Contraseña" type='password'class="input-user-pass <%= locals.errors && errors.password ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.password : null %>" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"  title='Mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número'>
                         <i class="material-icons-outlined icon-login">lock</i>
                     </div>
                     <% if (locals.errors && errors.password) { %>
@@ -86,7 +86,7 @@
                     <br>
                     <div>
                         <label><b>Imagen de perfil</b></label>
-                        <input name="image" type='file'>
+                        <input name="image" type='file' required pattern="(?i)\.(jpg|png|gif)$" required>
                         <i class="fas fa-portrait"> </i>
                     </div>
                     <% if (locals.errors && errors.image) { %>
@@ -108,5 +108,6 @@
     <footer class="nav-footer">
         <%- include('../partials/footer'); %>
     </footer>
+    <script src="/js/usersValidations.js"></script>
 </body>
 </html>

@@ -15,9 +15,9 @@
                         <hr class="home-hr" />
                     </div>
                     <form class="form-show-data-rows" action="/products/create" method="POST" enctype="multipart/form-data">
-                        <div class="form-select-container">
+                         <div class="form-select-container">
                             <label for="name" class="label-text">Nombre:</label>
-                            <input class="input-type-text" type="text" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : null %>" >
+                            <input class="input-type-text" type="text" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : null %>" value="<%=locals.old && old.name?old.name:""%>" required pattern="^[a-zA-Z\s]{4,}$" title="El Nombre debe tener al menos 4 caracteres"  >
                         </div>
                         <% if (locals.errors && errors.name) { %>
                             <div class="text-danger">
@@ -26,7 +26,8 @@
                         <% } %>
                         <div class="form-select-container">
                             <label for="description" class="label-text">Descripcion:</label>
-                            <input class="input-type-text" type="text" name="description" id="description" value="<%= locals.oldData && oldData.description ? oldData.description : null %>" >
+                            <input class="input-type-text" type="text" name="description" id="description" value="<%= locals.oldData && oldData.description ? oldData.description : null %>"
+                            required  pattern='^[a-zA-Z\s]{20,}$' title="Descripcion debe tener al menos 20 caracteres" />>
                         </div>
                         <% if (locals.errors && errors.description) { %>
                             <div class="text-danger">
@@ -59,7 +60,7 @@
                         <% } %>
                         <div class="form-select-container">
                             <label for="price" class="label-text">Precio:</label>
-                            <input class="input-type-text" type="number" name="price" id="price" value="<%= locals.oldData && oldData.price ? oldData.price : null %>" >
+                            <input class="input-type-text" type="number" name="price" id="price" value="<%= locals.oldData && oldData.price ? oldData.price : null %>"  required pattern='^[\w]{2,}$' title='Tiene que tener minimo 2 digitos'>
                         </div>
                         <% if (locals.errors && errors.price) { %>
                             <div class="text-danger">
@@ -95,7 +96,7 @@
                         <% } %>
                         <div class="form-select-container">
                             <label for="image" class="label-text">Imagen:</label>
-                            <input class="input-type-text" type="file" name="image" >
+                            <input class="input-type-text" type="file" name="image" required pattern="(?i)\.(jpg|png|gif)$"  >
                         </div>
                         <% if (locals.errors && errors.image) { %>
                             <div class="text-danger">
@@ -112,6 +113,7 @@
             <footer class="nav-footer">
                 <%- include('../partials/footer'); %>
             </footer>
+            <script src="/js/productsValidations.js"></script>
     </body>
 
 </html>

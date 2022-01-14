@@ -752,7 +752,7 @@ body {
   grid-template:
     "header" 80px
     "nav" 0px
-    "main" 600px
+    "main" 700px
     "footer" 460px;
 }
 
@@ -1602,7 +1602,7 @@ title p{
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   margin-left: 15%;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .input-type-text {
@@ -1734,18 +1734,13 @@ a.link-form-button:visited {
 .section-container-edit {
 /* max-width: 70%; */
   width: 45%;
-  height: 75%;
-  padding: 0%;
+  min-width: 400px;
   margin-top: 4%;
   margin-bottom: 6%;
   background-color: white;
   border-radius: 2rem;
   box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 15%);
-  /* display: grid; */
   grid-template-columns: 1fr;
-  justify-content: space-around;
-  align-content: space-between;
-  overflow: scroll; 
 }
 
 .title-edit p{
