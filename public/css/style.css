@@ -752,7 +752,7 @@ body {
   grid-template:
     "header" 80px
     "nav" 0px
-    "main" 600px
+    "main" 700px
     "footer" 460px;
 }
 
@@ -1745,7 +1745,7 @@ a.link-form-button:visited {
   grid-template-columns: 1fr;
   justify-content: space-around;
   align-content: space-between;
-  overflow: scroll; 
+  /* overflow: scroll;  */
 }
 
 .title-edit p{

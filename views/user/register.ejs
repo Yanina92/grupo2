@@ -64,7 +64,7 @@
                         </div>
                     <% } %>
                     <div class ='div-formbox-password'>
-                        <input name="password" placeholder="Contraseña" type='password'class="input-user-pass <%= locals.errors && errors.password ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.password : null %>" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"  title='Mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número>
+                        <input name="password" placeholder="Contraseña" type='password'class="input-user-pass <%= locals.errors && errors.password ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.password : null %>" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"  title='Mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número'>
                         <i class="material-icons-outlined icon-login">lock</i>
                     </div>
                     <% if (locals.errors && errors.password) { %>
