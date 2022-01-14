@@ -49,3 +49,11 @@
 * *Continuar haciendo:* Dividir tareas para el sprint y buscar mejoras para la estructura del proyecto en general.
 * *Hacer menos:*  No tenemos comentarios por el momento.
 * *Dejar de hacer:* Olvidarse de la weekly.
+
+**Sprint 7:**
+
+* *Comenzar a hacer:* Destinar mas tiempo para solucionar los errores que pueda presentar el proyecto.
+* *Hacer más:* Reunirnos mas seguido para realizar las tareas pendientes.
+* *Continuar haciendo:* Dividir tareas para el sprint y buscar mejoras para la estructura del proyecto en general.
+* *Hacer menos:*  Unificar el proyecto a último momento.
+* *Dejar de hacer:* Olvidarse de la weekly.
