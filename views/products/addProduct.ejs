@@ -17,7 +17,7 @@
                     <form class="form-show-data-rows" action="/products/create" method="POST" enctype="multipart/form-data">
                          <div class="form-select-container">
                             <label for="name" class="label-text">Nombre:</label>
-                            <input class="input-type-text" type="text" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : null %>" value="<%=locals.old && old.name?old.name:""%>" required pattern="^[a-zA-Z\s]{4,}$" title="El Nombre ebe tener al menos 4 caracteres"  >
+                            <input class="input-type-text" type="text" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : null %>" value="<%=locals.old && old.name?old.name:""%>" required pattern="^[a-zA-Z\s]{4,}$" title="El Nombre debe tener al menos 4 caracteres"  >
                         </div>
                         <% if (locals.errors && errors.name) { %>
                             <div class="text-danger">

@@ -28,7 +28,7 @@
                 <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
                     <br> 
                     <div class='div-formbox-user'>
-                        <input name="first_name" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.firstName : null %>"  required title='El nombre solo acepta letras y debe tener mas de 2 caracteres'>
+                        <input name="first_name" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.firstName : null %>"  required pattern="^[a-zA-Z\s]{4,}$" title="El Nombre debe tener al menos 4 caracteres"  >
                         <i class="material-icons icon-login">perm_identity</i>       
                     </div>
                     <% if (locals.errors && errors.firstName) { %>
@@ -37,7 +37,7 @@
                         </div>
                     <% } %>
                     <div class='div-formbox-user'>
-                        <input name="lastName" placeholder="Apellido" type='text' class="input-user-name <%= locals.errors && errors.lastName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.lastName : null %>" required  title='El nombre solo acepta letras y debe tener mas de 2 caracteres'>
+                        <input name="lastName" placeholder="Apellido" type='text' class="input-user-name <%= locals.errors && errors.lastName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.lastName : null %>" required pattern="^[a-zA-Z\s]{4,}$" title="El Apellido debe tener al menos 4 caracteres"  >
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
                     <% if (locals.errors && errors.lastName) { %>
