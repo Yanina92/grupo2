@@ -38,78 +38,52 @@
             <p>APROVECHA ESTOS DESCUENTAZOS</p>
             <hr class="home-hr">
          </div>
-         <article class="products-off">
-            <div class="arrow-left"><i class="fas fa-angle-left"></i></div>
-            <div class="arrow-right"><i class="fas fa-angle-right"></i></div>
 
-            <div class="box-products">
-               <div class="product">
-                  <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
-                     alt="Foto de producto">
-                  <div class="box-text-off">
-                     <p>Oferta del dia</p>
-                  </div>
-                  <p class="prize-through">$2750</p>
-                  <div class="box-prize-off">
-                     <p>$1750</p>
-                     <p>30% OFF</p>
-                  </div>
-                  <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
-               </div>
-            </div>
-
-            <div class="box-products-2">
-               <div class="product">
-                  <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
-                     alt="Foto de producto">
-                  <div class="box-text-off">
-                     <p>Oferta del dia</p>
-                  </div>
-                  <p class="prize-through">$2750</p>
-                  <div class="box-prize-off">
-                     <p>$1750</p>
-                     <p>30% OFF</p>
-                  </div>
-                  <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
-               </div>
-            </div>
-
-
-            <div class="box-products-3">
-               <div class="product">
-                  <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
-                     alt="Foto de producto">
-                  <div class="box-text-off">
-                     <p>Oferta del dia</p>
-                  </div>
-                  <p class="prize-through">$2750</p>
-                  <div class="box-prize-off">
-                     <p>$1750</p>
-                     <p>30% OFF</p>
-                  </div>
-                  <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
-               </div>
-            </div>
-
-
-            <div class="box-products-4">
-               <div class="product">
-                  <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
-                     alt="Foto de producto">
-                  <div class="box-text-off">
-                     <p>Oferta del dia</p>
-                  </div>
-                  <p class="prize-through">$2750</p>
-                  <div class="box-prize-off">
-                     <p>$1750</p>
-                     <p>30% OFF</p>
-                  </div>
-                  <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
-               </div>
-            </div>
+            <article class="products-off" id='offer-2'>
+            <% products[0].forEach(function(product,index){ %>
+               <div class="box-products-<%= index == 0 ?'1':index + 1%>" >
+                   <div class="product" >
+                       <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
+                       <div class="box-text-off">
+                           <p>Oferta del dia</p>
+                           </div>
+                       <p><%=product.name %></p>
+                      <p class="prize-through"><%=product.price %></p>
+                      <div class="box-prize-off">
+                      <p><%=product.price %></p>
+                      <p><%=product.discount %></p>
+                      </div>
+                      <p class="product-footer"><%=product.description %></p>
+                   </div>
+                </div>
+                <% })%>
+               </article>
+<!-- 
+         <article class="products-off-OFF" id='offer-1'>
+            <%# products[0].forEach(function(product,index){ %>
+               <div class="box-products-<%#= index == 0 ?'1':index + 1%>" >
+                   <div class="product" >
+                       <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
+                       <div class="box-text-off">
+                           <p>Oferta del dia</p>
+                           </div>
+                       <p><%#=product.name %></p>
+                      <p class="prize-through"><%#=product.price %></p>
+                      <div class="box-prize-off">
+                      <p><%#=product.price %></p>
+                      <p><%#=product.discount %></p>
+                      </div>
+                      <p class="product-footer"><%#=product.description %></p>
+                   </div>
+                </div>
+                <%# })%>
+               </article> -->
+               
+         
+            
       </main>
-
-      <main class="main-home">
+      <button class="button-standar-products" id="button-home" type="button" value="0" >Ver mas</button>
+      <main class="main-home">   
          <article>
             <div class="title">
                <p>CATEGORIAS DESTACADAS</p>
@@ -201,6 +175,7 @@
          <%- include('./partials/footer'); %>
 
       </footer>
+      <script src="js/home.js"></script>
    </body>
 
 </html>

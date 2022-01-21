@@ -1077,6 +1077,12 @@ p {
 
 /******* NICOLAS *******/
 
+.body-home{
+  text-align: center;
+  background: repeating-linear-gradient( 
+45deg
+, #f0f0f0, #f0f0f0 10px, #f2f2f2 10px, #f2f2f2 20px );
+}
 
 .grid-container-home {
   display: grid;
@@ -1127,6 +1133,7 @@ p {
   object-fit: contain;
 }
 .msg-slider{
+  display: none;
   background-color:var(--grisOscuro);
   height:6vh;
   font-size: 18px;
@@ -1164,12 +1171,22 @@ title p{
 .home-hr {
   border: solid var(hr-color) 1px;
 }
-
-.products-off {
+.products-off{
   display: flex;
   justify-content: center;
   width: 100%;
   text-align: center;
+}
+
+.products-off-ON {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.products-off-OFF {
+  display: none;
 }
 .products-list {
   display: flex;
@@ -1184,17 +1201,17 @@ title p{
 .box-products-2,
 .box-products-3,
 .box-products-4 {
-  width: 40%;
+ 
   text-align: center;
   transition: all 1s;
   margin: 10px;
 }
 
-.box-products-2,
+ .box-products-2,
 .box-products-3,
 .box-products-4 {
   display: none;
-}
+} 
 
 /* PRODUCTO */
 .product {
@@ -1217,7 +1234,7 @@ title p{
   overflow: hidden;
   transition: all 1s;
 }
-
+/* 
 .box-products:hover .product-footer { 
   display: block;
   transition: all 1s;
@@ -1235,7 +1252,7 @@ title p{
 .box-products-4:hover .product-footer {
   display: block;
   transition: all 1s;
-}
+} */
 
 .box-products:hover {
   transform: scale(1.05);
@@ -1251,7 +1268,7 @@ title p{
   transform: scale(1.05);
 }
 
-.arrow-left,
+/* .arrow-left,
 .arrow-right {
   position: relative;
   top: 100px;
@@ -1259,7 +1276,7 @@ title p{
 
 .arrow-right {
   order: 1;
-}
+} */
 
 .product-img {
   width: 100%;
@@ -1383,6 +1400,9 @@ title p{
 /* ---------- MEDIA-QUERIES ---------- */
 
 @media (min-width: 768px) {
+  .msg-slider{
+    display: block;
+  }
   .slider {
     height: 500px;
   }
@@ -1457,7 +1477,7 @@ title p{
     justify-content: space-evenly;
   }
   .slider {
-    height: 850px;
+    height: 750px;
   }
 
   /* ---------- CATEGORIAS DESTACADAS ---------- */
@@ -1491,7 +1511,9 @@ title p{
   .art-categorias {
     grid-template-columns: 20% 20% 20% 20% 20%;
   }
-
+  .slider {
+    height: 1000px;
+  }
   .cat-box-5 {
     margin: 10px;
     display: flex;
@@ -1808,4 +1830,17 @@ a:visited {
     #f2f2f2 10px,
     #f2f2f2 20px
   );  
+}
+
+
+.button-standar-products {
+  position: relative;
+  width:6rem;
+  height: 3rem;
+  border-radius: 0.2rem;
+  bottom: 40px;
+  border: none;
+  box-shadow: 0px 0px 5px 1px black;
+  background-color: var(--contrastColor);
+  font-size: 1rem;
 }

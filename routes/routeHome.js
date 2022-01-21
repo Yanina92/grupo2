@@ -7,7 +7,7 @@ const controller = require('../controller/controllerHome');
 const routerProduct = require('../routes/routeProduct');
 
 router.get('/', controller.index);
-
+// router.get('/r',controller.refresh)
 //router.use('/products',routerProduct);
 //router.use('/users', routerUsers);
 //router.use('/login', routeLogin);

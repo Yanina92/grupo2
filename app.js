@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLoggedMiddlewares = require('./middlewares/userLoggedMiddlewares');
+const routerApi = require('./routes/routeApi')
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -24,6 +25,7 @@ app.use(userLoggedMiddlewares);
 app.use('/', routerHome);
 app.use('/products',routerProduct);
 app.use('/users', routerUsers);
+app.use('/api',routerApi)
 app.use((req, res, next) => {
     res.status(404).render('not-found');
 });

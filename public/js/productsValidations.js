@@ -12,7 +12,7 @@ function frontValidations ()  {
     $span.textContent = $input.title;
     $span.classList.add('text-danger')
     $span.style.display ='none'
-    $span.style.fontSize = '14px'
+    $span.style.fontSize = '14px' 
     form.insertAdjacentElement("afterbegin",$span)
   });
 
