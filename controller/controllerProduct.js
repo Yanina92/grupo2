@@ -3,9 +3,9 @@ const fs = require("fs");
 const path = require("path");
 const productPath = path.join(__dirname, "../data/productsData.json");
 const db = require('../database/models');
-const sequelize = db.sequelize;
-const Product = require('../database/models/Product');
+const Sequelize = require('sequelize')
 const Products = db.Product;
+
 
 const controller = {
 
@@ -21,11 +21,20 @@ const controller = {
     res.render('./products/productCart');
   },
  
-  productsList:function(req, res) {
-    Products.findAll()
+  productsList:function(req, res, next) {
+    let perPage = 5;
+    let page = req.params.page || 1;
+    let pages = '';
+    Products.findAndCountAll({
+      offset:((perPage * page) - page)},
+      {
+        limit:perPage
+      }
+    )
       .then(products => {
-          res.render("./products/productList",{products})
+          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page})
       })
+      .catch((e) => res.send(e)) 
   },
 
   createForm: (req, res) => {

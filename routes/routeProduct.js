@@ -14,7 +14,7 @@ router.get('/productCart',controller.productsCart);
 router.get('/create', controller.createForm);
 router.post('/create',uploadFile.single('image'),validationFormProduct,controller.saveProduct);
 //Read
-router.get('/',controller.productsList);
+router.get('/:page',controller.productsList);
 //Update
 router.get('/edit/:id', controller.editProduct);
 router.post('/edit/:id',uploadFile.single('image'),validationFormProduct,controller.updateProduct);
