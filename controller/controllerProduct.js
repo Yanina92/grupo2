@@ -21,10 +21,11 @@ const controller = {
     res.render('./products/productCart');
   },
  
-  productsList:function(req, res, next) {
+  productsList:function(req, res) {
     let perPage = 5;
-    let page = req.params.page || 1;
+    let page = req.params.page || 1 ;
     let pages = '';
+    let desc = (discount) => parseFloat(discount)/100  
     Products.findAndCountAll({
       offset:((perPage * page) - page)},
       {
@@ -32,11 +33,45 @@ const controller = {
       }
     )
       .then(products => {
-          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page})
+          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page,desc})
       })
-      .catch((e) => res.send(e)) 
-  },
 
+  },
+  productsListPriceASC:function(req, res) {
+    let perPage = 5;
+    let page = req.params.page || 1 ;
+    let pages = '';
+    let desc = (discount) => parseFloat(discount)/100  
+    Products.findAndCountAll({
+      offset:((perPage * page) - page),
+         
+      },{
+        limit:perPage
+      }
+    )
+      .then(products => {
+          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page,desc},console.log(products.rows))
+      })
+
+  },
+  productsListPriceDESC:function(req, res) {
+    let perPage = 5;
+    let page = req.params.page || 1 ;
+    let pages = '';
+    let desc = (discount) => parseFloat(discount)/100  
+    Products.findAndCountAll({
+      offset:((perPage * page) - page),
+         
+      },{
+        limit:perPage
+      }
+    )
+      .then(products => {
+          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page,desc},console.log(products.rows))
+      })
+
+  },
+ 
   createForm: (req, res) => {
     res.render("./products/addProduct");
   },

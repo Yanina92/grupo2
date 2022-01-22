@@ -22,15 +22,23 @@
             <% products.forEach(function(product,index){ %>
                 <div class="box-products <%= index %>" >
                     <div class="product" >
-                        <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
+                        <img class="product-img" src="<%= product.image %>" alt="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp">
                         <div class="box-text-off">
+                            <%if(product.offer == 1){%>
                             <p>Oferta del dia</p>
+                           <%}%>
                             </div>
                         <p><%=product.name %></p>
-                       <p class="prize-through"><%=product.price %></p>
+                        <% if(product.offer) { %>
+                       <p class="prize-through"><%= product.price %></p>
+                       <% } %>
                        <div class="box-prize-off">
-                       <p><%=product.price %></p>
-                       <p><%=product.discount %></p>
+                           <% if (product.offer){ %>
+                       <p>$<%= Math.trunc(product.price * (desc(product.discount))) %></p>
+                       <p class='off-number'>%<%= product.discount %></p>
+                       <%}else{%>
+                        <p class='finally-prize'>$<%=product.price%></p>
+                        <% } %>
                        </div>
                        <p class="product-footer"><%=product.description %></p>
                     </div>
@@ -40,8 +48,15 @@
     </main>
 
 <div class="nav-footer-list">
-    <div>Pagina<%= page %> de <%= pages %>  </div>
-    <button class="button-standar" >Siguiente</button>
+    <%if((parseFloat(page) - 1) != 0 ){%>
+    <button class="button-standar" onclick="location.href='/products/<%= parseFloat(page) - 1 %>'">Previo</button>
+<%}%>
+
+    <div class= "text-list">Pagina <%= page %> de <%= pages %> </div>
+
+    <%if((page != pages)){%>
+    <button class="button-standar" onclick="location.href='/products/<%= parseFloat(page) + 1 %>'">Siguiente</button>
+    <%}%>
 </div>
  
     <footer class="nav-footer">

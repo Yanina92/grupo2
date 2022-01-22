@@ -1233,6 +1233,7 @@ title p{
   white-space: nowrap;
   overflow: hidden;
   transition: all 1s;
+  text-align: initial;
 }
 /* 
 .box-products:hover .product-footer { 
@@ -1280,6 +1281,7 @@ title p{
 
 .product-img {
   width: 100%;
+  height: 250px;
   max-height: 70%;
   border-radius: 5px 5px 0 0;
   object-fit:cover;
@@ -1298,9 +1300,11 @@ title p{
   background-color: red;
   border-radius: 0px 5px 5px 0px;
 }
-.box-prize-off p:last-child {
-  color: #73c39e;
+
+.off-number{
+  color: #05c76c;
   align-self: center;
+  margin-left:5px ;
 }
 
 .prize-through {
@@ -1309,7 +1313,13 @@ title p{
   text-decoration: line-through;
   font-family: var(--number);
 }
-
+.finally-prize{
+  display: flex;
+  font-size: 25px;
+  position: relative;
+  margin-right: 10px;
+  font-family: var(--number);
+}
 .box-prize-off {
   display: flex;
   font-family: var(--number);
@@ -1317,13 +1327,13 @@ title p{
   justify-content: flex-start;
   font-size: 15px;
 }
-.box-prize-off p:first-child {
+/* .box-prize-off p:first-child {
   display: flex;
   font-size: 25px;
   position: relative;
   margin-right: 10px;
   font-family: var(--number);
-}
+} */
 
 /* ---------- ARTICLE-CATEGORIAS ---------- */
 
@@ -1829,10 +1839,15 @@ a:visited {
     #f0f0f0 10px,
     #f2f2f2 10px,
     #f2f2f2 20px
-  );  
+  );
+  align-items: baseline;
 }
 
+.text-list{
 
+margin-left: 5px;
+margin-right: 5px;
+}
 .button-standar-products {
   position: relative;
   width:6rem;
