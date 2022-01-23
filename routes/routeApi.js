@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const usersAPIController = require('../controller/usersAPIcontroller');
+const productsAPIController = require('../controller/productsAPIController');
 
-
-//CRUD
-//Create (Register)
+//Usuarios
 router.get('/users',usersAPIController.list);
-router.get('/:id',usersAPIController.detail);
+router.get('/users/:id',usersAPIController.detail);
 
+//Prductos
 
+router.get('/products',productsAPIController.list);
+router.get('/products/:id',productsAPIController.detail);
 
 module.exports = router;

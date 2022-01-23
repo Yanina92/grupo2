@@ -9,7 +9,7 @@ const Users = db.User;
 const controller = {
 
     'list': (req, res) => {
-        Users.findAll()
+        Users.findAll({attributes:["id","first_name","last_name","email","image"]})
         .then(user => {
             let respuesta = {
                 meta: {
@@ -25,7 +25,7 @@ const controller = {
     },
     
     'detail': (req, res) => {
-      Users.findByPk(req.params.id)
+      Users.findByPk(req.params.id,{attributes:["id","first_name","last_name","email","image"]})
             .then(user => {
                 let respuesta = {
                     meta: {
