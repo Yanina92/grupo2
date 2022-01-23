@@ -818,6 +818,38 @@ body {
   right: 12px;
 }
 
+.menu-display{
+    display: none;
+    position: fixed;
+    right: 0;
+    width: 50vw;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    z-index: 100;
+    background-color: var(--contrastColor);
+    box-shadow: 0px 0px 2px 1px black;
+  }
+  .list-burger{
+  display: flex;
+  flex-direction: column;
+  }
+
+  .list-burger h3{
+    margin: 10px;
+    font: 20px;
+    color: white;
+    
+  }
+  .item-burger{
+  height: 50px;
+  font-size: 16px;
+  color:white
+  }
+  .main-nav.show {
+    margin-left: 0;
+  }
+  
+
 /****************        *******************/
 
 .main-content {
