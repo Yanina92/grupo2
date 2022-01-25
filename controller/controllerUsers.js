@@ -24,7 +24,10 @@ const controller = {
     },
 
     processRegister:function(req, res) {
-
+        let errors = validationResult(req);
+        if (errors.errors.length > 0) {
+            res.render("./user/register",{ errors:errors.mapped(), oldData:req.body});
+        }else {
         let userToCreate = {
             ...req.body,
             password: bcryptjs.hashSync(req.body.password,10),
@@ -32,43 +35,9 @@ const controller = {
         }
         Users.create(userToCreate);
         //return res.send('ok, se creo el usuario');
-        res.redirect('/');
+        res.redirect('/users');
+    }
     },
-
-    /**processRegister:function(req, res) {
-
-        const resultValidation = validationResult(req);
-
-        if (resultValidation.errors.length > 0){
-            console.log("aca")
-            return res.render('./user/register', {
-            errors: resultValidation.mapped(),
-            oldData: req.body,
-        });
-        }
-
-        let userInDb = User.findByField('email',req.body.email);
-
-        if (userInDb) {
-            return res.render('./user/register', {
-            errors: {
-                email:{
-                    msg: 'Este email ya esta registrado'
-                }
-            },
-            oldData: req.body
-            });
-        }
-
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password,10),
-            image: req.file.filename
-        }
-        Users.create(userToCreate);
-        return res.send('ok, se creo el usuario');
-    //res.redirect('/');
-    },**/
 
     edit: function (req, res) {
         let userId = req.params.id;

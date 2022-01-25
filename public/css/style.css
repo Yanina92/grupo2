@@ -37,6 +37,33 @@
   scrollbar-width: 0px;
 }
 
+.image-error{
+  width: 100vw;
+  height: 50vh;
+}
+.texto-imagen{
+  position: absolute;
+  top:10px;
+  left:10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: rem;
+  color: rgba(8, 8, 8, 0.541);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 90px;
+  margin-left: 5%;
+}
+
+.main-content-404{
+  display: inline-block;
+  position: relative;
+  /* margin-left: 20%; */
+  
+  }
+
+
+
+
 .body-productDetail {
   font-family: "Lato", sans-serif;
 }
@@ -225,6 +252,7 @@ div.google-location {
   display: flex;
 }
 
+
 .nombre{
   font-size: 12px;
   margin-top:5px;
@@ -361,6 +389,15 @@ margin-left:10px;
 
 
   @media (min-width: 768px) { /* Tablet */
+    .texto-imagen{
+      position: absolute;
+      top: 50px;
+      left: 6%;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    
     .art{
     padding: 12px;
     width: 32vw;
@@ -393,11 +430,28 @@ margin-left:10px;
    }
   }
   @media (min-width: 1200px) { /* PC */
+    .texto-imagen{
+      position: absolute;
+      top: 50px;
+      left: 9%;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    .image-error{
+      width: 80vw;
+      height: 50vh;
+      margin-left: 10%;
+      margin-top: 6%;
+    }
+ 
+
     .art{
      padding: 15px;
      width: 23%;
      margin-left: 15px;
      }
+
      .art4{
       display: block;
      }
@@ -747,13 +801,53 @@ body {
   text-align: center;
 } */
 
-.grid-container {
+.grid-container{
   display: grid;
   grid-template:
     "header" 80px
     "nav" 0px
     "main" 700px
     "footer" 460px;
+}
+
+.grid-container-login,
+.grid-container-error{
+  display: grid;
+  grid-template:
+    "header" 80px
+    "nav" 0px
+    "main" 500px
+    "footer" 460px;
+}
+
+.tipo-usuario,
+.tipo-admin,
+.tipo-client{
+  width: 50vw;
+  margin-top: 5%;
+}
+.tipo-client input{
+  width: 30%;
+}
+.tipo-client label{
+  width: 80%;
+  font-size: 1.2rem;
+}
+.tipo-admin input{
+  width: 20%;
+}
+.tipo-admin label{
+  width: 70%;
+  font-size: 1.2rem;
+}
+.imagen-perfil{
+  width:100%;
+  margin-left: 12%;
+  font-size: 1.5rem;
+}
+.imagen-login{
+  width: 100%;
+  margin: 5%;
 }
 
 /**************** HEADER *******************/
@@ -866,6 +960,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 6%;
 }
 
 .input-user-name,
@@ -965,6 +1060,22 @@ p {
   width: 200px;
   height: 200px;
 }
+
+.grid-container-product-add{
+  display: grid;
+  grid-template:
+  "header" 70px
+  "nav" 40px
+  "main" 65%
+  "footer" 360px;
+}
+
+
+
+
+
+
+
 /*/DESKTOP/*/
 @media (min-width: 768px) {
   .grid-container {
@@ -975,6 +1086,25 @@ p {
       "main" auto
       "footer" 360px;
   }
+
+  .grid-container-login,
+  .grid-container-error,
+  .grid-container-product-add{
+    display: grid;
+    grid-template:
+    "header" 80px
+    "nav" 40px
+    "main" 70%
+    "footer" 360px;
+  }
+
+  .section-login-container{
+    width: 90%;
+    height: 95%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+
 
   /**************** HEADER *******************/
 
@@ -1461,11 +1591,32 @@ title p{
   }
   .product-footer {
     display: block;
-
   }
 }
 
 @media (min-width: 1200px) {
+  .grid-container-product-add{
+    display: grid;
+    grid-template:
+    "header" 6%
+    "nav" 30px
+    "main" 75%
+    "footer" 250px;
+}
+.section-container-edit{
+  width: 80%;
+}
+.title-edit p{
+  font-size: 18px;
+  font-weight: bold;
+  height: 2em;
+}
+.form-show-data-rows{
+  font-size: 1.2rem;
+}
+.form-select-container{
+  margin: 0px;
+}
   .box-products,
   .box-products-2,
   .box-products-3,
@@ -1479,15 +1630,12 @@ title p{
   .slider {
     height: 750px;
   }
-
   /* ---------- CATEGORIAS DESTACADAS ---------- */
-
   .art-categorias {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     height: 100%;
   }
-
   .cat-box-3,
   .cat-box-4 {
     margin: 10px;
@@ -1504,10 +1652,26 @@ title p{
     font-size: 1.5em;
     font-weight: bold;
   }
+  .tipo-usuario,
+  .tipo-admin,
+  .tipo-client{
+    width: 20vw;
+    margin-top: 5%;
+  }
+
 }
 
 @media (min-width: 1600px) {
   /* ---------- CATEGORIAS DESTACADAS ---------- */
+  .grid-container-product-add,
+  .grid-container-error{
+    display: grid;
+    grid-template:
+    "header" 6%
+    "nav" 30px
+    "main" 85%
+    "footer" 250px;
+  }
   .art-categorias {
     grid-template-columns: 20% 20% 20% 20% 20%;
   }
@@ -1621,9 +1785,9 @@ title p{
   display: grid;
   gap: 1rem;
   grid-template-columns: 0.8fr  ;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  margin-left: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 8%;
   /* justify-content: center; */
 }
 
@@ -1633,7 +1797,7 @@ title p{
   outline: none;
   border: none;
   border-bottom: 1px solid rgb(0 0 0 / 15%);
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition:  0.5s;
 }
 
@@ -1670,21 +1834,31 @@ title p{
 
 }
 
-.button-standar {
-  height: 2rem;
-  border-radius: 0.2rem;
+.button-standar{
+  height: 2.4rem;
+  border-radius: 1rem;
   border: none;
   background-color: var(--contrastColor);
   font-size: 1rem;
 }
+.button-siguiente{
+  height: 2.2rem;
+  border: none;
+  background-color: var(--contrastColor);
+  font-size: 1rem;
+  margin-left: 8px;
+}
+
 .button-standar:hover{
   cursor:pointer;
 }
 .button-standar-warning{
-  height: 2rem;
-  border-radius: 0.2rem;
+  height: 2.4rem;
+  width: 9rem;
+  border-radius: 1rem;
   border: none;
   background-color: var(--contrastColor);
+  font-size: 1rem;
   cursor: no-drop;
 }
 .link-form-button-container:hover{
@@ -1716,12 +1890,14 @@ title p{
 
 a.link-form-button,
 a.link-form-button:visited {
-  text-align: center;
-  padding-top: 0.22rem;
-  height: 2rem;
-  border-radius: 0.2rem;
+  height: 2.4rem;
+  width: 9rem;
+  border-radius: 1rem;
   border: none;
   background-color: var(--contrastColor);
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 0.22rem;
   color: var(--textPrimaryColor);
   text-decoration: none;
 }
@@ -1734,7 +1910,7 @@ a.link-form-button:visited {
 .title-edit{
     text-align: center;
     background-color: var(--contrastColor);
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
 
 }
 

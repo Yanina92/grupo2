@@ -2,19 +2,19 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controller/controllerUsers');
 const multer = require('multer');
-const path = require('path');
+// const path = require('path');
 
 const storage = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validationRegisterMiddleware');
 const guestMiddlewares = require('../middlewares/guestMiddlewares');
 const authMiddlewares = require('../middlewares/authMiddlewares');
 
-const uploadFile = multer({storage});
+const uploadFile = multer({storage: storage});
 
 //CRUD
 //Create (Register)
 router.get('/register',guestMiddlewares, controller.register);
-router.post('/register',validations, uploadFile.single('image') , controller.processRegister);
+router.post('/register', uploadFile.single('image'), validations, controller.processRegister);
 //Read (List)
 router.get('/', controller.index);
 //Update

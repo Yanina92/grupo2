@@ -10,13 +10,18 @@ const Products = db.Product;
 const controller = {
 
   productsDetail:(req, res) => {
-    let identy = req.params.id
-    const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
-    let product = products.find(p=>p.id==identy);
-    // let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
-    res.render('./products/productDetail',{product})
+    // let identy = req.params.id
+    // const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
+    // let product = products.find(p=>p.id==identy);
+    // // let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
+    // res.render('./products/productDetail',{product})
+    let productId = req.params.id;
+    let product = Products.findByPk(productId)
+    .then((product) => {
+        return res.render("./products/productDetail", { product },console.log(product));
+    })
+    .catch(error => res.send(error))
   },
-
   productsCart: (req, res) => {
     res.render('./products/productCart');
   },

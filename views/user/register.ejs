@@ -72,11 +72,15 @@
                             <%= errors.password.msg %>
                         </div>
                     <% } %>
-                    <div>
+                    <div class="tipo-usuario">
+                        <div class="tipo-admin">
                         <input class='input-user-phone' id='administrator' name="admin" value='1' type='radio'>
                         <label for="administrator">Administrador</label>
+                        </div>
+                        <div class="tipo-client">
                         <input class='input-user-phone' id='customer' name="admin" value='0' type='radio'>
                         <label for="customer">Cliente</label>
+                    </div>
                     </div>
                     <% if (locals.errors && errors.admin) { %>
                         <div class='text-danger'>
@@ -85,8 +89,8 @@
                     <% } %>
                     <br>
                     <div>
-                        <label><b>Imagen de perfil</b></label>
-                        <input name="image" type='file' required pattern="(?i)\.(jpg|png|gif)$" required>
+                        <label class="imagen-perfil"><b>Imagen de perfil</b></label>
+                        <input class="imagen-login" name="image" type='file' required pattern="(?i)\.(jpg|png|gif)$" required>
                         <i class="fas fa-portrait"> </i>
                     </div>
                     <% if (locals.errors && errors.image) { %>
