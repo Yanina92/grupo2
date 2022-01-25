@@ -7,9 +7,11 @@ const productsAPIController = require('../controller/productsAPIController');
 router.get('/users',usersAPIController.list);
 router.get('/users/:id',usersAPIController.detail);
 
-//Prductos
+//Productos
 
 router.get('/products',productsAPIController.list);
 router.get('/products/:id',productsAPIController.detail);
+
+//Categorias
 
 module.exports = router;
