@@ -817,15 +817,31 @@ body {
   position: absolute;
   right: 12px;
 }
-
-.menu-display{
-    display: none;
+.showMenu {
+  position: fixed;
+  visibility: visible;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50vw;
+  z-index: 100;
+  background-color: var(--contrastColor);
+  box-shadow: 0px 0px 2px 1px black;
+}
+.cutButton{
+ opacity: 0;
+}
+/* .menu{
+  transition:transform 2s;
+} */
+  .menu-display{
     position: fixed;
-    right: 0;
+  visibility: hidden;
+    top: 0;
+    right: 0px;
+    bottom: 0;
     width: 50vw;
-    margin-left: -100%;
-    transition: all 0.2s linear;
-    z-index: 100;
+    z-index: 99;
     background-color: var(--contrastColor);
     box-shadow: 0px 0px 2px 1px black;
   }
@@ -1110,7 +1126,6 @@ p {
 /******* NICOLAS *******/
 
 .body-home{
-  text-align: center;
   background: repeating-linear-gradient( 
 45deg
 , #f0f0f0, #f0f0f0 10px, #f2f2f2 10px, #f2f2f2 20px );
@@ -1300,16 +1315,6 @@ title p{
 .box-products-4:hover {
   transform: scale(1.05);
 }
-
-/* .arrow-left,
-.arrow-right {
-  position: relative;
-  top: 100px;
-}
-
-.arrow-right {
-  order: 1;
-} */
 
 .product-img {
   width: 100%;
@@ -1513,10 +1518,9 @@ title p{
   .box-products-3,
   .box-products-4 {
     display: flex;
-    width: 20%;
   }
   .products-off {
-    justify-content: space-evenly;
+    align-items: center;
   }
   .slider {
     height: 750px;

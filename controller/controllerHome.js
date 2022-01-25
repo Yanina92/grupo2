@@ -20,20 +20,5 @@ Products.findAll({where:{offer:1},offset:1,limit: 8,order: sequelize.random()})
                 res.render('index.ejs',{products,desc,math})})
             }
         }
-    
-
-        // Products.findAll({where:{offer:1},offset:1,limit: 8,order: sequelize.random()})
-        //     .then(products =>{
-        //         res.render('index.ejs',{products},console.log(products.length));
-        //     })
-        
-     
-    //,
-    // refresh:function(req, res) {
-    //     Products.findAll({where:{offer:1},offset:1,limit: 5})
-    //         .then(products =>{
-    //             res.render('index.ejs',{products},console.log(products.length));
-    //         })
-        
 
 module.exports = controller;

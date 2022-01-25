@@ -1,29 +1,37 @@
-// const btn = document.getElementById('button-home');
-// const article = document.getElementById('offer-1');
-// const article2 = document.getElementById('offer-2');
-// const changeClass = () =>  {
-//   article.classList.toggle("products-off-OFF");
-//   article2.classList.toggle("products-off-ON");
-// }
-// const click = function(e){
-//   changeClass();
-// };
+window.addEventListener('load', function() {
+  const $btn = document.getElementById('burger-btn');
+  let $menu = document.getElementById('display-burger');
+  let $items = document.querySelectorAll('.item-burger')
 
-// console.log('este tiene el button',btn)
+  function itemsClose() {
+    if ($menu.classList.contains("showMenu")) {
+      $menu.classList.toggle("menu-display");
+    }
+  }
+  $items.forEach(element => {
+    element.onclick = itemsClose; 
+  })
+   
 
+function toggleMenu() {
+  if ($menu.classList.contains("showMenu")) {
+    $menu.classList.toggle("menu-display");
+    // $menu.classList.add("menu-display");
 
-// btn.onclick = click;
+    // closeIcon.style.display = "none";
+    $btn.classList.remove("cutButton");
+  } else {
+    $menu.classList.toggle("showMenu");
+    // $menu.classList.remove("menu-display");
 
-let btn = document.getElementById('.material-icons');
-let $display = document.getElementById('.menu-display')
-
-const changeClass = () =>  {
- $display.style.display = 'block'
+    // closeIcon.style.display = "block";
+    $btn.classList.add("cutButton");
+  }
 }
-const click = function(e){
-  changeClass();
-};
-console.log('este tiene el button',btn)
-console.log('este tiene el button',$display)
+  console.log('este tiene el button',)
+  
+  
+  $btn.onclick = toggleMenu;
+  
+  });
 
-btn.onclick = click;

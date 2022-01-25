@@ -173,7 +173,7 @@ const controller = {
   delete: function (req, res) {
     Products.destroy({where: {id:req.params.id}, force:true})
     .then(() =>{
-    return res.redirect("/products");
+    return res.redirect("/products/1");
     })
     .catch(error => res.send(error))    
   }, 
