@@ -4,9 +4,16 @@
  <%- include('../partials/head'); %>
 
 <body class="body-productDetail">
-  <header class="nav-header">
-    <%- include('../partials/header') %>
-  </header>
+
+  <div class="grid-container-home">
+    <header class="nav-header">
+        <%-include('../partials/header') %>
+    
+    </header>
+
+  <%-include('../partials/nav-bar') %>
+</div>
+
   <main>
     <div class="hola">
       <div class="primer">
@@ -87,27 +94,9 @@
         <p class="detProd">Productos relacionados</p>
       </div>
       <section class="seccion">
-        <div class="products2">
-          <!-- <div class="arrow-left"><i class="fas fa-angle-left"></i></div>
-          <div class="arrow-right"><i class="fas fa-angle-right"></i></div> -->
-          <% productosRelacionados.forEach(function(product){ %>
-          <article class="art">
-            <div class="produc">
-              <img class="product-img" src= <%=product.image %>
-                alt="Foto de producto">
-              <div class="box-text-off">
-                <p><%=product.offer %></p>
-              </div>
-              <p class="prize-through"><%=product.price %></p>
-              <div class="box-prize-off">
-                <p><%=product.price %></p>
-                <p><%=product.discount %></p>
-              </div>
-              <p class="product-footer"><%=product.name %></p>
-            </div>
-          </article>
-          <% }) %>
-          <!-- <article class="art2">
+       
+       
+        <article class="art2">
             <div class="produc1">
               <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp"
                 alt="Foto de producto">
@@ -153,7 +142,7 @@
               </div>
               <p class="product-footer">Hacha de mano Cabo de madera 600grs.</p>
             </div>
-          </article> -->
+          </article> 
 
         </div>
       </section>

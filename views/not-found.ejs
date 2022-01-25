@@ -13,13 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost&family=Raleway:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="grid-container-error">
     <header class="nav-header">
-        <%- include('./partials/header') %>
+        <%- include('./partials/header'); %>
     </header>
+        <%- include('./partials/nav-bar') %>
+        
     <main class="main-content-login">
-    <img src="/images/error_404.jpg" alt="error_404">
-    <h3>Ups! No hemos encontrado la página que estas buscando</h3>
+    <img src="/images/404.jpeg" alt="error_404" class="image-error">
+    <div class="texto-imagen">Ups! No hemos encontrado la página que estas buscando</div>
     </main>
     <footer class="nav-footer">
         <%- include('./partials/footer'); %>
