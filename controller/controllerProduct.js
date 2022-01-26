@@ -3,9 +3,9 @@ const fs = require("fs");
 const path = require("path");
 const productPath = path.join(__dirname, "../data/productsData.json");
 const db = require('../database/models');
-const sequelize = db.sequelize;
-const Product = require('../database/models/Product');
+const Sequelize = require('sequelize')
 const Products = db.Product;
+
 
 const controller = {
 
@@ -27,12 +27,56 @@ const controller = {
   },
  
   productsList:function(req, res) {
-    Products.findAll()
+    let perPage = 5;
+    let page = req.params.page || 1 ;
+    let pages = '';
+    let desc = (discount) => parseFloat(discount)/100  
+    Products.findAndCountAll({
+      offset:((perPage * page) - page)},
+      {
+        limit:perPage
+      }
+    )
       .then(products => {
-          res.render("./products/productList",{products})
+          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page,desc})
       })
-  },
 
+  },
+  productsListPriceASC:function(req, res) {
+    let perPage = 5;
+    let page = req.params.page || 1 ;
+    let pages = '';
+    let desc = (discount) => parseFloat(discount)/100  
+    Products.findAndCountAll({
+      offset:((perPage * page) - page),
+         
+      },{
+        limit:perPage
+      }
+    )
+      .then(products => {
+          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page,desc},console.log(products.rows))
+      })
+
+  },
+  productsListPriceDESC:function(req, res) {
+    let perPage = 5;
+    let page = req.params.page || 1 ;
+    let pages = '';
+    let desc = (discount) => parseFloat(discount)/100  
+    Products.findAndCountAll({
+      offset:((perPage * page) - page),
+         
+      },{
+        limit:perPage
+      }
+    )
+      .then(products => {
+          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page,desc},console.log(products.rows))
+      })
+
+  },
+ 
   createForm: (req, res) => {
     res.render("./products/addProduct");
   },
@@ -134,7 +178,7 @@ const controller = {
   delete: function (req, res) {
     Products.destroy({where: {id:req.params.id}, force:true})
     .then(() =>{
-    return res.redirect("/products");
+    return res.redirect("/products/1");
     })
     .catch(error => res.send(error))    
   }, 

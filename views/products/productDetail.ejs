@@ -55,31 +55,18 @@
         </div>
         <div class="primero">
           <p class="nombre"><%=product.name %></p>
-          <p class="precio"><%=product.price %></p>
-          <div class="cant">
-            <i class="fas fa-plus-circle"></i>
-            <input class="cantidad">
-            <i class="fas fa-minus-circle"></i>
-          </div>
+          <p class="precio">$<%=product.price %></p>
           
             <div class="cont">
-              <p class="titulo">Especif. Tecnicas
-              <i class="fas fa-caret-down"></i></p>
+              <p class="titulo">Descripcion </p>
+              <p class="titulo"><%= product.description%></p>
             
               <div class="especif">
-                <p class="texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p class="texto"><Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.></p>
               </div>
             </div>
 
-            <div class="cont">
-              <p class="titulo">Descripcion
-              <i class="fas fa-caret-down"></i></p>
-              <div class="desc">
-                <p class="texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-              </div>
-            </div>
             
         
          <div class="add-carrito">
@@ -151,6 +138,7 @@
   <footer class="nav-footer">
     <%- include('../partials/footer'); %>
   </footer>
+  <script src="../../js/home.js"></script>
 </body>
 
 </html>

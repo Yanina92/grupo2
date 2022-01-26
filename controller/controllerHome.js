@@ -8,26 +8,17 @@ const Category = db.Category;
 
 const controller = {
     index:function(req, res) {
-        
-const productsPage1 =  Products.findAll({where:{offer:1},offset:1,limit: 4,order: sequelize.random()});
-const productsPage2 =  Products.findAll({where:{offer:1},offset:4,limit: 8,order: sequelize.random()});
+let desc = (discount) => parseFloat(discount)/100;
+let math = function(price,desce) {
+  return  Math.abs
+    (Math.trunc
+        (parseFloat(price) - parseFloat(desce)))
+};
 
-Promise.all([productsPage1,productsPage2])
-.then(products =>{
-     res.render('index.ejs',{products},console.log(products[0]))})
+Products.findAll({where:{offer:1},offset:1,limit: 8,order: sequelize.random()})
+            .then(products =>{
+                res.render('index.ejs',{products,desc,math})})
+            }
+        }
 
-        // Products.findAll({where:{offer:1},offset:1,limit: 8,order: sequelize.random()})
-        //     .then(products =>{
-        //         res.render('index.ejs',{products},console.log(products.length));
-        //     })
-        
-     }
-    //,
-    // refresh:function(req, res) {
-    //     Products.findAll({where:{offer:1},offset:1,limit: 5})
-    //         .then(products =>{
-    //             res.render('index.ejs',{products},console.log(products.length));
-    //         })
-        
-}
 module.exports = controller;

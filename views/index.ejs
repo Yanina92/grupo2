@@ -13,7 +13,7 @@
 
 
       <section class="carrucel">
-         <div class="slider">
+         <div class="   slider">
             <ul>
                <li><img src="/images-home/img-slider-2.png"></li>
                <li><img src="/images-home/img-motosierra.jpg"></li>
@@ -40,49 +40,38 @@
          </div>
 
             <article class="products-off" id='offer-2'>
-            <% products[0].forEach(function(product,index){ %>
+            <% products.forEach(function(product,index){ %>
+               <% let descuento = product.price * (desc(product.discount)) %>
                <div class="box-products-<%= index == 0 ?'1':index + 1%>" >
-                   <div class="product" >
-                       <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
+                  
+                   <div class="product"><a class="link-product"href="/products/detail/<%= product.id %>">
+                       <img class="product-img" src="<%= product.image %>" alt="Foto de producto">
+                     </a>
                        <div class="box-text-off">
                            <p>Oferta del dia</p>
                            </div>
                        <p><%=product.name %></p>
                       <p class="prize-through"><%=product.price %></p>
                       <div class="box-prize-off">
-                      <p><%=product.price %></p>
-                      <p><%=product.discount %></p>
+                      <p><%= math(product.price,descuento) %></p>
+                      <p class='off-number'>%<%=product.discount %></p>
                       </div>
+                      
                       <p class="product-footer"><%=product.description %></p>
+                      
+                      
+                     </button>
+                
                    </div>
+                    
                 </div>
+               
+          
                 <% })%>
                </article>
-<!-- 
-         <article class="products-off-OFF" id='offer-1'>
-            <%# products[0].forEach(function(product,index){ %>
-               <div class="box-products-<%#= index == 0 ?'1':index + 1%>" >
-                   <div class="product" >
-                       <img class="product-img" src="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp" alt="Foto de producto">
-                       <div class="box-text-off">
-                           <p>Oferta del dia</p>
-                           </div>
-                       <p><%#=product.name %></p>
-                      <p class="prize-through"><%#=product.price %></p>
-                      <div class="box-prize-off">
-                      <p><%#=product.price %></p>
-                      <p><%#=product.discount %></p>
-                      </div>
-                      <p class="product-footer"><%#=product.description %></p>
-                   </div>
-                </div>
-                <%# })%>
-               </article> -->
-               
-         
             
       </main>
-      <button class="button-standar-products" id="button-home" type="button" value="0" >Ver mas</button>
+      <!-- <button class="button-standar-products" id="button-home" type="button" value="0" >Ver mas</button> -->
       <main class="main-home">   
          <article>
             <div class="title">
@@ -90,45 +79,45 @@
                <hr class="home-hr">
             </div>
             <div class="art-categorias">
-               <a href="/products">
+               <a href="/products/1">
                <div class="cat-box">
                   <div class="cat">Electricidad<i class="fas fa-bolt"></i></div>
                </div>
             </a>
                
-               <a href="/products">
+               <a href="/products/1">
                <div class="cat-box">
                   <div class="cat">Buloneria</div>
                </div>
             </a>
                
 
-               <a href="/products">
+               <a href="/products/1">
                <div class="cat-box-2">
                   <div class="cat">Sanitarios<i class="fas fa-toilet"></i></div>
                </div>
             </a>
 
               
-               <a href="/products">
+               <a href="/products/1">
                <div class="cat-box-2">
                   <div class="cat">Jardineria<i class="fas fa-tree"></i></div>
                </div>
                </a>
 
-               <a href="/products">
+               <a href="/products/1">
                <div class="cat-box-3">
                   <div class="cat">Quimicos <i class="fas fa-flask"></i> </div>
                </div>
             </a>
 
-               <a href="/products">
+               <a href="/products/1">
                <div class="cat-box-3">
                   <div class="cat">Pintura<i class="fas fa-brush"></i></div>
                </div>
             </a>
 
-               <a href="/products">
+               <a href="/products/1">
                <div class="cat-box-4">
                   <div class="cat">Iluminacion<i class="far fa-lightbulb"></i></div>
                </div>
@@ -140,13 +129,13 @@
                </div>
             </a>
 
-               <a href="/products">
+               <a href="/products/1">
                <div class="cat-box-5">
                   <div class="cat">Cerrajeria<i class="fas fa-key"></i></div>
                </div>
             </a>
 
-               <a href="/products">
+               <a href="/products/1">
                <div class="cat-box-5">
                   <div class="cat">Elementos de Seguridad<i class="fas fa-hard-hat"></i></div>
                </div>
@@ -157,12 +146,7 @@
 
 
       <section class="banner-footer">
-         <nav>
-            <div>
-               <p> <a href="/login"> MI CUENTA </a> </p>
-               <p> <a href="/productCart"> CARRITO </a> </p>
-            </div>
-         </nav>
+
 
          <div class="banner">
             <img src="/images/banner-footer.png" alt="">

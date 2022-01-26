@@ -806,7 +806,7 @@ body {
   grid-template:
     "header" 80px
     "nav" 0px
-    "main" 700px
+    "main" ""
     "footer" 460px;
 }
 
@@ -856,6 +856,7 @@ body {
 .support-bar {
   grid-area: "nav";
   overflow: hidden;
+  display: none;
 }
 
 .nav-burger i:nth-child(2) {
@@ -911,6 +912,55 @@ body {
   position: absolute;
   right: 12px;
 }
+.showMenu {
+  position: fixed;
+  visibility: visible;
+  text-align: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50vw;
+  z-index: 100;
+  background-color: var(--contrastColor);
+  box-shadow: 0px 0px 2px 1px black;
+}
+.cutButton{
+ opacity: 0;
+}
+/* .menu{
+  transition:transform 2s;
+} */
+  .menu-display{
+    position: fixed;
+  visibility: hidden;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    width: 50vw;
+    z-index: 99;
+    background-color: var(--contrastColor);
+    box-shadow: 0px 0px 2px 1px black;
+  }
+  .list-burger{
+  display: flex;
+  flex-direction: column;
+  }
+
+  .list-burger h3{
+    margin: 10px;
+    font: 20px;
+    border-bottom: black 0.5px solid;
+    
+  }
+  .item-burger{
+  height: 50px;
+  font-size: 16px;
+  color:white
+  }
+  .main-nav.show {
+    margin-left: 0;
+  }
+  
 
 /****************        *******************/
 
@@ -1065,8 +1115,8 @@ p {
   display: grid;
   grid-template:
   "header" 70px
-  "nav" 40px
-  "main" 65%
+  "nav" 0px
+  "main" ""
   "footer" 360px;
 }
 
@@ -1094,7 +1144,7 @@ p {
     grid-template:
     "header" 80px
     "nav" 40px
-    "main" 70%
+    "main" auto
     "footer" 360px;
   }
 
@@ -1196,8 +1246,7 @@ p {
     display: grid;
     grid-template: "Contact Follow Location";
     background-color: var(--primaryColor);
-    gap: 20px;
-   
+    gap: 20px;   
   }
 
   .contact {
@@ -1208,7 +1257,6 @@ p {
 /******* NICOLAS *******/
 
 .body-home{
-  text-align: center;
   background: repeating-linear-gradient( 
 45deg
 , #f0f0f0, #f0f0f0 10px, #f2f2f2 10px, #f2f2f2 20px );
@@ -1237,7 +1285,7 @@ p {
 .slider {
   width: 100%;
   margin: auto;
-  height: 200px;
+  height: 350px;
   overflow: hidden;
 }
 
@@ -1363,6 +1411,7 @@ title p{
   white-space: nowrap;
   overflow: hidden;
   transition: all 1s;
+  text-align: initial;
 }
 /* 
 .box-products:hover .product-footer { 
@@ -1398,18 +1447,9 @@ title p{
   transform: scale(1.05);
 }
 
-/* .arrow-left,
-.arrow-right {
-  position: relative;
-  top: 100px;
-}
-
-.arrow-right {
-  order: 1;
-} */
-
 .product-img {
   width: 100%;
+  height: 250px;
   max-height: 70%;
   border-radius: 5px 5px 0 0;
   object-fit:cover;
@@ -1428,9 +1468,11 @@ title p{
   background-color: red;
   border-radius: 0px 5px 5px 0px;
 }
-.box-prize-off p:last-child {
-  color: #73c39e;
+
+.off-number{
+  color: #05c76c;
   align-self: center;
+  margin-left:5px ;
 }
 
 .prize-through {
@@ -1439,7 +1481,13 @@ title p{
   text-decoration: line-through;
   font-family: var(--number);
 }
-
+.finally-prize{
+  display: flex;
+  font-size: 25px;
+  position: relative;
+  margin-right: 10px;
+  font-family: var(--number);
+}
 .box-prize-off {
   display: flex;
   font-family: var(--number);
@@ -1447,13 +1495,13 @@ title p{
   justify-content: flex-start;
   font-size: 15px;
 }
-.box-prize-off p:first-child {
+/* .box-prize-off p:first-child {
   display: flex;
   font-size: 25px;
   position: relative;
   margin-right: 10px;
   font-family: var(--number);
-}
+} */
 
 /* ---------- ARTICLE-CATEGORIAS ---------- */
 
@@ -1466,7 +1514,7 @@ title p{
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 2px 1px black;
   color: var(--main-title-text-color);
-  height: 20vh;
+  height: 30vh;
   width: 80vw;
   padding: 3%;
 }
@@ -1527,9 +1575,16 @@ title p{
   margin-top: 15px;
 }
 
+.nav-bar-carrito{
+  display: none;
+}
 /* ---------- MEDIA-QUERIES ---------- */
 
 @media (min-width: 768px) {
+  .nav-bar-carrito{
+    display: inline-block;
+    
+  }
   .msg-slider{
     display: block;
   }
@@ -1564,7 +1619,7 @@ title p{
     display: grid;
     grid-template:
       "header" 80px
-      "nav" 40px;
+      "nav" 0px;
   }
   
   .products-off {
@@ -1622,10 +1677,9 @@ title p{
   .box-products-3,
   .box-products-4 {
     display: flex;
-    width: 20%;
   }
   .products-off {
-    justify-content: space-evenly;
+    align-items: center;
   }
   .slider {
     height: 750px;
@@ -2005,10 +2059,15 @@ a:visited {
     #f0f0f0 10px,
     #f2f2f2 10px,
     #f2f2f2 20px
-  );  
+  );
+  align-items: baseline;
 }
 
+.text-list{
 
+margin-left: 5px;
+margin-right: 5px;
+}
 .button-standar-products {
   position: relative;
   width:6rem;
