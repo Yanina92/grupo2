@@ -1,5 +1,5 @@
 window.addEventListener('load', function() {
-  const $btn = document.getElementById('burger-btn');
+  const $btn = [document.getElementById('burger-btn'),document.getElementById('display-burger')];
   let $menu = document.getElementById('display-burger');
   let $items = document.querySelectorAll('.item-burger')
 
@@ -31,7 +31,14 @@ function toggleMenu() {
   console.log('este tiene el button',)
   
   
-  $btn.onclick = toggleMenu;
+  function burgerDisplay() {
   
+  $btn.forEach(element => {
+    
+  element.onclick = toggleMenu;
+  })
+}
+  
+ burgerDisplay(); 
   });
 

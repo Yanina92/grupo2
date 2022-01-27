@@ -64,7 +64,7 @@ const controller = {
                 where: {id: req.params.id}
             })
             .then(()=> {
-                return res.redirect('/users')})            
+                return res.redirect('/profile')})            
             .catch(error => res.send(error));
     },
 
@@ -92,16 +92,19 @@ const controller = {
                 console.log("Stay Here - 2")
                     if (isOkThePassword){
                         console.log("Stay Here - 3")
-                        delete user.password;
+                        delete user.password
                         req.session.userLogged = user;
-
-                        if(req.body.remember_user){
+                    }
+                    if(req.body.remember_user){
                         console.log("Stay Here - 4")
                         res.cookie('userEmail',req.body.email,{maxAge:(1000*60)*2})
+                       return res.render('./user/profile',console.log("Work2!"),{user})
                     }
+                    if(isOkThePassword && !req.body.remember_user){
                     console.log("Stay Here - 5")
-                    return res.redirect('./profile',302,console.log("Work!"));
-                }else{
+                  return res.redirect('./profile',302,console.log("Work!"),{user});
+                }
+                {
                     console.log("Stay Here - ????")
                     return res.render('./user/login',{
                         errors:{
@@ -121,8 +124,10 @@ const controller = {
     profile:function(req, res) {
 
         console.log(req.cookies.userEmail);
+        console.log(req.session.userLogged)
 
-        return res.render('./user/profile',{
+        return res.render('./user/profile',
+        {
             user: req.session.userLogged
         });
     },

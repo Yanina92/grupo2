@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Admin</title>
 </head>
-<body>
+<body class="grid-container">
     <header class="nav-header">
         <%- include('../partials/header'); %>
     </header>
@@ -23,23 +23,23 @@
     <main class="main-content">
         <section class="section-container">
             <div class="section-container-inner">
-                <% users.forEach(function(user) {%>
+                <% products.forEach(function(products) {%>
                     <div class="cards-list">
                         <div class="user-card">
-                            <img class="user-profile-card"src="https://img.favpng.com/17/3/18/computer-icons-user-profile-male-png-favpng-ZmC9dDrp9x27KFnnge0jKWKBs.jpg"></img>
+                            <img class="user-profile-card"src="<%=products.image%>"></img>
                             <div class="user-data">
-                                <p><%=user.firstName%></p>
-                                <p><%=user.profile%></p>
-                                <p><%=user.email%></p>
+                                <p><%=products.name%></p>
+                                <p><%=products.profile%></p>
+                                <p><%=products.email%></p>
                             </div>
-                            <form action='/users/delete/<%= user.id %>' method='post'>
+                            <form action='/products/delete/<%= products.id %>' method='post'>
                                 <button type="submit" class="action-button">
                                     <span class="material-icons-outlined icon-button-delete">
                                         delete_forever
                                     </span>
                                 </button>
                             </form>
-                            <form action='/users/edit/<%= user.id %>' method='GET'>
+                            <form action='/products/edit/<%= products.id %>' method='GET'>
                                 <button type="submit" class="action-button">
                                     <span class="material-icons-outlined icon-button-edit">
                                         edit

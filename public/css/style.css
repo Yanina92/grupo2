@@ -810,6 +810,7 @@ body {
     "footer" 460px;
 }
 
+
 .grid-container-login,
 .grid-container-error{
   display: grid;
@@ -932,12 +933,12 @@ body {
 } */
   .menu-display{
     position: fixed;
-  visibility: hidden;
+    visibility: hidden;
     top: 0;
     right: 0px;
     bottom: 0;
     width: 50vw;
-    z-index: 99;
+    z-index: 100;
     background-color: var(--contrastColor);
     box-shadow: 0px 0px 2px 1px black;
   }
@@ -961,7 +962,9 @@ body {
     margin-left: 0;
   }
   
-
+#burger-btn{
+  cursor: pointer;
+}
 /****************        *******************/
 
 .main-content {
@@ -1177,6 +1180,7 @@ p {
 
   .registerUser-bar{
     display:flex;
+    align-self: center;
   }
 
   .image-bar{
@@ -1784,13 +1788,12 @@ title p{
   height: auto;
   justify-content: center;
   align-items: space-between;
+  background-color: var(--primaryColor);
 }
 
 .section-container {
   max-width: 600px;
-  max-height: 800px;
   width: 98%;
-  height: 100%;
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: white;
@@ -1801,14 +1804,15 @@ title p{
   grid-template-columns: 1fr;
   justify-content: space-around;
   align-content: space-between;
-  overflow: scroll;
 }
-
+.user-card form button {
+cursor: pointer;
+}
 .user-card {
   min-width: 340px;
   max-width: 560px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--primaryDarkColor);
   height: 90px;
   border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
   margin-top: 5px;
@@ -2029,7 +2033,6 @@ a:visited {
 
 
 .profile{
-  margin-top:5%;
   text-align: center;
 }
 
@@ -2078,4 +2081,92 @@ margin-right: 5px;
   box-shadow: 0px 0px 5px 1px black;
   background-color: var(--contrastColor);
   font-size: 1rem;
+}
+.profile{
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #f2f2f2 10px,
+    #f2f2f2 20px
+  );
+  min-width: 200px;
+    min-height: 200px;
+}
+
+.profile-content-img{
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px 1px black;
+margin: auto;
+ width: 50vw;
+}
+
+.profile-img{
+  width: 100%;
+  height: auto;
+}
+
+.profile  h2 ,.msg-mail{
+  background-color: var(--primaryDarkColor);
+}
+
+.msg-user-mail{
+    width: 30%;
+    margin: auto;
+    background-color: var(--white);
+}
+
+.profile-admin{
+  display: flex;
+  justify-content: space-between;
+}
+.profile-admin ul{
+  list-style: none;
+}
+.item-profile:hover{
+  color: var(--contrastColor);
+}
+
+@media (min-width: 768px){ 
+  
+.profile{
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #f2f2f2 10px,
+    #f2f2f2 20px
+  );
+}
+
+.profile-content-img{
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px 1px black;
+  margin: auto;
+  width: 40vw;
+}
+
+.profile-img{
+  width: 100%;
+}
+
+.profile  h2 ,.msg-mail{
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #f2f2f2 10px,
+    #f2f2f2 20px
+  );
+}
+
+.msg-user-mail{
+  font-size: 20px;
+    width: 30%;
+    width: max-content;
+    margin: auto;
+    background-color: var(--contrastColor);
+    border-radius: 5px;
+}
+
 }
