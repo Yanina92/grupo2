@@ -8,8 +8,8 @@ const Category = db.Category;
 
 const controller = {
     index:function(req, res) {
-let desc = (discount) => parseFloat(discount)/100;
-let math = function(price,desce) {
+    let desc = (discount) => parseFloat(discount)/100;
+    let math = function(price,desce) {
   return  Math.abs
     (Math.trunc
         (parseFloat(price) - parseFloat(desce)))

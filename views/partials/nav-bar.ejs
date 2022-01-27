@@ -1,10 +1,11 @@
 <nav class="support-bar"> 
-    <span class="items-bar"><a href="/products/1">Productos</a></span>
+    <span style="display: none"items-bar"><a href="/products/">Productos</a></span>
+
     <a class="items-bar" href="/"> Home </a>
     <span></span>
     <% if (locals.isLogged) { %>      
-    <div class="registerUser-bar">
-    <img src='/images/avatars/<%= userLogged.image%>' width="50" class="image-bar">
+    <div class="registerUser-bar"><a href="/users/profile">
+    <img src='/images/avatars/<%= userLogged.image%>' width="50" class="image-bar"></a>
     <span class="greeting-bar">Hi <%= userLogged.firstName %>!</span>
     <span class="logout-bar"><a href="/users/logout">Logout</a></span>
     </div>
