@@ -30,15 +30,15 @@ const controller = {
     let perPage = 5;
     let page = req.params.page || 1 ;
     let pages = '';
-    let desc = (discount) => parseFloat(discount)/100  
+    let desc = (discount) => parseFloat(discount)/100 ;
     Products.findAndCountAll({
       offset:((perPage * page) - page)},
       {
-        limit:perPage
+        limit:(perPage)
       }
     )
       .then(products => {
-          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page,desc})
+          res.render("./products/productList",{products:products.rows,pages:Math.trunc(products.count / perPage) , page,desc})
       })
 
   },
