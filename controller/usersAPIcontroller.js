@@ -25,7 +25,7 @@ const controller = {
     },
     
     'detail': (req, res) => {
-      Users.findByPk(req.params.id,{attributes:["id","first_name","last_name","email","image"]})
+      Users.findByPk(req.params.id,{attributes:["id","first_name","last_name","email","phone","image"]})
             .then(user => {
                 let respuesta = {
                     meta: {

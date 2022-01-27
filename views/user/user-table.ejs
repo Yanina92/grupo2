@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost&family=Raleway:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Admin</title>
-</head>
+    <%- include('./partials/head') %>
 <body>
     <header class="nav-header">
         <%- include('../partials/header'); %>
@@ -26,7 +13,7 @@
                 <% users.forEach(function(user) {%>
                     <div class="cards-list">
                         <div class="user-card">
-                            <img class="user-profile-card"src="https://img.favpng.com/17/3/18/computer-icons-user-profile-male-png-favpng-ZmC9dDrp9x27KFnnge0jKWKBs.jpg"></img>
+                            <img class="user-profile-card" src="<%=user.image%>"></img>
                             <div class="user-data">
                                 <p><%=user.firstName%></p>
                                 <p><%=user.profile%></p>

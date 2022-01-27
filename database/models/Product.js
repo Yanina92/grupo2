@@ -42,10 +42,10 @@ module.exports = (sequelize, dataTypes) => {
   const Product = sequelize.define(alias, cols, config);
 
   Product.associate =  function (models){  
-    Product.hasOne(models.Category, // Relacion de Producto => Category
+    Product.belongsTo(models.Category, // Relacion de Producto => Category
         { 
         as:"category",
-        foreignKey:"id"
+        foreignKey:"id_category"
         });
 
     Product.belongsTo(models.Brand, // Relacion de Producto => Brand

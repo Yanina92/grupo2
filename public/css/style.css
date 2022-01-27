@@ -26,6 +26,8 @@
   margin-top: 10px;
 }
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -36,15 +38,21 @@
   scrollbar-color: transparent transparent; /* thumb and track color */
   scrollbar-width: 0px;
 }
+.pcant{
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
 .image-error{
   width: 100vw;
   height: 50vh;
+  margin-top: 30px;
 }
 .texto-imagen{
   position: absolute;
   top:10px;
   left:10px;
+ 
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: rem;
   color: rgba(8, 8, 8, 0.541);
@@ -59,6 +67,14 @@
   position: relative;
   /* margin-left: 20%; */
   
+  }
+  .grid-container-error{
+    display: grid;
+    grid-template:
+      "header" 80px
+      "nav" 0px
+      "main" 1
+      "footer" 460px;
   }
 
 
@@ -274,10 +290,11 @@ div.google-location {
   margin-left: 15px;
   padding: 0;
 }
-.prod{
+.prod {
   margin: 0;
-  padding:0;
-  width: 30vw;
+  padding: 0;
+  width: 50vw;
+  height: 120%;
 }
 .products2{
   display:flex;
@@ -306,7 +323,7 @@ div.google-location {
 .add-prodCart{
   text-decoration: none;
   color:black ;
-  font-size: 14px;
+  font-size: 10px;
   padding: 5px;
   text-align: center;
 }
@@ -362,7 +379,7 @@ div.google-location {
 }
 .product1{
   border-radius:5px ;
-  width: 100%;   
+  width: 70%;   
   margin-top: 10px;
   box-shadow: 0px 0px 5px 1px black;
   text-align:center;
@@ -397,7 +414,16 @@ margin-left:10px;
       text-align: center;
       font-size: 1.4rem;
     }
-    
+    .add-prodCart {
+      font-size: 14px;
+    }
+    .logoPerrito{
+      border-radius: 5%;
+      border: 2px solid black;
+      width: 100%;
+      height: 100%;
+      margin-top: 10px;
+    }
     .art{
     padding: 12px;
     width: 32vw;
@@ -438,12 +464,7 @@ margin-left:10px;
       text-align: center;
       font-size: 1.4rem;
     }
-    .image-error{
-      width: 80vw;
-      height: 50vh;
-      margin-left: 10%;
-      margin-top: 6%;
-    }
+   
  
 
     .art{
@@ -598,11 +619,13 @@ margin-left:10px;
 
 .botonProductCart {
   border: 3px solid var(--bordeBoton);
-  border-radius: 5px;
+  border-radius: 8px;
   width: 60vw;
-  height: 8vh;
+  height: 6vh;
   background-color: var(--contrastColor);
   color: var(--negro);
+  font-weight: bold;
+
 }
 
 .botonProductCart:hover {
@@ -619,8 +642,8 @@ margin-left:10px;
 .entradaProductCart {
   border: 3px solid var(--bordeBoton);
   border-radius: 5px;
-  width: 60vw;
-  height: 4vh;
+  width: 70vw;
+  height: 5vh;
   background-color: var(--white);
 }
 
@@ -713,6 +736,7 @@ i.fas.fa-trash-alt:hover {
   .botonProductCart {
     width: 30vw;
     height: 5vh;
+  
   }
 
   .entradaProductCart {
@@ -725,6 +749,11 @@ i.fas.fa-trash-alt:hover {
 
 @media (min-width: 1200px) {
   /*Desktop */
+  .prod {
+    margin: 0;
+    padding: 0;
+    width: 40vw;
+  }
 
   .destornilladorProductCart {
     width: 22vw;
@@ -811,8 +840,7 @@ body {
 }
 
 
-.grid-container-login,
-.grid-container-error{
+.grid-container-login{
   display: grid;
   grid-template:
     "header" 80px
@@ -1453,7 +1481,7 @@ title p{
 
 .product-img {
   width: 100%;
-  height: 250px;
+  height: 250;
   max-height: 70%;
   border-radius: 5px 5px 0 0;
   object-fit:cover;
@@ -1749,6 +1777,15 @@ title p{
   .cat-box-5 a {
     font-size: 1.5em;
     font-weight: bold;
+  }
+  .image-error{
+    width: 40vw;
+    height: 50vh;
+    margin-left: 30%;
+    margin-top: 6%;
+  }
+  .texto-imagen{
+    margin-left: 20%;
   }
 }
 @keyframes slider {
