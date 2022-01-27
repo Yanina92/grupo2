@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
-const User = require('../database/models/User');
-const {validationResult} =require('express-validator');
+const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const db = require('../database/models');
 const sequelize = db.sequelize;
@@ -26,16 +25,20 @@ const controller = {
     processRegister:function(req, res) {
         let errors = validationResult(req);
         if (errors.errors.length > 0) {
-            res.render("./user/register",{ errors:errors.mapped(), oldData:req.body});
+            res.render("./user/register",{ errors:errors.mapped(), oldData:req.body,})
         }else {
-        let userToCreate = {
-            ...req.body,
+        Users.create ({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
             password: bcryptjs.hashSync(req.body.password,10),
-            image: req.file.filename
-        }
-        Users.create(userToCreate);
-        //return res.send('ok, se creo el usuario');
-        res.redirect('/users');
+            phone: req.body.phone,
+            image: req.file.filename,
+            admin: req.body.admin
+    })
+    .then(usuario => console.log(usuario),res.redirect('/users/profile'))
+    .catch(error => console.log(res.status(400).send(error)))
+
     }
     },
 
@@ -78,27 +81,41 @@ const controller = {
     },
 
     loginProcess:function(req, res) {
-        let userToLogin = User.findByField('email',req.body.email);
+        let email = req.body.email;
+       Users.findOne({where: {email:email},raw : true})
+        .then(response =>{ 
+            console.log(response,"Stay Here - 1")
+            if (response){
+                console.log("Stay Here - 1.8")
+                let isOkThePassword = bcryptjs.compareSync(req.body.password,response.password)
+                let user = response;
+                console.log("Stay Here - 2")
+                    if (isOkThePassword){
+                        console.log("Stay Here - 3")
+                        delete user.password;
+                        req.session.userLogged = user;
 
-        if (userToLogin){
-            let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
-            if (isOkThePassword){
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-                if(req.body.remember_user){
-                    res.cookie('userEmail',req.body.email,{maxAge:(1000*60)*2})
-                }
-                return res.redirect('/users/profile');
-            }     
-        }
+                        if(req.body.remember_user){
+                        console.log("Stay Here - 4")
+                        res.cookie('userEmail',req.body.email,{maxAge:(1000*60)*2})
+                    }
+                    console.log("Stay Here - 5")
+                    return res.redirect('./profile',302,console.log("Work!"));
+                }else{
+                    console.log("Stay Here - ????")
+                    return res.render('./user/login',{
+                        errors:{
+                            email:{
+                                msg:'Las credenciales son invalidas'
+                            }
+                        }  
+                    });
+                }     
+            }
+   
+        })
 
-        return res.render('./user/login',{
-            errors:{
-                email:{
-                    msg:'Las credenciales son invalidas'
-                }
-            }  
-        });
+     
     },
 
     profile:function(req, res) {
