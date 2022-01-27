@@ -10,26 +10,6 @@ const Categories = db.Category;
 const controller = {
 
     'list': (req, res) => {
-
-       /* let cat = Categories.findAll({raw: true})  
-
-        let contadorCategorias = {};
-
-        for (let i = 0; i < cat.length; i++) {
-            var contador = 0;
-            contador = Products.count({
-                where: {
-                category_id: {
-                    [Op.eq]: cat[i].id,
-                },
-                },
-            });
-
-            contadorCategorias[`Categoria ${cat[i].name}`] = contador;
-        }
-
-      console.log(contadorCategorias);*/
-
         Products.findAll({include:[{association:"category"},{association:"brand"}]})        
         .then(function (product) {
                 let respuesta = {
@@ -57,6 +37,21 @@ const controller = {
                 }
                 res.json(respuesta);
             });
+    },
+    
+    'categories':(req, res) => {
+        Categories.findAll()
+        .then(category => {
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    total: category.length,
+                    url: '/api/categories/'
+                },
+                data: category
+            }
+            res.json(respuesta);
+        });
     },
  
 
