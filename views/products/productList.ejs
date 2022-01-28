@@ -22,7 +22,9 @@
             <% products.forEach(function(product,index){ %>
                 <div class="box-products <%= index %>" >
                     <div class="product" >
+                        <a class="link-product"href="/products/detail/<%= product.id %>">
                         <img class="product-img" src="<%= product.image %>" alt="https://http2.mlstatic.com/D_NQ_NP_732978-MLA46116430743_052021-O.webp">
+                    </a>
                         <div class="box-text-off">
                             <%if(product.offer == 1){%>
                             <p>Oferta del dia</p>
@@ -46,19 +48,6 @@
                  
                  <% }) %>        
     </main>
-
-<div class="nav-footer-list">
-    <%if((parseFloat(page) - 1) != 0 ){%>
-    <button class="button-standar" onclick="location.href='/products/<%= parseFloat(page) - 1 %>'">Previo</button>
-<%}%>
-
-    <div class= "text-list">Pagina <%= page %> de <%= pages %> </div>
-
-    <%if((page != pages)){%>
-    <button class="button-standar" onclick="location.href='/products/<%= parseFloat(page) + 1 %>'">Siguiente</button>
-    <%}%>
-</div>
- 
     <footer class="nav-footer">
         <%-include('../partials/footer') %>
     </footer>

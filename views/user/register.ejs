@@ -1,34 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost&family=Raleway:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Product list</title>
-</head>
+    <%- include('../partials/head') %>
 <body class="grid-container">
     <header class="nav-header">
         <%- include('../partials/header'); %>
     </header>
-
         <%- include('../partials/nav-bar') %>
-
-
 
     <main class="main-content">        
         <section class="section-login-container">           
                 <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
                     <br> 
                     <div class='div-formbox-user'>
-                        <input name="first_name" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.firstName ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.firstName : null %>"  required pattern="^[a-zA-Z\s]{4,}$" title="El Nombre debe tener al menos 4 caracteres"  >
+                        <input name="first_name" placeholder="Nombre" type='text' class="input-user-name <%= locals.errors && errors.first_name ? 'is-invalid':null%>" value="<%= locals.oldData ? oldData.first_name : null %>"  required pattern="^[a-zA-Z\s]{4,}$" title="El Nombre debe tener al menos 4 caracteres"  >
                         <i class="material-icons icon-login">perm_identity</i>       
                     </div>
                     <% if (locals.errors && errors.firstName) { %>
@@ -37,7 +21,7 @@
                         </div>
                     <% } %>
                     <div class='div-formbox-user'>
-                        <input name="lastName" placeholder="Apellido" type='text' class="input-user-name <%= locals.errors && errors.lastName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.lastName : null %>" required pattern="^[a-zA-Z\s]{4,}$" title="El Apellido debe tener al menos 4 caracteres"  >
+                        <input name="last_name" placeholder="Apellido" type='text' class="input-user-name <%= locals.errors && errors.lastName ? 'is-invalid' : null%>" value="<%= locals.oldData ? oldData.last_name : null %>" required pattern="^[a-zA-Z\s]{4,}$" title="El Apellido debe tener al menos 4 caracteres"  >
                         <i class="material-icons icon-login">perm_identity</i>
                     </div>
                     <% if (locals.errors && errors.lastName) { %>
@@ -90,7 +74,8 @@
                     <br>
                     <div>
                         <label class="imagen-perfil"><b>Imagen de perfil</b></label>
-                        <input class="imagen-login" name="image" type='file' required pattern="(?i)\.(jpg|png|gif)$" required>
+                        <input class="imagen-login" name="image" type='file'  pattern="(?i)\.(jpg|png|gif)$"
+                        value="https://robohash.org/temporibusprovidentdignissimos.png">
                         <i class="fas fa-portrait"> </i>
                     </div>
                     <% if (locals.errors && errors.image) { %>

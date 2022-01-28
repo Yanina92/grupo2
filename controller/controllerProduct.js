@@ -3,18 +3,14 @@ const fs = require("fs");
 const path = require("path");
 const productPath = path.join(__dirname, "../data/productsData.json");
 const db = require('../database/models');
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
+const { render } = require('ejs');
 const Products = db.Product;
 
 
 const controller = {
 
   productsDetail:(req, res) => {
-    // let identy = req.params.id
-    // const products = JSON.parse(fs.readFileSync(productPath, 'utf8'));
-    // let product = products.find(p=>p.id==identy);
-    // // let productosRelacionados = product.productosRelacionados.map((pId)=>products.find(p=>p.id==pId));
-    // res.render('./products/productDetail',{product})
     let productId = req.params.id;
     let product = Products.findByPk(productId)
     .then((product) => {
@@ -27,54 +23,31 @@ const controller = {
   },
  
   productsList:function(req, res) {
-    let perPage = 5;
-    let page = req.params.page || 1 ;
-    let pages = '';
-    let desc = (discount) => parseFloat(discount)/100 ;
-    Products.findAndCountAll({
-      offset:((perPage * page) - page)},
-      {
-        limit:(perPage)
-      }
-    )
-      .then(products => {
-          res.render("./products/productList",{products:products.rows,pages:Math.trunc(products.count / perPage) , page,desc})
-      })
+    // let perPage = 10;
+    // let page = req.params.page || 1;
+    // let pages = '';
+    // let desc = (discount) => parseFloat(discount)/100;
+    // Products.findAndCountAll({
+    //   limit:8,
+    //   offset:(perPage * page)
+    // }
+    // )
+    //   .then(products => {
+    //       res.render("./products/productList",{products:products.rows,pages:Math.trunc(products.count / perPage) , page,desc})
+    //   })
+    Products.findAll()
+    .then(products => {
+      let desc = (discount) => parseFloat(discount)/100;
+      res.render('./products/productlist',{products,desc})
+    })
 
   },
-  productsListPriceASC:function(req, res) {
-    let perPage = 5;
-    let page = req.params.page || 1 ;
-    let pages = '';
-    let desc = (discount) => parseFloat(discount)/100  
-    Products.findAndCountAll({
-      offset:((perPage * page) - page),
-         
-      },{
-        limit:perPage
-      }
-    )
-      .then(products => {
-          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page,desc},console.log(products.rows))
-      })
 
-  },
-  productsListPriceDESC:function(req, res) {
-    let perPage = 5;
-    let page = req.params.page || 1 ;
-    let pages = '';
-    let desc = (discount) => parseFloat(discount)/100  
-    Products.findAndCountAll({
-      offset:((perPage * page) - page),
-         
-      },{
-        limit:perPage
-      }
-    )
-      .then(products => {
-          res.render("./products/productList",{products:products.rows,pages:products.count / perPage , page,desc},console.log(products.rows))
-      })
-
+  table:(req,res) => {
+    Products.findAll()
+    .then(products =>{
+      res.render("../views/products/products-table",{products})
+    })
   },
  
   createForm: (req, res) => {
@@ -82,24 +55,43 @@ const controller = {
   },
 
   saveProduct:function(req, res) {
-
     let errors = validationResult(req);
-
     if (errors.errors.length > 0) {
+        res.render("./products/addProduct",{ errors:errors.mapped(), oldData:req.body})
+    }else {
+    Products.create ({
+        name: req.body.name,
+        description: req.body.description,
+        offer: req.body.offer,
+        discount: req.body.discount,
+        price: req.body.price,
+        image:req.file.filename,
+        stock:req.body.stock, 
+        id_category: req.body.category, 
+        id_brand:req.body.brand
+})
+.then(products => console.log(products),res.redirect('/products/table'))
+.catch(error => console.log(res.status(400).send(error)))
 
-      res.render("./products/addProduct",{ errors:errors.mapped(), oldData:req.body}); 
+}
 
-    } else {
+    // let errors = validationResult(req);
 
-      let productToCreate = {
-        ...req.body,
-        image: req.file.filename
-      };
+    // if (errors.errors.length > 0) {
 
-      Products.create(productToCreate);
-      res.redirect('/products');
+    //   res.render("./products/addProduct",{ errors:errors.mapped(), oldData:req.body}); 
+
+    // } else {
+
+    //   let productToCreate = {
+    //     ...req.body,
+    //     image: req.file.filename
+    //   };
+
+    //   Products.create(productToCreate);
+    //   res.redirect('/products');
       
-    };
+    // };
   },
 
   /**
@@ -152,29 +144,6 @@ const controller = {
     };
     
   },
-
-  /**updateProduct: (req, res) => {
-    let products = JSON.parse(fs.readFileSync(productPath, "utf8"));
-    let id = req.params.id;
-    let productToEdit = products.find((product) => product.id == id);
-
-    productToEdit = {
-      id: productToEdit.id,
-      ...req.body,
-    };
-    console.log(productToEdit);
-    let newProducts = products.map((product) => {
-      if (product.id == productToEdit.id) {
-        return (product = { ...productToEdit });
-      }
-      return product;
-    });
-    console.log("Articulo ID:" + id + " se modifico");
-
-    fs.writeFileSync(productPath, JSON.stringify(newProducts, null, " "));
-    res.redirect("/products");
-  },**/
-
   delete: function (req, res) {
     Products.destroy({where: {id:req.params.id}, force:true})
     .then(() =>{

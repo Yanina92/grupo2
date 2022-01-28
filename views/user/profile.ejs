@@ -9,13 +9,26 @@
 
         <%- include('../partials/nav-bar') %>
     <main class="profile">
-        <h2>Hi <%= user.firstName %>!</h2>
-        <img src='/images/avatars/<%= user.image%>'>
-        <br>
-        <br>
-        <div>Mail registrado</div>
-        <div><%=user.email%></div>
-      
+        <h1 style="font-size: 20px">Bienvenido! <%= user.first_name %>!</h1>
+       <div class='profile-content-img'><img class='profile-img' src='/images/avatars/<%= user.image%>'></div> 
+        <div class="msg-mail">Tu Mail</div>
+        <div class="msg-user-mail"><%=user.email%></div>
+<hr>
+    <div class="profile-admin">
+            <ul><h3>Tus datos</h3>
+            <li><a class="item-profile" href="/users/edit/<%=user.id%>"><%= user.first_name%></li></a>
+            <li><a class="item-profile" href="/users/edit/<%=user.id%>"><%= user.last_name%></li></a>
+            <li><a class="item-profile" href="/users/edit/<%=user.id%>"><%= user.admin?"Admin":"Cliente"%></li></a>
+        </ul>
+        <% if(user.admin) { %>
+            <ul><h3>Herramientas Admin</h3>
+            <li><a class="item-profile" href="/users">Ver lista de Usuarios</a></li>
+            <li><a class="item-profile" href="/products/table">Ver lista de Productos</a></li>
+            <li><a class="item-profile" href="/products/create">Agregar Producto</a></li>
+        </ul>
+        <%}%>
+    </div>
+   
     </main>
     <footer class="nav-footer">
         <%- include('../partials/footer') %>

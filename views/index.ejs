@@ -44,7 +44,8 @@
                <% let descuento = product.price * (desc(product.discount)) %>
                <div class="box-products-<%= index == 0 ?'1':index + 1%>" >
                   
-                   <div class="product"><a class="link-product"href="/products/detail/<%= product.id %>">
+                   <div class="product">
+                      <a class="link-product"href="/products/detail/<%= product.id %>">
                        <img class="product-img" src="<%= product.image %>" alt="Foto de producto">
                      </a>
                        <div class="box-text-off">

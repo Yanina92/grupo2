@@ -26,6 +26,8 @@
   margin-top: 10px;
 }
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -36,15 +38,21 @@
   scrollbar-color: transparent transparent; /* thumb and track color */
   scrollbar-width: 0px;
 }
+.pcant{
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
 .image-error{
   width: 100vw;
   height: 50vh;
+  margin-top: 30px;
 }
 .texto-imagen{
   position: absolute;
   top:10px;
   left:10px;
+ 
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: rem;
   color: rgba(8, 8, 8, 0.541);
@@ -59,6 +67,14 @@
   position: relative;
   /* margin-left: 20%; */
   
+  }
+  .grid-container-error{
+    display: grid;
+    grid-template:
+      "header" 80px
+      "nav" 0px
+      "main" 1
+      "footer" 460px;
   }
 
 
@@ -274,10 +290,11 @@ div.google-location {
   margin-left: 15px;
   padding: 0;
 }
-.prod{
+.prod {
   margin: 0;
-  padding:0;
-  width: 30vw;
+  padding: 0;
+  width: 50vw;
+  height: 120%;
 }
 .products2{
   display:flex;
@@ -306,7 +323,7 @@ div.google-location {
 .add-prodCart{
   text-decoration: none;
   color:black ;
-  font-size: 14px;
+  font-size: 10px;
   padding: 5px;
   text-align: center;
 }
@@ -362,7 +379,7 @@ div.google-location {
 }
 .product1{
   border-radius:5px ;
-  width: 100%;   
+  width: 70%;   
   margin-top: 10px;
   box-shadow: 0px 0px 5px 1px black;
   text-align:center;
@@ -397,7 +414,16 @@ margin-left:10px;
       text-align: center;
       font-size: 1.4rem;
     }
-    
+    .add-prodCart {
+      font-size: 14px;
+    }
+    .logoPerrito{
+      border-radius: 5%;
+      border: 2px solid black;
+      width: 100%;
+      height: 100%;
+      margin-top: 10px;
+    }
     .art{
     padding: 12px;
     width: 32vw;
@@ -438,12 +464,7 @@ margin-left:10px;
       text-align: center;
       font-size: 1.4rem;
     }
-    .image-error{
-      width: 40vw;
-      height: 50vh;
-      margin-left: 10%;
-      margin-top: 6%;
-    }
+   
  
 
     .art{
@@ -598,11 +619,13 @@ margin-left:10px;
 
 .botonProductCart {
   border: 3px solid var(--bordeBoton);
-  border-radius: 5px;
+  border-radius: 8px;
   width: 60vw;
-  height: 8vh;
+  height: 6vh;
   background-color: var(--contrastColor);
   color: var(--negro);
+  font-weight: bold;
+
 }
 
 .botonProductCart:hover {
@@ -619,8 +642,8 @@ margin-left:10px;
 .entradaProductCart {
   border: 3px solid var(--bordeBoton);
   border-radius: 5px;
-  width: 60vw;
-  height: 4vh;
+  width: 70vw;
+  height: 5vh;
   background-color: var(--white);
 }
 
@@ -713,6 +736,7 @@ i.fas.fa-trash-alt:hover {
   .botonProductCart {
     width: 30vw;
     height: 5vh;
+  
   }
 
   .entradaProductCart {
@@ -725,6 +749,11 @@ i.fas.fa-trash-alt:hover {
 
 @media (min-width: 1200px) {
   /*Desktop */
+  .prod {
+    margin: 0;
+    padding: 0;
+    width: 40vw;
+  }
 
   .destornilladorProductCart {
     width: 22vw;
@@ -810,8 +839,8 @@ body {
     "footer" 460px;
 }
 
-.grid-container-login,
-.grid-container-error{
+
+.grid-container-login{
   display: grid;
   grid-template:
     "header" 80px
@@ -932,12 +961,12 @@ body {
 } */
   .menu-display{
     position: fixed;
-  visibility: hidden;
+    visibility: hidden;
     top: 0;
     right: 0px;
     bottom: 0;
     width: 50vw;
-    z-index: 99;
+    z-index: 100;
     background-color: var(--contrastColor);
     box-shadow: 0px 0px 2px 1px black;
   }
@@ -961,7 +990,9 @@ body {
     margin-left: 0;
   }
   
-
+#burger-btn{
+  cursor: pointer;
+}
 /****************        *******************/
 
 .main-content {
@@ -1177,6 +1208,7 @@ p {
 
   .registerUser-bar{
     display:flex;
+    align-self: center;
   }
 
   .image-bar{
@@ -1449,7 +1481,7 @@ title p{
 
 .product-img {
   width: 100%;
-  height: 250px;
+  height: 250;
   max-height: 70%;
   border-radius: 5px 5px 0 0;
   object-fit:cover;
@@ -1746,6 +1778,15 @@ title p{
     font-size: 1.5em;
     font-weight: bold;
   }
+  .image-error{
+    width: 40vw;
+    height: 50vh;
+    margin-left: 30%;
+    margin-top: 6%;
+  }
+  .texto-imagen{
+    margin-left: 20%;
+  }
 }
 @keyframes slider {
   0% {
@@ -1784,13 +1825,12 @@ title p{
   height: auto;
   justify-content: center;
   align-items: space-between;
+  background-color: var(--primaryColor);
 }
 
 .section-container {
   max-width: 600px;
-  max-height: 800px;
   width: 98%;
-  height: 100%;
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: white;
@@ -1801,14 +1841,15 @@ title p{
   grid-template-columns: 1fr;
   justify-content: space-around;
   align-content: space-between;
-  overflow: scroll;
 }
-
+.user-card form button {
+cursor: pointer;
+}
 .user-card {
   min-width: 340px;
   max-width: 560px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--primaryDarkColor);
   height: 90px;
   border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
   margin-top: 5px;
@@ -2029,7 +2070,6 @@ a:visited {
 
 
 .profile{
-  margin-top:5%;
   text-align: center;
 }
 
@@ -2078,4 +2118,92 @@ margin-right: 5px;
   box-shadow: 0px 0px 5px 1px black;
   background-color: var(--contrastColor);
   font-size: 1rem;
+}
+.profile{
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #f2f2f2 10px,
+    #f2f2f2 20px
+  );
+  min-width: 200px;
+    min-height: 200px;
+}
+
+.profile-content-img{
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px 1px black;
+margin: auto;
+ width: 50vw;
+}
+
+.profile-img{
+  width: 100%;
+  height: auto;
+}
+
+.profile  h2 ,.msg-mail{
+  background-color: var(--primaryDarkColor);
+}
+
+.msg-user-mail{
+    width: 30%;
+    margin: auto;
+    background-color: var(--white);
+}
+
+.profile-admin{
+  display: flex;
+  justify-content: space-between;
+}
+.profile-admin ul{
+  list-style: none;
+}
+.item-profile:hover{
+  color: var(--contrastColor);
+}
+
+@media (min-width: 768px){ 
+  
+.profile{
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #f2f2f2 10px,
+    #f2f2f2 20px
+  );
+}
+
+.profile-content-img{
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px 1px black;
+  margin: auto;
+  width: 40vw;
+}
+
+.profile-img{
+  width: 100%;
+}
+
+.profile  h2 ,.msg-mail{
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f0f0,
+    #f0f0f0 10px,
+    #f2f2f2 10px,
+    #f2f2f2 20px
+  );
+}
+
+.msg-user-mail{
+  font-size: 20px;
+    width: 30%;
+    width: max-content;
+    margin: auto;
+    background-color: var(--contrastColor);
+    border-radius: 5px;
+}
+
 }

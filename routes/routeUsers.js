@@ -8,7 +8,7 @@ const storage = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validationRegisterMiddleware');
 const guestMiddlewares = require('../middlewares/guestMiddlewares');
 const authMiddlewares = require('../middlewares/authMiddlewares');
-
+const adminMiddlewares = require('../middlewares/adminMiddlewares')
 const uploadFile = multer({storage: storage});
 
 //CRUD
@@ -18,7 +18,7 @@ router.post('/register', uploadFile.single('image'), validations, controller.pro
 //Read (List)
 router.get('/', controller.index);
 //Update
-router.get('/edit/:id', controller.edit);
+router.get('/edit/:id' ,controller.edit);
 router.post('/edit/:id', controller.update);
 //Delete
 router.post('/delete/:id', controller.delete);
